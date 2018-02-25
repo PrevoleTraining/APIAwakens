@@ -11,10 +11,25 @@ import UIKit
 class CharaceterViewController: UITableViewController {
     let character = SWCharacter(name: "Luke Skywalker", heightInCm: 1.72, massInKg: 77, hairColor: "blond", skinColor: "fair", eyeColor: "blue", birthYear: "19BBY", gender: "male", homeworld: "https://www.swapi.co/api/planets/1/", vehicles: ["https://www.swapi.co/api/vehicles/14/", "https://www.swapi.co/api/vehicles/30/"], starships: ["https://www.swapi.co/api/starships/12/", "https://www.swapi.co/api/starships/22/"])
     
+    lazy var characterPickerDS = {
+        return CharactersPickerDataSource(characters: [
+            character,
+            character,
+            character,
+            character,
+            character,
+            character,
+            character,
+            character
+        ])
+    }()
+    
     let characterDetailDataSource = CharacterDetailsDataSource()
     
     @IBOutlet weak var nameLabel: UILabel!
-
+    
+    @IBOutlet weak var characterPicker: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +38,8 @@ class CharaceterViewController: UITableViewController {
         characterDetailDataSource.update(with: character)
         
         tableView.dataSource = characterDetailDataSource
+        characterPicker.dataSource = characterPickerDS
+        characterPicker.delegate = characterPickerDS
     }
     
     override func viewDidLayoutSubviews() {

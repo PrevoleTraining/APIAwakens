@@ -23,6 +23,7 @@
 		FD49258A2042F2C3009480B1 /* DataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925892042F2C3009480B1 /* DataCell.swift */; };
 		FD49258C2043446D009480B1 /* CharacterDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49258B2043446D009480B1 /* CharacterDetailsDataSource.swift */; };
 		FD49258E20435BF2009480B1 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49258D20435BF2009480B1 /* UITableView.swift */; };
+		FD49259020436AF4009480B1 /* CharactersPickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49258F20436AF4009480B1 /* CharactersPickerDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		FD4925892042F2C3009480B1 /* DataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCell.swift; sourceTree = "<group>"; };
 		FD49258B2043446D009480B1 /* CharacterDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsDataSource.swift; sourceTree = "<group>"; };
 		FD49258D20435BF2009480B1 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		FD49258F20436AF4009480B1 /* CharactersPickerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersPickerDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				FD49258B2043446D009480B1 /* CharacterDetailsDataSource.swift */,
+				FD49258F20436AF4009480B1 /* CharactersPickerDataSource.swift */,
 			);
 			path = "Data Sources";
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD49259020436AF4009480B1 /* CharactersPickerDataSource.swift in Sources */,
 				FD4925842042E936009480B1 /* CharaceterViewController.swift in Sources */,
 				FD4925722041BA95009480B1 /* SWCharacter.swift in Sources */,
 				FD49258A2042F2C3009480B1 /* DataCell.swift in Sources */,
