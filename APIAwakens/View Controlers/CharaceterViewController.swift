@@ -8,23 +8,18 @@
 
 import UIKit
 
-class CharaceterViewController: UITableViewController {
-    let character = SWCharacter(name: "Luke Skywalker", heightInCm: 1.72, massInKg: 77, hairColor: "blond", skinColor: "fair", eyeColor: "blue", birthYear: "19BBY", gender: "male", homeworld: "https://www.swapi.co/api/planets/1/", vehicles: ["https://www.swapi.co/api/vehicles/14/", "https://www.swapi.co/api/vehicles/30/"], starships: ["https://www.swapi.co/api/starships/12/", "https://www.swapi.co/api/starships/22/"])
+class CharaceterViewController: UITableViewController, UIPickerViewDelegate {
+    var characters: [SWCharacter]? {
+        didSet {
+            if let characters = characters {
+                characterPickerDS.update(characters: characters)
+            }
+        }
+    }
     
-    lazy var characterPickerDS = {
-        return CharactersPickerDataSource(characters: [
-            character,
-            character,
-            character,
-            character,
-            character,
-            character,
-            character,
-            character
-        ])
-    }()
+    private let characterPickerDS = CharactersPickerDataSource()
     
-    let characterDetailDataSource = CharacterDetailsDataSource()
+    private let characterDetailDataSource = CharacterDetailsDataSource()
     
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -33,13 +28,15 @@ class CharaceterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        nameLabel.text = character.name
-        
-        characterDetailDataSource.update(with: character)
-        
         tableView.dataSource = characterDetailDataSource
         characterPicker.dataSource = characterPickerDS
         characterPicker.delegate = characterPickerDS
+        
+        characterPickerDS.observe { character in
+            self.nameLabel.text = character.name
+            self.characterDetailDataSource.update(with: character)
+            self.tableView.reloadData()
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -48,7 +45,6 @@ class CharaceterViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 

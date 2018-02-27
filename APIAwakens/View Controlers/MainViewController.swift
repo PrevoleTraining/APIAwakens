@@ -9,6 +9,14 @@
 import UIKit
 
 class MainViewController: UITableViewController {
+    let luke = SWCharacter(name: "Luke Skywalker", heightInCm: 172, massInKg: 77, hairColor: "blond", skinColor: "fair", eyeColor: "blue", birthYear: "19BBY", gender: "male", homeworld: "Tatooine", vehicles: ["https://www.swapi.co/api/vehicles/14/", "https://www.swapi.co/api/vehicles/30/"], starships: ["https://www.swapi.co/api/starships/12/", "https://www.swapi.co/api/starships/22/"])
+    
+    let c3po = SWCharacter(name: "C-3PO", heightInCm: 167, massInKg: 75, hairColor: "n/a", skinColor: "gold", eyeColor: "yellow", birthYear: "112BBY", gender: "n/a", homeworld: "Tatooine", vehicles: [], starships: [])
+    
+    lazy var characters: [SWCharacter] = {
+        return [ luke, c3po ]
+    }()
+    
     @IBOutlet weak var charactersButton: UIButton!
     @IBOutlet weak var starhipsButton: UIButton!
     @IBOutlet weak var vehiclesButton: UIButton!
@@ -30,7 +38,15 @@ class MainViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "viewCharacterDetails" {
+            let controller = segue.destination as! CharaceterViewController
+            controller.characters = characters
+        }
+    }
+    
     // Mark: - UI Preparation
+    
     func setupButton(_ button: UIButton) {
         button.centerImageAndButton(5, imageOnTop: true)
     }

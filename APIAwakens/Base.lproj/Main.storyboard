@@ -38,7 +38,7 @@
                                                         <color key="titleColor" red="0.49570518732070923" green="0.84109824895858765" blue="0.99992293119430542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="1N0-Ld-tn3" kind="show" id="ZRE-51-Ek7"/>
+                                                        <segue destination="1N0-Ld-tn3" kind="show" identifier="viewCharacterDetails" id="ZRE-51-Ek7"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

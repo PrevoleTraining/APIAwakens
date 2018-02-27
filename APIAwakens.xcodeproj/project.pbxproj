@@ -81,7 +81,7 @@
 				FD4925872042F27F009480B1 /* Views */,
 				FD4925822042E8EA009480B1 /* View Controlers */,
 				FD49257B2042E1A9009480B1 /* View Models */,
-				FD49257A2042E180009480B1 /* Data Sources */,
+				FD49257A2042E180009480B1 /* UI Data Sources */,
 				FD4925772042D836009480B1 /* Extensions */,
 				FD4925702041BA88009480B1 /* Models */,
 				FD49255E2041B8BE009480B1 /* AppDelegate.swift */,
@@ -112,13 +112,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		FD49257A2042E180009480B1 /* Data Sources */ = {
+		FD49257A2042E180009480B1 /* UI Data Sources */ = {
 			isa = PBXGroup;
 			children = (
 				FD49258B2043446D009480B1 /* CharacterDetailsDataSource.swift */,
 				FD49258F20436AF4009480B1 /* CharactersPickerDataSource.swift */,
 			);
-			path = "Data Sources";
+			path = "UI Data Sources";
 			sourceTree = "<group>";
 		};
 		FD49257B2042E1A9009480B1 /* View Models */ = {
