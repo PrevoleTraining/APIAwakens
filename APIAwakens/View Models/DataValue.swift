@@ -8,8 +8,19 @@
 
 import Foundation
 
+let oneInchInCentimerMeter = 2.54
+
 protocol DataValue {
     var formatedValue: String { get }
+}
+
+protocol DataValueToggelable: DataValue {
+    var leftToggleLabel: String { get }
+    var rightToggleLabel: String { get }
+    
+    mutating func toggle()
+    
+    func isActive(text: String?) -> Bool
 }
 
 struct StringValue: DataValue {
@@ -20,10 +31,40 @@ struct StringValue: DataValue {
     }
 }
 
-struct MetricValue: DataValue {
-    var value: Double
+struct MetricEnglishValue: DataValueToggelable {
+    private var valueInCm: Double
+    private var isMetric: Bool = true
+    
+    init(valueInCm: Double) {
+        self.valueInCm = valueInCm
+    }
     
     var formatedValue: String {
-        return "\(value)m"
+        if isMetric {
+            return "\(valueInCm / 100)m"
+        } else {
+            return "\(valueInCm * oneInchInCentimerMeter / 100)\""
+        }
+    }
+    
+    var leftToggleLabel: String {
+        return "English"
+    }
+    
+    var rightToggleLabel: String {
+        return "Metric"
+    }
+    
+    mutating func toggle() {
+        isMetric = !isMetric
+    }
+    
+    func isActive(text: String?) -> Bool {
+        if text == nil {
+            return false
+        } else {
+            return (isMetric && "Metric" == text)
+                || (!isMetric && "English" == text)
+        }
     }
 }

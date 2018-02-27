@@ -147,7 +147,7 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="sf6-rc-ybM">
-                            <rect key="frame" x="0.0" y="132" width="375" height="300"/>
+                            <rect key="frame" x="0.0" y="176" width="375" height="300"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4g7-HR-Otp">
@@ -249,8 +249,77 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DataCell" id="rtQ-z2-8We" customClass="DataCell" customModule="APIAwakens" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToggleDataCell" id="4Ts-b7-aGe" customClass="ToggleDataCell" customModule="APIAwakens" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Ts-b7-aGe" id="Zvb-Hj-G2m">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QkO-no-KAw">
+                                            <rect key="frame" x="15" y="10.5" width="90" height="21.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="Q7w-6k-12e"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" red="0.49570518730000002" green="0.84109824899999996" blue="0.99992293119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mm3-Pe-WYX">
+                                            <rect key="frame" x="115" y="10" width="49.5" height="23"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                            <color key="textColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8V3-gi-Z4d">
+                                            <rect key="frame" x="232" y="6" width="57" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="60" id="mjQ-uz-GVp"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <state key="normal" title="Toggle 1">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="toggle:" destination="4Ts-b7-aGe" eventType="touchUpInside" id="GM9-iF-Ned"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvo-Jv-ct7">
+                                            <rect key="frame" x="297" y="6" width="59" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="60" id="TbZ-2Z-IbY"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <state key="normal" title="Toggle 2">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="toggle:" destination="4Ts-b7-aGe" eventType="touchUpInside" id="5bG-eE-IaP"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="8V3-gi-Z4d" firstAttribute="centerY" secondItem="Zvb-Hj-G2m" secondAttribute="centerY" id="8jF-Ct-JqY"/>
+                                        <constraint firstItem="tvo-Jv-ct7" firstAttribute="centerY" secondItem="Zvb-Hj-G2m" secondAttribute="centerY" id="9nS-nN-xCs"/>
+                                        <constraint firstItem="QkO-no-KAw" firstAttribute="centerY" secondItem="Zvb-Hj-G2m" secondAttribute="centerY" id="A51-Zd-GZm"/>
+                                        <constraint firstAttribute="trailing" secondItem="tvo-Jv-ct7" secondAttribute="trailing" constant="19" id="Fu9-v6-a5I"/>
+                                        <constraint firstItem="tvo-Jv-ct7" firstAttribute="leading" secondItem="8V3-gi-Z4d" secondAttribute="trailing" constant="8" id="XNe-pe-Y2A"/>
+                                        <constraint firstItem="Mm3-Pe-WYX" firstAttribute="leading" secondItem="QkO-no-KAw" secondAttribute="trailing" constant="10" id="dvF-c3-qsF"/>
+                                        <constraint firstItem="QkO-no-KAw" firstAttribute="leading" secondItem="Zvb-Hj-G2m" secondAttribute="leading" constant="15" id="fvL-oY-gh7"/>
+                                        <constraint firstItem="8V3-gi-Z4d" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mm3-Pe-WYX" secondAttribute="trailing" constant="8" id="k64-2u-MRk"/>
+                                        <constraint firstItem="Mm3-Pe-WYX" firstAttribute="centerY" secondItem="Zvb-Hj-G2m" secondAttribute="centerY" id="wpF-I0-qnG"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="titleLabel" destination="QkO-no-KAw" id="UEY-Ng-K1z"/>
+                                    <outlet property="toggleLeftButton" destination="8V3-gi-Z4d" id="Ebn-1K-rNI"/>
+                                    <outlet property="toggleRightButton" destination="tvo-Jv-ct7" id="PlP-RQ-JHW"/>
+                                    <outlet property="valueLabel" destination="Mm3-Pe-WYX" id="fg7-8S-f8T"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DataCell" id="rtQ-z2-8We" customClass="DataCell" customModule="APIAwakens" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="132" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rtQ-z2-8We" id="lbj-Gx-obG">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>

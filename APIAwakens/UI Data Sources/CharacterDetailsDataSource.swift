@@ -25,19 +25,25 @@ class CharacterDetailsDataSource: NSObject, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DataCell.reuseIdentifier, for: indexPath) as! DataCell
-        
         if let character = character {
             let data = character.data[indexPath.row]
             
-            cell.titleLabel.text = data.label.rawValue
-            cell.valueLabel.text = data.value.formatedValue
+            let cell = tableView.dequeueReusableCell(withIdentifier: data.cellIdentifier)
+            
+            if let dataCell = cell as? DataCell {
+                dataCell.update(label: data.label.rawValue, data: data.value)
+            } else if let toggleDataCell = cell as? ToggleDataCell {
+                toggleDataCell.update(label: data.label.rawValue, data: data.value as! DataValueToggelable)
+            }
+            
+//            let cell = tableView.dequeueReusableCell(withIdentifier: data.cellIdentifier, for: indexPath) as! DataCell
+//
+//            cell.update(label: data.label.rawValue, data: data.value)
+            
+            return cell!
         } else {
-            cell.titleLabel.text = ""
-            cell.valueLabel.text = ""
+            return tableView.dequeueReusableCell(withIdentifier: DataCell.reuseIdentifier, for: indexPath)
         }
-        
-        return cell
     }
     
     func update(with character: SWCharacter) {
