@@ -32,13 +32,9 @@ class CharacterDetailsDataSource: NSObject, UITableViewDataSource {
             
             if let dataCell = cell as? DataCell {
                 dataCell.update(label: data.label.rawValue, data: data.value)
-            } else if let toggleDataCell = cell as? ToggleDataCell {
-                toggleDataCell.update(label: data.label.rawValue, data: data.value as! DataValueToggelable)
+            } else if let englishMetricCell = cell as? EnglishMetricDataCell {
+                englishMetricCell.update(label: data.label.rawValue, metricValue: data.value as! EnglishMetricValue)
             }
-            
-//            let cell = tableView.dequeueReusableCell(withIdentifier: data.cellIdentifier, for: indexPath) as! DataCell
-//
-//            cell.update(label: data.label.rawValue, data: data.value)
             
             return cell!
         } else {

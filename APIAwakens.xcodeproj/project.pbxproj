@@ -23,7 +23,8 @@
 		FD49258C2043446D009480B1 /* CharacterDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49258B2043446D009480B1 /* CharacterDetailsDataSource.swift */; };
 		FD49258E20435BF2009480B1 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49258D20435BF2009480B1 /* UITableView.swift */; };
 		FD49259020436AF4009480B1 /* CharactersPickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49258F20436AF4009480B1 /* CharactersPickerDataSource.swift */; };
-		FD4925922045FAD6009480B1 /* ToggleDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925912045FAD6009480B1 /* ToggleDataCell.swift */; };
+		FD4925922045FAD6009480B1 /* EnglishMetricDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925912045FAD6009480B1 /* EnglishMetricDataCell.swift */; };
+		FD4925952049E9F3009480B1 /* UnitUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925942049E9F3009480B1 /* UnitUIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +46,8 @@
 		FD49258B2043446D009480B1 /* CharacterDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsDataSource.swift; sourceTree = "<group>"; };
 		FD49258D20435BF2009480B1 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		FD49258F20436AF4009480B1 /* CharactersPickerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersPickerDataSource.swift; sourceTree = "<group>"; };
-		FD4925912045FAD6009480B1 /* ToggleDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleDataCell.swift; sourceTree = "<group>"; };
+		FD4925912045FAD6009480B1 /* EnglishMetricDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishMetricDataCell.swift; sourceTree = "<group>"; };
+		FD4925942049E9F3009480B1 /* UnitUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitUIButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		FD49255D2041B8BE009480B1 /* APIAwakens */ = {
 			isa = PBXGroup;
 			children = (
+				FD4925932049E9C7009480B1 /* UI */,
 				FD4925872042F27F009480B1 /* Views */,
 				FD4925822042E8EA009480B1 /* View Controlers */,
 				FD49257B2042E1A9009480B1 /* View Models */,
@@ -143,9 +146,17 @@
 			isa = PBXGroup;
 			children = (
 				FD4925892042F2C3009480B1 /* DataCell.swift */,
-				FD4925912045FAD6009480B1 /* ToggleDataCell.swift */,
+				FD4925912045FAD6009480B1 /* EnglishMetricDataCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		FD4925932049E9C7009480B1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FD4925942049E9F3009480B1 /* UnitUIButton.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,7 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD4925922045FAD6009480B1 /* ToggleDataCell.swift in Sources */,
+				FD4925922045FAD6009480B1 /* EnglishMetricDataCell.swift in Sources */,
 				FD49259020436AF4009480B1 /* CharactersPickerDataSource.swift in Sources */,
 				FD4925842042E936009480B1 /* CharaceterViewController.swift in Sources */,
 				FD4925722041BA95009480B1 /* SWCharacter.swift in Sources */,
@@ -229,6 +240,7 @@
 				FD4925862042EE76009480B1 /* DataValue.swift in Sources */,
 				FD49258C2043446D009480B1 /* CharacterDetailsDataSource.swift in Sources */,
 				FD4925762041BEC7009480B1 /* Starship.swift in Sources */,
+				FD4925952049E9F3009480B1 /* UnitUIButton.swift in Sources */,
 				FD4925612041B8BE009480B1 /* MainViewController.swift in Sources */,
 				FD4925742041BA9F009480B1 /* Vehicle.swift in Sources */,
 				FD49258E20435BF2009480B1 /* UITableView.swift in Sources */,

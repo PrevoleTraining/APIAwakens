@@ -14,15 +14,6 @@ protocol DataValue {
     var formatedValue: String { get }
 }
 
-protocol DataValueToggelable: DataValue {
-    var leftToggleLabel: String { get }
-    var rightToggleLabel: String { get }
-    
-    mutating func toggle()
-    
-    func isActive(text: String?) -> Bool
-}
-
 struct StringValue: DataValue {
     var value: String
     
@@ -31,40 +22,31 @@ struct StringValue: DataValue {
     }
 }
 
-struct MetricEnglishValue: DataValueToggelable {
-    private var valueInCm: Double
-    private var isMetric: Bool = true
+struct EnglishMetricValue: DataValue {
+    enum Unit: String {
+        case metric = "metric"
+        case english = "english"
+    }
+    
+    private var value: Double
+    private var unit: Unit = .metric
     
     init(valueInCm: Double) {
-        self.valueInCm = valueInCm
+        self.value = valueInCm
     }
     
     var formatedValue: String {
-        if isMetric {
-            return "\(valueInCm / 100)m"
-        } else {
-            return "\(valueInCm * oneInchInCentimerMeter / 100)\""
+        switch unit {
+        case .metric: return "\(value / 100)m"
+        case .english: return "\(value * oneInchInCentimerMeter / 100)\""
         }
     }
     
-    var leftToggleLabel: String {
-        return "English"
+    func isUnit(_ unit: Unit) -> Bool {
+        return self.unit == unit
     }
     
-    var rightToggleLabel: String {
-        return "Metric"
-    }
-    
-    mutating func toggle() {
-        isMetric = !isMetric
-    }
-    
-    func isActive(text: String?) -> Bool {
-        if text == nil {
-            return false
-        } else {
-            return (isMetric && "Metric" == text)
-                || (!isMetric && "English" == text)
-        }
+    mutating func change(unit: Unit) {
+        self.unit = unit
     }
 }
