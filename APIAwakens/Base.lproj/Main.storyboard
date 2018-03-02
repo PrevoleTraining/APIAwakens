@@ -369,7 +369,9 @@
                     </tableView>
                     <connections>
                         <outlet property="characterPicker" destination="ben-R7-2sR" id="ErW-iU-301"/>
+                        <outlet property="largestLabel" destination="ZqI-xn-a8q" id="Z0y-e2-5P9"/>
                         <outlet property="nameLabel" destination="u5t-q9-NMy" id="Cco-vg-Xgp"/>
+                        <outlet property="smallestLabel" destination="gNG-j2-gfQ" id="fOo-iV-X89"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ige-bl-ELi" userLabel="First Responder" sceneMemberID="firstResponder"/>

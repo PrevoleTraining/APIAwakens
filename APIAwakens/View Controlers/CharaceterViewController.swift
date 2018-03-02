@@ -22,8 +22,10 @@ class CharaceterViewController: UITableViewController, UIPickerViewDelegate {
     private let characterDetailDataSource = CharacterDetailsDataSource()
     
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var characterPicker: UIPickerView!
+    
+    @IBOutlet weak var smallestLabel: UILabel!
+    @IBOutlet weak var largestLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,15 @@ class CharaceterViewController: UITableViewController, UIPickerViewDelegate {
         tableView.dataSource = characterDetailDataSource
         characterPicker.dataSource = characterPickerDS
         characterPicker.delegate = characterPickerDS
+        
+        if let characters = characters {
+            let closure: (SWCharacter, SWCharacter) -> Bool = { (left, right) -> Bool in
+                return left.heightInCm < right.heightInCm
+            }
+            
+            smallestLabel.text = characters.min(by: closure)?.name
+            largestLabel.text = characters.max(by: closure)?.name
+        }
         
         characterPickerDS.observe { character in
             self.nameLabel.text = character.name
