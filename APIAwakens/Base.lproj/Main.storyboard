@@ -38,7 +38,7 @@
                                                         <color key="titleColor" red="0.49570518732070923" green="0.84109824895858765" blue="0.99992293119430542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="1N0-Ld-tn3" kind="show" identifier="dataView" id="ZRE-51-Ek7"/>
+                                                        <segue destination="1N0-Ld-tn3" kind="show" identifier="charactersDetailsView" id="ZRE-51-Ek7"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -63,6 +63,9 @@
                                                     <state key="normal" title="Vehicles" image="icon-vehicles">
                                                         <color key="titleColor" red="0.49570518730000002" green="0.84109824899999996" blue="0.99992293119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="1N0-Ld-tn3" kind="show" identifier="vehiclesDetailsView" id="qTR-Jp-eVc"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -86,6 +89,9 @@
                                                     <state key="normal" title="Starships" image="icon-starships">
                                                         <color key="titleColor" red="0.49570518730000002" green="0.84109824899999996" blue="0.99992293119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <segue destination="1N0-Ld-tn3" kind="show" identifier="starshipsDetailsView" id="Ack-4q-O4s"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -117,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="676" y="261"/>
         </scene>
-        <!--Test-->
+        <!--DetailView-->
         <scene sceneID="gRq-cb-j2O">
             <objects>
-                <tableViewController title="Test" id="1N0-Ld-tn3" customClass="DataViewController" customModule="APIAwakens" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="DetailView" id="1N0-Ld-tn3" customClass="DataViewController" customModule="APIAwakens" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Swd-iD-OIG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -376,7 +382,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ige-bl-ELi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1520.8" y="86.806596701649184"/>
+            <point key="canvasLocation" x="1574" y="223"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fjR-gV-LKw">
@@ -408,4 +414,7 @@
         <image name="icon-starships" width="100" height="100"/>
         <image name="icon-vehicles" width="100" height="100"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ack-4q-O4s"/>
+    </inferredMetricsTieBreakers>
 </document>

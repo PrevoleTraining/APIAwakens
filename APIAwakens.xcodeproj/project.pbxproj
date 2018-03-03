@@ -30,6 +30,8 @@
 		FD49259F204ACCA1009480B1 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49259E204ACCA1009480B1 /* ViewModelFactory.swift */; };
 		FD4925A1204ADF86009480B1 /* DataCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925A0204ADF86009480B1 /* DataCollection.swift */; };
 		FD4925A5204AE23B009480B1 /* Sizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925A4204AE23B009480B1 /* Sizable.swift */; };
+		FD4925A7204B0843009480B1 /* VehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925A6204B0843009480B1 /* VehicleViewModel.swift */; };
+		FD4925A9204B13A0009480B1 /* StarshipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925A8204B13A0009480B1 /* StarshipViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		FD49259E204ACCA1009480B1 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		FD4925A0204ADF86009480B1 /* DataCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollection.swift; sourceTree = "<group>"; };
 		FD4925A4204AE23B009480B1 /* Sizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizable.swift; sourceTree = "<group>"; };
+		FD4925A6204B0843009480B1 /* VehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewModel.swift; sourceTree = "<group>"; };
+		FD4925A8204B13A0009480B1 /* StarshipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,8 @@
 				FD4925852042EE76009480B1 /* DataValue.swift */,
 				FD492598204A88AC009480B1 /* ViewModel.swift */,
 				FD49259E204ACCA1009480B1 /* ViewModelFactory.swift */,
+				FD4925A6204B0843009480B1 /* VehicleViewModel.swift */,
+				FD4925A8204B13A0009480B1 /* StarshipViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -250,6 +256,7 @@
 				FD49259020436AF4009480B1 /* PickerDataSource.swift in Sources */,
 				FD4925842042E936009480B1 /* DataViewController.swift in Sources */,
 				FD4925722041BA95009480B1 /* SWCharacter.swift in Sources */,
+				FD4925A9204B13A0009480B1 /* StarshipViewModel.swift in Sources */,
 				FD49258A2042F2C3009480B1 /* DataCell.swift in Sources */,
 				FD49257D2042E1CE009480B1 /* CharacterViewModel.swift in Sources */,
 				FD492599204A88AC009480B1 /* ViewModel.swift in Sources */,
@@ -262,6 +269,7 @@
 				FD4925742041BA9F009480B1 /* Vehicle.swift in Sources */,
 				FD4925A5204AE23B009480B1 /* Sizable.swift in Sources */,
 				FD49258E20435BF2009480B1 /* UITableView.swift in Sources */,
+				FD4925A7204B0843009480B1 /* VehicleViewModel.swift in Sources */,
 				FD4925A1204ADF86009480B1 /* DataCollection.swift in Sources */,
 				FD49259F204ACCA1009480B1 /* ViewModelFactory.swift in Sources */,
 				FD49255F2041B8BE009480B1 /* AppDelegate.swift in Sources */,

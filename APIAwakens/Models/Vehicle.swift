@@ -8,8 +8,8 @@
 
 import Foundation
 
-class Vehicle {
-    /*let name: String
+class Vehicle: Sizable {
+    let name: String
     let model: String
     let manufacturer: String
     let costInCredits: Int
@@ -21,4 +21,23 @@ class Vehicle {
     let consumables: String
     let vhcClass: String // Also for starship class
     let pilots: [String] // Links*/
+    
+    var size: Double {
+        return lengthInM
+    }
+    
+    init(name: String, model: String, manufacturer: String, costInCredits: Int, lengthInM: Double, maxAtmosphericSpeedInKmPerHour: Int, crew: Int, passengers: Int, cargoCapacity: Int, consumables: String, vhcClass: String, pilots: [String]) {
+        self.name = name
+        self.model = model
+        self.manufacturer = manufacturer
+        self.costInCredits = costInCredits
+        self.lengthInM = lengthInM
+        self.maxAtmosphericSpeedInKmPerHour = maxAtmosphericSpeedInKmPerHour
+        self.crew = crew
+        self.passengers = passengers
+        self.cargoCapacity = cargoCapacity
+        self.consumables = consumables
+        self.vhcClass = vhcClass
+        self.pilots = pilots
+    }
 }
