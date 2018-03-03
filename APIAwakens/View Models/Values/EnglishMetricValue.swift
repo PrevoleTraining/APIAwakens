@@ -1,26 +1,12 @@
 //
-//  DataValue.swift
+//  EnglishMetricDataValue.swift
 //  APIAwakens
 //
-//  Created by lprevost on 25.02.18.
+//  Created by lprevost on 03.03.18.
 //  Copyright © 2018 prevole.ch. All rights reserved.
 //
 
 import Foundation
-
-let oneInchInCentimerMeter = 2.54
-
-protocol DataValue {
-    var formatedValue: String { get }
-}
-
-struct StringValue: DataValue {
-    var value: String
-    
-    var formatedValue: String {
-        return value
-    }
-}
 
 struct EnglishMetricValue: DataValue {
     enum Unit: String {

@@ -56,6 +56,12 @@ class DataViewController: UITableViewController, UIPickerViewDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "exchangeRateModal", let controller = segue.destination as? ExchangeRateViewController, let button = sender as? UIButton, let view = button.superview, let cell = view.superview as? CashDataCell {
+            controller.rateModalDelegate = cell
+        }
+    }
 }
 
 

@@ -30,10 +30,11 @@ class DetailsDataSource: NSObject, UITableViewDataSource {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: data.cellIdentifier)
             
-            if let dataCell = cell as? DataCell {
-                dataCell.update(label: data.label, data: data.value)
-            } else if let englishMetricCell = cell as? EnglishMetricDataCell {
-                englishMetricCell.update(label: data.label, metricValue: data.value as! EnglishMetricValue)
+            switch cell {
+            case let dataCell as DataCell: dataCell.update(label: data.label, data: data.value)
+            case let englishMetricCell as EnglishMetricDataCell: englishMetricCell.update(label: data.label, metricValue: data.value as! EnglishMetricValue)
+            case let cashCell as CashDataCell: cashCell.update(label: data.label, cashValue: data.value as! CashValue)
+            default: fatalError("Unknown cell type")
             }
             
             return cell!

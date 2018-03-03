@@ -32,6 +32,13 @@
 		FD4925A5204AE23B009480B1 /* Sizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925A4204AE23B009480B1 /* Sizable.swift */; };
 		FD4925A7204B0843009480B1 /* VehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925A6204B0843009480B1 /* VehicleViewModel.swift */; };
 		FD4925A9204B13A0009480B1 /* StarshipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925A8204B13A0009480B1 /* StarshipViewModel.swift */; };
+		FD4925AB204B2DB7009480B1 /* CashUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925AA204B2DB7009480B1 /* CashUIButton.swift */; };
+		FD4925AD204B2DE1009480B1 /* CashDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925AC204B2DE1009480B1 /* CashDataCell.swift */; };
+		FD4925B0204B3465009480B1 /* StringValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925AF204B3465009480B1 /* StringValue.swift */; };
+		FD4925B2204B3479009480B1 /* EnglishMetricValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925B1204B3479009480B1 /* EnglishMetricValue.swift */; };
+		FD4925B4204B3492009480B1 /* CashValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925B3204B3492009480B1 /* CashValue.swift */; };
+		FD4925B6204B3D1C009480B1 /* ExchangeRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925B5204B3D1C009480B1 /* ExchangeRateViewController.swift */; };
+		FD4925B8204B3DD9009480B1 /* RateModalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925B7204B3DD9009480B1 /* RateModalDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +69,13 @@
 		FD4925A4204AE23B009480B1 /* Sizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizable.swift; sourceTree = "<group>"; };
 		FD4925A6204B0843009480B1 /* VehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewModel.swift; sourceTree = "<group>"; };
 		FD4925A8204B13A0009480B1 /* StarshipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipViewModel.swift; sourceTree = "<group>"; };
+		FD4925AA204B2DB7009480B1 /* CashUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashUIButton.swift; sourceTree = "<group>"; };
+		FD4925AC204B2DE1009480B1 /* CashDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashDataCell.swift; sourceTree = "<group>"; };
+		FD4925AF204B3465009480B1 /* StringValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringValue.swift; sourceTree = "<group>"; };
+		FD4925B1204B3479009480B1 /* EnglishMetricValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishMetricValue.swift; sourceTree = "<group>"; };
+		FD4925B3204B3492009480B1 /* CashValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashValue.swift; sourceTree = "<group>"; };
+		FD4925B5204B3D1C009480B1 /* ExchangeRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateViewController.swift; sourceTree = "<group>"; };
+		FD4925B7204B3DD9009480B1 /* RateModalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateModalDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,8 +158,8 @@
 		FD49257B2042E1A9009480B1 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				FD4925AE204B344E009480B1 /* Values */,
 				FD49257C2042E1CE009480B1 /* CharacterViewModel.swift */,
-				FD4925852042EE76009480B1 /* DataValue.swift */,
 				FD492598204A88AC009480B1 /* ViewModel.swift */,
 				FD49259E204ACCA1009480B1 /* ViewModelFactory.swift */,
 				FD4925A6204B0843009480B1 /* VehicleViewModel.swift */,
@@ -159,6 +173,8 @@
 			children = (
 				FD4925602041B8BE009480B1 /* MainViewController.swift */,
 				FD4925832042E936009480B1 /* DataViewController.swift */,
+				FD4925B5204B3D1C009480B1 /* ExchangeRateViewController.swift */,
+				FD4925B7204B3DD9009480B1 /* RateModalDelegate.swift */,
 			);
 			path = "View Controlers";
 			sourceTree = "<group>";
@@ -168,6 +184,7 @@
 			children = (
 				FD4925892042F2C3009480B1 /* DataCell.swift */,
 				FD4925912045FAD6009480B1 /* EnglishMetricDataCell.swift */,
+				FD4925AC204B2DE1009480B1 /* CashDataCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,8 +193,20 @@
 			isa = PBXGroup;
 			children = (
 				FD4925942049E9F3009480B1 /* UnitUIButton.swift */,
+				FD4925AA204B2DB7009480B1 /* CashUIButton.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		FD4925AE204B344E009480B1 /* Values */ = {
+			isa = PBXGroup;
+			children = (
+				FD4925852042EE76009480B1 /* DataValue.swift */,
+				FD4925AF204B3465009480B1 /* StringValue.swift */,
+				FD4925B1204B3479009480B1 /* EnglishMetricValue.swift */,
+				FD4925B3204B3492009480B1 /* CashValue.swift */,
+			);
+			path = Values;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,11 +295,18 @@
 				FD4925762041BEC7009480B1 /* Starship.swift in Sources */,
 				FD4925952049E9F3009480B1 /* UnitUIButton.swift in Sources */,
 				FD4925612041B8BE009480B1 /* MainViewController.swift in Sources */,
+				FD4925B6204B3D1C009480B1 /* ExchangeRateViewController.swift in Sources */,
+				FD4925AD204B2DE1009480B1 /* CashDataCell.swift in Sources */,
 				FD4925742041BA9F009480B1 /* Vehicle.swift in Sources */,
+				FD4925B8204B3DD9009480B1 /* RateModalDelegate.swift in Sources */,
 				FD4925A5204AE23B009480B1 /* Sizable.swift in Sources */,
 				FD49258E20435BF2009480B1 /* UITableView.swift in Sources */,
 				FD4925A7204B0843009480B1 /* VehicleViewModel.swift in Sources */,
+				FD4925B4204B3492009480B1 /* CashValue.swift in Sources */,
+				FD4925B0204B3465009480B1 /* StringValue.swift in Sources */,
 				FD4925A1204ADF86009480B1 /* DataCollection.swift in Sources */,
+				FD4925AB204B2DB7009480B1 /* CashUIButton.swift in Sources */,
+				FD4925B2204B3479009480B1 /* EnglishMetricValue.swift in Sources */,
 				FD49259F204ACCA1009480B1 /* ViewModelFactory.swift in Sources */,
 				FD49255F2041B8BE009480B1 /* AppDelegate.swift in Sources */,
 				FD4925792042D843009480B1 /* UIButton.swift in Sources */,
