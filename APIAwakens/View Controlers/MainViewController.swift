@@ -29,19 +29,21 @@ class MainViewController: UITableViewController {
         setupButton(vehiclesButton)
         
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "viewCharacterDetails" {
-            let controller = segue.destination as! CharaceterViewController
-            controller.characters = characters
+        if segue.identifier == "dataView" {
+            let controller = segue.destination as! DataViewController
+            
+            do {
+                try controller.data = DataCollection(collectionLabel: "Characters", sizables: characters)
+            } catch {
+                fatalError()
+            }
         }
     }
     

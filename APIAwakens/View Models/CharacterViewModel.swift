@@ -8,17 +8,7 @@
 
 import Foundation
 
-struct CharacterViewModel {
-    typealias LabelValue = (label: CharacterViewModelLabel, value: DataValue, cellIdentifier: String)
-    
-    enum CharacterViewModelLabel: String {
-        case born = "Born"
-        case homeworld = "Home"
-        case height = "Height"
-        case eyeColor = "Eyes"
-        case hairColor = "Hair"
-    }
-    
+struct CharacterViewModel: ViewModel {
     let name: String
     let data: [LabelValue]
 }
@@ -29,11 +19,11 @@ extension CharacterViewModel {
         
         var data: [LabelValue] = []
     
-        data.append((label: .born, value: StringValue(value: character.birthYear), cellIdentifier: DataCell.reuseIdentifier))
-        data.append((label: .homeworld, StringValue(value: character.homeworld), cellIdentifier: DataCell.reuseIdentifier))
-        data.append((label: .height, EnglishMetricValue(valueInCm: character.heightInCm), cellIdentifier: EnglishMetricDataCell.reuseIdentifier))
-        data.append((label: .eyeColor, StringValue(value: character.eyeColor), cellIdentifier: DataCell.reuseIdentifier))
-        data.append((label: .hairColor, StringValue(value: character.hairColor), cellIdentifier: DataCell.reuseIdentifier))
+        data.append((label: "Born", value: StringValue(value: character.birthYear), cellIdentifier: DataCell.reuseIdentifier))
+        data.append((label: "Home", StringValue(value: character.homeworld), cellIdentifier: DataCell.reuseIdentifier))
+        data.append((label: "Height", EnglishMetricValue(valueInCm: character.heightInCm), cellIdentifier: EnglishMetricDataCell.reuseIdentifier))
+        data.append((label: "Eyes", StringValue(value: character.eyeColor), cellIdentifier: DataCell.reuseIdentifier))
+        data.append((label: "Hair", StringValue(value: character.hairColor), cellIdentifier: DataCell.reuseIdentifier))
         
         self.data = data;
     }

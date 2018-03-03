@@ -38,7 +38,7 @@
                                                         <color key="titleColor" red="0.49570518732070923" green="0.84109824895858765" blue="0.99992293119430542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="1N0-Ld-tn3" kind="show" identifier="viewCharacterDetails" id="ZRE-51-Ek7"/>
+                                                        <segue destination="1N0-Ld-tn3" kind="show" identifier="dataView" id="ZRE-51-Ek7"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -117,10 +117,10 @@
             </objects>
             <point key="canvasLocation" x="676" y="261"/>
         </scene>
-        <!--Characters-->
+        <!--Test-->
         <scene sceneID="gRq-cb-j2O">
             <objects>
-                <tableViewController title="Characters" id="1N0-Ld-tn3" customClass="CharaceterViewController" customModule="APIAwakens" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Test" id="1N0-Ld-tn3" customClass="DataViewController" customModule="APIAwakens" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Swd-iD-OIG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -368,7 +368,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="characterPicker" destination="ben-R7-2sR" id="ErW-iU-301"/>
+                        <outlet property="dataPicker" destination="ben-R7-2sR" id="ErW-iU-301"/>
                         <outlet property="largestLabel" destination="ZqI-xn-a8q" id="Z0y-e2-5P9"/>
                         <outlet property="nameLabel" destination="u5t-q9-NMy" id="Cco-vg-Xgp"/>
                         <outlet property="smallestLabel" destination="gNG-j2-gfQ" id="fOo-iV-X89"/>

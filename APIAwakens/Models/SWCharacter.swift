@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SWCharacter {
+class SWCharacter: Sizable {
     let name: String
     let heightInCm: Double
     let massInKg: Double
@@ -20,6 +20,10 @@ class SWCharacter {
     let homeworld: String // Link
     let vehicles: [String] // Links
     let starships: [String] // Links
+    
+    var size: Double {
+        return heightInCm
+    }
     
     init(name: String, heightInCm: Double, massInKg: Double, hairColor: String, skinColor: String, eyeColor: String, birthYear: String, gender: String, homeworld: String, vehicles: [String], starships: [String]) {
         self.name = name

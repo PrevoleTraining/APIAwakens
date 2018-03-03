@@ -17,14 +17,19 @@
 		FD4925762041BEC7009480B1 /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925752041BEC7009480B1 /* Starship.swift */; };
 		FD4925792042D843009480B1 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925782042D843009480B1 /* UIButton.swift */; };
 		FD49257D2042E1CE009480B1 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49257C2042E1CE009480B1 /* CharacterViewModel.swift */; };
-		FD4925842042E936009480B1 /* CharaceterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925832042E936009480B1 /* CharaceterViewController.swift */; };
+		FD4925842042E936009480B1 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925832042E936009480B1 /* DataViewController.swift */; };
 		FD4925862042EE76009480B1 /* DataValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925852042EE76009480B1 /* DataValue.swift */; };
 		FD49258A2042F2C3009480B1 /* DataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925892042F2C3009480B1 /* DataCell.swift */; };
-		FD49258C2043446D009480B1 /* CharacterDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49258B2043446D009480B1 /* CharacterDetailsDataSource.swift */; };
+		FD49258C2043446D009480B1 /* DetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49258B2043446D009480B1 /* DetailsDataSource.swift */; };
 		FD49258E20435BF2009480B1 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49258D20435BF2009480B1 /* UITableView.swift */; };
-		FD49259020436AF4009480B1 /* CharactersPickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49258F20436AF4009480B1 /* CharactersPickerDataSource.swift */; };
+		FD49259020436AF4009480B1 /* PickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49258F20436AF4009480B1 /* PickerDataSource.swift */; };
 		FD4925922045FAD6009480B1 /* EnglishMetricDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925912045FAD6009480B1 /* EnglishMetricDataCell.swift */; };
 		FD4925952049E9F3009480B1 /* UnitUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925942049E9F3009480B1 /* UnitUIButton.swift */; };
+		FD492597204A7B2F009480B1 /* Namable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD492596204A7B2F009480B1 /* Namable.swift */; };
+		FD492599204A88AC009480B1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD492598204A88AC009480B1 /* ViewModel.swift */; };
+		FD49259F204ACCA1009480B1 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49259E204ACCA1009480B1 /* ViewModelFactory.swift */; };
+		FD4925A1204ADF86009480B1 /* DataCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925A0204ADF86009480B1 /* DataCollection.swift */; };
+		FD4925A5204AE23B009480B1 /* Sizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925A4204AE23B009480B1 /* Sizable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,14 +45,19 @@
 		FD4925752041BEC7009480B1 /* Starship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
 		FD4925782042D843009480B1 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		FD49257C2042E1CE009480B1 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
-		FD4925832042E936009480B1 /* CharaceterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharaceterViewController.swift; sourceTree = "<group>"; };
+		FD4925832042E936009480B1 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		FD4925852042EE76009480B1 /* DataValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataValue.swift; sourceTree = "<group>"; };
 		FD4925892042F2C3009480B1 /* DataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCell.swift; sourceTree = "<group>"; };
-		FD49258B2043446D009480B1 /* CharacterDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsDataSource.swift; sourceTree = "<group>"; };
+		FD49258B2043446D009480B1 /* DetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDataSource.swift; sourceTree = "<group>"; };
 		FD49258D20435BF2009480B1 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
-		FD49258F20436AF4009480B1 /* CharactersPickerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersPickerDataSource.swift; sourceTree = "<group>"; };
+		FD49258F20436AF4009480B1 /* PickerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDataSource.swift; sourceTree = "<group>"; };
 		FD4925912045FAD6009480B1 /* EnglishMetricDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishMetricDataCell.swift; sourceTree = "<group>"; };
 		FD4925942049E9F3009480B1 /* UnitUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitUIButton.swift; sourceTree = "<group>"; };
+		FD492596204A7B2F009480B1 /* Namable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Namable.swift; sourceTree = "<group>"; };
+		FD492598204A88AC009480B1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		FD49259E204ACCA1009480B1 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		FD4925A0204ADF86009480B1 /* DataCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollection.swift; sourceTree = "<group>"; };
+		FD4925A4204AE23B009480B1 /* Sizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +112,9 @@
 				FD4925712041BA95009480B1 /* SWCharacter.swift */,
 				FD4925732041BA9F009480B1 /* Vehicle.swift */,
 				FD4925752041BEC7009480B1 /* Starship.swift */,
+				FD492596204A7B2F009480B1 /* Namable.swift */,
+				FD4925A0204ADF86009480B1 /* DataCollection.swift */,
+				FD4925A4204AE23B009480B1 /* Sizable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -118,8 +131,8 @@
 		FD49257A2042E180009480B1 /* UI Data Sources */ = {
 			isa = PBXGroup;
 			children = (
-				FD49258B2043446D009480B1 /* CharacterDetailsDataSource.swift */,
-				FD49258F20436AF4009480B1 /* CharactersPickerDataSource.swift */,
+				FD49258B2043446D009480B1 /* DetailsDataSource.swift */,
+				FD49258F20436AF4009480B1 /* PickerDataSource.swift */,
 			);
 			path = "UI Data Sources";
 			sourceTree = "<group>";
@@ -129,6 +142,8 @@
 			children = (
 				FD49257C2042E1CE009480B1 /* CharacterViewModel.swift */,
 				FD4925852042EE76009480B1 /* DataValue.swift */,
+				FD492598204A88AC009480B1 /* ViewModel.swift */,
+				FD49259E204ACCA1009480B1 /* ViewModelFactory.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -137,7 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				FD4925602041B8BE009480B1 /* MainViewController.swift */,
-				FD4925832042E936009480B1 /* CharaceterViewController.swift */,
+				FD4925832042E936009480B1 /* DataViewController.swift */,
 			);
 			path = "View Controlers";
 			sourceTree = "<group>";
@@ -232,18 +247,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD4925922045FAD6009480B1 /* EnglishMetricDataCell.swift in Sources */,
-				FD49259020436AF4009480B1 /* CharactersPickerDataSource.swift in Sources */,
-				FD4925842042E936009480B1 /* CharaceterViewController.swift in Sources */,
+				FD49259020436AF4009480B1 /* PickerDataSource.swift in Sources */,
+				FD4925842042E936009480B1 /* DataViewController.swift in Sources */,
 				FD4925722041BA95009480B1 /* SWCharacter.swift in Sources */,
 				FD49258A2042F2C3009480B1 /* DataCell.swift in Sources */,
 				FD49257D2042E1CE009480B1 /* CharacterViewModel.swift in Sources */,
+				FD492599204A88AC009480B1 /* ViewModel.swift in Sources */,
 				FD4925862042EE76009480B1 /* DataValue.swift in Sources */,
-				FD49258C2043446D009480B1 /* CharacterDetailsDataSource.swift in Sources */,
+				FD49258C2043446D009480B1 /* DetailsDataSource.swift in Sources */,
+				FD492597204A7B2F009480B1 /* Namable.swift in Sources */,
 				FD4925762041BEC7009480B1 /* Starship.swift in Sources */,
 				FD4925952049E9F3009480B1 /* UnitUIButton.swift in Sources */,
 				FD4925612041B8BE009480B1 /* MainViewController.swift in Sources */,
 				FD4925742041BA9F009480B1 /* Vehicle.swift in Sources */,
+				FD4925A5204AE23B009480B1 /* Sizable.swift in Sources */,
 				FD49258E20435BF2009480B1 /* UITableView.swift in Sources */,
+				FD4925A1204ADF86009480B1 /* DataCollection.swift in Sources */,
+				FD49259F204ACCA1009480B1 /* ViewModelFactory.swift in Sources */,
 				FD49255F2041B8BE009480B1 /* AppDelegate.swift in Sources */,
 				FD4925792042D843009480B1 /* UIButton.swift in Sources */,
 			);

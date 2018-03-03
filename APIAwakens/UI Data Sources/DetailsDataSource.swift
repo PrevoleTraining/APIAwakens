@@ -9,31 +9,31 @@
 import Foundation
 import UIKit
 
-class CharacterDetailsDataSource: NSObject, UITableViewDataSource {
-    private var character: CharacterViewModel?
+class DetailsDataSource: NSObject, UITableViewDataSource {
+    private var viewModel: ViewModel?
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let character = character else {
+        guard let viewModel = viewModel else {
             return 0
         }
         
-        return character.data.count
+        return viewModel.data.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let character = character {
-            let data = character.data[indexPath.row]
+        if let viewModel = viewModel {
+            let data = viewModel.data[indexPath.row]
             
             let cell = tableView.dequeueReusableCell(withIdentifier: data.cellIdentifier)
             
             if let dataCell = cell as? DataCell {
-                dataCell.update(label: data.label.rawValue, data: data.value)
+                dataCell.update(label: data.label, data: data.value)
             } else if let englishMetricCell = cell as? EnglishMetricDataCell {
-                englishMetricCell.update(label: data.label.rawValue, metricValue: data.value as! EnglishMetricValue)
+                englishMetricCell.update(label: data.label, metricValue: data.value as! EnglishMetricValue)
             }
             
             return cell!
@@ -42,7 +42,7 @@ class CharacterDetailsDataSource: NSObject, UITableViewDataSource {
         }
     }
     
-    func update(with character: SWCharacter) {
-        self.character = CharacterViewModel(character: character)
+    func update(with viewModel: ViewModel) {
+        self.viewModel = viewModel
     }
 }

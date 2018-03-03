@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-class CharactersPickerDataSource: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
-    typealias Observer = (_ character: SWCharacter) -> Void
-    
-    private var characters: [SWCharacter] = []
+class PickerDataSource: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
+    typealias Observer = (_ character: ViewModel) -> Void
+
+    private var namables: [Namable] = []
     
     private var current: Int = 0
     
@@ -23,15 +23,15 @@ class CharactersPickerDataSource: NSObject, UIPickerViewDataSource, UIPickerView
         notify()
     }
     
-    func update(characters: [SWCharacter]) {
-        self.characters = characters
+    func update(namables: [Namable]) {
+        self.namables = namables
         self.current = 0
         notify()
     }
     
     private func notify() {
-        if let observer = observer, current < characters.count {
-            observer(characters[current])
+        if current < namables.count, let observer = observer {
+            observer(ViewModelFactory.create(namable: namables[current]))
         }
     }
     
@@ -42,13 +42,13 @@ class CharactersPickerDataSource: NSObject, UIPickerViewDataSource, UIPickerView
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-        return characters.count
+        return namables.count
     }
     
     // MARK: - Delegate
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return characters[row].name
+        return namables[row].name
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
