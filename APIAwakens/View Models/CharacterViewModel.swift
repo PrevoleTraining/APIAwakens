@@ -25,6 +25,22 @@ extension CharacterViewModel {
         data.append((label: "Eyes", value: StringValue(value: character.eyeColor), cellIdentifier: DataCell.reuseIdentifier))
         data.append((label: "Hair", value: StringValue(value: character.hairColor), cellIdentifier: DataCell.reuseIdentifier))
         
+        if character.starships.count > 0 {
+            data.append((label: "Starships", value: StringValue(value: ""), cellIdentifier: TitleCell.reuseIdentifier))
+            
+            for starship in character.starships {
+                data.append((label: "", value: StringValue(value: starship), cellIdentifier: NavigationCell.reuseIdentifier))
+            }
+        }
+
+        if character.vehicles.count > 0 {
+            data.append((label: "Vehicles", value: StringValue(value: ""), cellIdentifier: TitleCell.reuseIdentifier))
+            
+            for vehicle in character.vehicles {
+                data.append((label: "", value: StringValue(value: vehicle), cellIdentifier: NavigationCell.reuseIdentifier))
+            }
+        }
+        
         self.data = data;
     }
 }

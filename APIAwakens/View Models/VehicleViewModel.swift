@@ -25,6 +25,14 @@ extension VehicleViewModel {
         data.append((label: "Class", value: StringValue(value: vehicle.vhcClass), cellIdentifier: DataCell.reuseIdentifier))
         data.append((label: "Crew", value: StringValue(value: "\(vehicle.crew)"), cellIdentifier: DataCell.reuseIdentifier))
         
+        if vehicle.pilots.count > 0 {
+            data.append((label: "Pilots", value: StringValue(value: ""), cellIdentifier: TitleCell.reuseIdentifier))
+            
+            for pilot in vehicle.pilots {
+                data.append((label: "", value: StringValue(value: pilot), cellIdentifier: NavigationCell.reuseIdentifier))
+            }
+        }
+        
         self.data = data;
     }
 }
