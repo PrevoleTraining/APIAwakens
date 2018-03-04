@@ -32,7 +32,7 @@ class DetailsDataSource: NSObject, UITableViewDataSource {
             
             switch cell {
             case let dataCell as DataCell: dataCell.update(label: data.label, data: data.value)
-            case let englishMetricCell as EnglishMetricDataCell: englishMetricCell.update(label: data.label, metricValue: data.value as! EnglishMetricValue)
+            case let englishMetricCell as MetricDataCell: englishMetricCell.update(label: data.label, metricValue: data.value as! MetricValue)
             case let cashCell as CashDataCell: cashCell.update(label: data.label, cashValue: data.value as! CashValue)
             default: fatalError("Unknown cell type")
             }

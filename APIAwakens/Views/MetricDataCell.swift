@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-class EnglishMetricDataCell: UITableViewCell {
-    static let reuseIdentifier = "EnglishMetricDataCell"
+class MetricDataCell: UITableViewCell {
+    static let reuseIdentifier = "MetricDataCell"
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
@@ -22,7 +22,7 @@ class EnglishMetricDataCell: UITableViewCell {
         return [ englishButton, metricButton ]
     }()
     
-    private var metricValue: EnglishMetricValue?
+    private var metricValue: MetricValue?
     
     // MARK: - Actions
     
@@ -32,7 +32,7 @@ class EnglishMetricDataCell: UITableViewCell {
     
     // MARK: - Helpers
     
-    func update(label: String, metricValue: EnglishMetricValue) {
+    func update(label: String, metricValue: MetricValue) {
         titleLabel.text = label
         self.metricValue = metricValue
         
@@ -43,7 +43,7 @@ class EnglishMetricDataCell: UITableViewCell {
         update(unit: nil)
     }
     
-    private func update(unit: EnglishMetricValue.Unit?) {
+    private func update(unit: MetricValue.Unit?) {
         if var metricValue = metricValue {
             if let unit = unit {
                 metricValue.change(unit: unit)

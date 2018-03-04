@@ -21,7 +21,7 @@ extension CharacterViewModel {
     
         data.append((label: "Born", value: StringValue(value: character.birthYear), cellIdentifier: DataCell.reuseIdentifier))
         data.append((label: "Home", value: StringValue(value: character.homeworld), cellIdentifier: DataCell.reuseIdentifier))
-        data.append((label: "Height", value: EnglishMetricValue(valueInCm: character.heightInCm), cellIdentifier: EnglishMetricDataCell.reuseIdentifier))
+        data.append((label: "Height", value: MetricValue(valueInCm: character.heightInCm), cellIdentifier: MetricDataCell.reuseIdentifier))
         data.append((label: "Eyes", value: StringValue(value: character.eyeColor), cellIdentifier: DataCell.reuseIdentifier))
         data.append((label: "Hair", value: StringValue(value: character.hairColor), cellIdentifier: DataCell.reuseIdentifier))
         

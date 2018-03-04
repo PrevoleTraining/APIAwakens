@@ -8,8 +8,6 @@
 
 import Foundation
 
-let oneInchInCentimerMeter = 2.54
-
 protocol DataValue {
     var formatedValue: String { get }
 }

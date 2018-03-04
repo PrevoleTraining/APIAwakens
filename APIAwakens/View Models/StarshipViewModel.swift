@@ -21,7 +21,7 @@ extension StarshipViewModel {
         
         data.append((label: "Make", value: StringValue(value: starship.manufacturer), cellIdentifier: DataCell.reuseIdentifier))
         data.append((label: "Cost", value: CashValue(valueInCredits: starship.costInCredits), cellIdentifier: DataCell.reuseIdentifier))
-        data.append((label: "Length", value: EnglishMetricValue(valueInCm: starship.lengthInM * 100), cellIdentifier: EnglishMetricDataCell.reuseIdentifier))
+        data.append((label: "Length", value: MetricValue(valueInCm: starship.lengthInM * 100), cellIdentifier: MetricDataCell.reuseIdentifier))
         data.append((label: "Class", value: StringValue(value: starship.vhcClass), cellIdentifier: DataCell.reuseIdentifier))
         data.append((label: "Crew", value: StringValue(value: "\(starship.crew)"), cellIdentifier: DataCell.reuseIdentifier))
 

@@ -36,6 +36,9 @@ class DataViewController: UITableViewController, UIPickerViewDelegate {
         super.viewDidLoad()
 
         tableView.dataSource = detailsDataSource
+        tableView.estimatedRowHeight = 44
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         dataPicker.dataSource = pickerDataSource
         dataPicker.delegate = pickerDataSource
         
