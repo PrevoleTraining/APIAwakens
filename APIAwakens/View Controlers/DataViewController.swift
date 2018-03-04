@@ -53,7 +53,7 @@ class DataViewController: UITableViewController, UIPickerViewDelegate {
     }
     
     override func viewDidLayoutSubviews() {
-        tableView.adjustFooterViewHeightToFillTableView()
+        //tableView.adjustFooterViewHeightToFillTableView()
     }
 
     override func didReceiveMemoryWarning() {

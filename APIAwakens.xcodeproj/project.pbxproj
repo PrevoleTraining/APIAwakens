@@ -39,6 +39,8 @@
 		FD4925B4204B3492009480B1 /* CashValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925B3204B3492009480B1 /* CashValue.swift */; };
 		FD4925B6204B3D1C009480B1 /* ExchangeRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925B5204B3D1C009480B1 /* ExchangeRateViewController.swift */; };
 		FD4925B8204B3DD9009480B1 /* RateModalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925B7204B3DD9009480B1 /* RateModalDelegate.swift */; };
+		FD56D2D9204B9D06002D71CB /* NavigationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2D8204B9D06002D71CB /* NavigationCell.swift */; };
+		FDFAA597204B954B00B4F77F /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFAA596204B954B00B4F77F /* TitleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		FD4925B3204B3492009480B1 /* CashValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashValue.swift; sourceTree = "<group>"; };
 		FD4925B5204B3D1C009480B1 /* ExchangeRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateViewController.swift; sourceTree = "<group>"; };
 		FD4925B7204B3DD9009480B1 /* RateModalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateModalDelegate.swift; sourceTree = "<group>"; };
+		FD56D2D8204B9D06002D71CB /* NavigationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCell.swift; sourceTree = "<group>"; };
+		FDFAA596204B954B00B4F77F /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +189,8 @@
 				FD4925892042F2C3009480B1 /* DataCell.swift */,
 				FD4925912045FAD6009480B1 /* MetricDataCell.swift */,
 				FD4925AC204B2DE1009480B1 /* CashDataCell.swift */,
+				FDFAA596204B954B00B4F77F /* TitleCell.swift */,
+				FD56D2D8204B9D06002D71CB /* NavigationCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -287,12 +293,14 @@
 				FD4925722041BA95009480B1 /* SWCharacter.swift in Sources */,
 				FD4925A9204B13A0009480B1 /* StarshipViewModel.swift in Sources */,
 				FD49258A2042F2C3009480B1 /* DataCell.swift in Sources */,
+				FD56D2D9204B9D06002D71CB /* NavigationCell.swift in Sources */,
 				FD49257D2042E1CE009480B1 /* CharacterViewModel.swift in Sources */,
 				FD492599204A88AC009480B1 /* ViewModel.swift in Sources */,
 				FD4925862042EE76009480B1 /* DataValue.swift in Sources */,
 				FD49258C2043446D009480B1 /* DetailsDataSource.swift in Sources */,
 				FD492597204A7B2F009480B1 /* Namable.swift in Sources */,
 				FD4925762041BEC7009480B1 /* Starship.swift in Sources */,
+				FDFAA597204B954B00B4F77F /* TitleCell.swift in Sources */,
 				FD4925952049E9F3009480B1 /* UnitUIButton.swift in Sources */,
 				FD4925612041B8BE009480B1 /* MainViewController.swift in Sources */,
 				FD4925B6204B3D1C009480B1 /* ExchangeRateViewController.swift in Sources */,

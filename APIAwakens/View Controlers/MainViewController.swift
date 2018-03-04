@@ -19,7 +19,7 @@ class MainViewController: UITableViewController {
     
     let deathStar = Starship(name: "Death Star", model: "DS-1 Orbital Battle Station", manufacturer: "Imperial Department of Military Research, Sienar Fleet Systems", costInCredits: 1000000000000, lengthInM: 120000, maxAtmosphericSpeedInKmPerHour: -1, crew: 342953, passengers: 843342, cargoCapacity: 1000000000000, consumables: "3 years", vhcClass: "Deep Space Mobile Battlestation", pilots: [], hyperdriveRating: 4.0, mglt: 10)
     
-    let corelianCorvette = Starship(name: "CR90 corvette", model: "CR90 corvette", manufacturer: "Corellian Engineering Corporation", costInCredits: 3500000, lengthInM: 150, maxAtmosphericSpeedInKmPerHour: 950, crew: 165, passengers: 600, cargoCapacity: 3000000, consumables: "1 year", vhcClass: "corvette", pilots: [], hyperdriveRating: 2.0, mglt: 60)
+    let corelianCorvette = Starship(name: "CR90 corvette", model: "CR90 corvette", manufacturer: "Corellian Engineering Corporation", costInCredits: 3500000, lengthInM: 150, maxAtmosphericSpeedInKmPerHour: 950, crew: 165, passengers: 600, cargoCapacity: 3000000, consumables: "1 year", vhcClass: "corvette", pilots: ["Luke Skywalker", "Han Solo", "Leia Organa"], hyperdriveRating: 2.0, mglt: 60)
     
     lazy var characters: [SWCharacter] = {
         return [ luke, c3po ]
