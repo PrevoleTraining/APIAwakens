@@ -112,13 +112,13 @@
 		FD49255D2041B8BE009480B1 /* APIAwakens */ = {
 			isa = PBXGroup;
 			children = (
-				FD4925932049E9C7009480B1 /* UI */,
+				FD49257A2042E180009480B1 /* Data Sources */,
+				FD4925702041BA88009480B1 /* Models */,
+				FD56D2DE2050731B002D71CB /* Networking */,
 				FD4925872042F27F009480B1 /* Views */,
 				FD4925822042E8EA009480B1 /* View Controlers */,
 				FD49257B2042E1A9009480B1 /* View Models */,
-				FD49257A2042E180009480B1 /* UI Data Sources */,
-				FD4925772042D836009480B1 /* Extensions */,
-				FD4925702041BA88009480B1 /* Models */,
+				FD4925932049E9C7009480B1 /* UI */,
 				FD49255E2041B8BE009480B1 /* AppDelegate.swift */,
 				FD4925622041B8BE009480B1 /* Main.storyboard */,
 				FD4925652041B8BE009480B1 /* Assets.xcassets */,
@@ -150,13 +150,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		FD49257A2042E180009480B1 /* UI Data Sources */ = {
+		FD49257A2042E180009480B1 /* Data Sources */ = {
 			isa = PBXGroup;
 			children = (
 				FD49258B2043446D009480B1 /* DetailsDataSource.swift */,
 				FD49258F20436AF4009480B1 /* PickerDataSource.swift */,
 			);
-			path = "UI Data Sources";
+			path = "Data Sources";
 			sourceTree = "<group>";
 		};
 		FD49257B2042E1A9009480B1 /* View Models */ = {
@@ -198,6 +198,7 @@
 		FD4925932049E9C7009480B1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FD4925772042D836009480B1 /* Extensions */,
 				FD4925942049E9F3009480B1 /* UnitUIButton.swift */,
 				FD4925AA204B2DB7009480B1 /* CashUIButton.swift */,
 			);
@@ -213,6 +214,13 @@
 				FD4925B3204B3492009480B1 /* CashValue.swift */,
 			);
 			path = Values;
+			sourceTree = "<group>";
+		};
+		FD56D2DE2050731B002D71CB /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

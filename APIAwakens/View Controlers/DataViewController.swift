@@ -65,6 +65,10 @@ class DataViewController: UITableViewController, UIPickerViewDelegate {
             controller.rateModalDelegate = cell
         }
     }
+    
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        // TODO: Implement the behavior to load the screen
+    }
 }
 
 
