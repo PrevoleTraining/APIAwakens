@@ -8,36 +8,29 @@
 
 import Foundation
 
-class Vehicle: Sizable {
-    let name: String
-    let model: String
-    let manufacturer: String
-    let costInCredits: Int
-    let lengthInM: Double
-    let maxAtmosphericSpeedInKmPerHour: Int
-    let crew: Int
-    let passengers: Int
-    let cargoCapacity: Int
-    let consumables: String
-    let vhcClass: String // Also for starship class
-    let pilots: [String] // Links*/
-    
-    var size: Double {
-        return lengthInM
+class Vehicle: BaseVehicle {
+    private enum VehicleCodingKeys: String, CodingKey {
+        case vhcClass = "vehicle_class"
     }
     
-    init(name: String, model: String, manufacturer: String, costInCredits: Int, lengthInM: Double, maxAtmosphericSpeedInKmPerHour: Int, crew: Int, passengers: Int, cargoCapacity: Int, consumables: String, vhcClass: String, pilots: [String]) {
-        self.name = name
-        self.model = model
-        self.manufacturer = manufacturer
-        self.costInCredits = costInCredits
-        self.lengthInM = lengthInM
-        self.maxAtmosphericSpeedInKmPerHour = maxAtmosphericSpeedInKmPerHour
-        self.crew = crew
-        self.passengers = passengers
-        self.cargoCapacity = cargoCapacity
-        self.consumables = consumables
+    let vhcClass: String
+    
+    init(name: String, model: String, manufacturer: String, costInCredits: String, lengthInM: String, maxAtmosphericSpeedInKmPerHour: String, crew: String, passengers: String, cargoCapacity: String, consumables: String, pilots: [String], vhcClass: String) {
+        
         self.vhcClass = vhcClass
-        self.pilots = pilots
+        
+        super.init(name: name, model: model, manufacturer: manufacturer, costInCredits: costInCredits, lengthInM: lengthInM, maxAtmosphericSpeedInKmPerHour: maxAtmosphericSpeedInKmPerHour, crew: crew, passengers: passengers, cargoCapacity: cargoCapacity, consumables: consumables, pilots: pilots)
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: VehicleCodingKeys.self)
+        
+        vhcClass = try container.decode(String.self, forKey: .vhcClass)
+        
+        try super.init(from: decoder)
+    }
+    
+    override var description: String {
+        return "\(super.description), vhcClass=\(vhcClass)"
     }
 }

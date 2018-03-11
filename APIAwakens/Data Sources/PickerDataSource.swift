@@ -25,7 +25,7 @@ class PickerDataSource: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
     
     func update(namables: [Namable]) {
         self.namables = namables
-        self.current = 0
+        current = 0
         notify()
     }
     

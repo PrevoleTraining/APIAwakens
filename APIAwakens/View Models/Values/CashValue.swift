@@ -14,14 +14,14 @@ struct CashValue: DataValue {
         case credits = "credits"
     }
     
-    private var value: Int
+    private var value: Int?
     private var unit: Unit = .credits
     
     private let formatter = NumberFormatter()
     
     var rate: Double = 1.0
 
-    init(valueInCredits: Int) {
+    init(valueInCredits: Int?) {
         self.value = valueInCredits
         
         self.formatter.maximumFractionDigits = 2
@@ -31,7 +31,7 @@ struct CashValue: DataValue {
     }
     
     var formatedValue: String {
-        if value > -1 {
+        if let value = value {
             switch unit {
             case .usd: return "$ \(formatter.string(from: (Double(value) * rate) as NSNumber)!)"
             case .credits: return formatter.string(from: value as NSNumber)!
@@ -50,6 +50,10 @@ struct CashValue: DataValue {
     }
     
     func isPositive() -> Bool {
+        guard let value = value else {
+            return false
+        }
+        
         return value >= 0
     }
 }

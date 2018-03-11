@@ -8,10 +8,24 @@
 
 import Foundation
 
-class SWCharacter: Sizable {
+class SWCharacter: Sizable, Decodable, CustomStringConvertible {
+    enum CodingKeys: String, CodingKey {
+        case name
+        case heightInCm = "height"
+        case massInKg = "mass"
+        case hairColor = "hair_color"
+        case skinColor = "skin_color"
+        case eyeColor = "eye_color"
+        case birthYear = "birth_year"
+        case gender
+        case homeworld
+        case vehicles
+        case starships
+    }
+    
     let name: String
-    let heightInCm: Double
-    let massInKg: Double
+    let heightInCm: String
+    let massInKg: String
     let hairColor: String
     let skinColor: String
     let eyeColor: String
@@ -22,10 +36,17 @@ class SWCharacter: Sizable {
     let starships: [String] // Links
     
     var size: Double {
-        return heightInCm
+        guard let size = Double(heightInCm) else {
+            return -1
+        }
+        return size
     }
     
-    init(name: String, heightInCm: Double, massInKg: Double, hairColor: String, skinColor: String, eyeColor: String, birthYear: String, gender: String, homeworld: String, vehicles: [String], starships: [String]) {
+    var description: String {
+        return "name=\(name), heightInCm=\(heightInCm), massInKg=\(massInKg), hairColor=\(hairColor), skinColor=\(skinColor), eyeColor=\(eyeColor), birthYear\(birthYear), gender=\(gender), homeworld=\(homeworld), vehicles=[\(vehicles.joined(separator: ", "))], starships=[\(starships.joined(separator: ", "))]"
+    }
+    
+    init(name: String, heightInCm: String, massInKg: String, hairColor: String, skinColor: String, eyeColor: String, birthYear: String, gender: String, homeworld: String, vehicles: [String], starships: [String]) {
         self.name = name
         self.heightInCm = heightInCm
         self.massInKg = massInKg

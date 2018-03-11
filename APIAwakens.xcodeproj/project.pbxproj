@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD470863205562D8000DC475 /* MainButtonsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD470862205562D8000DC475 /* MainButtonsDataSource.swift */; };
+		FD47086520556562000DC475 /* MainButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD47086420556562000DC475 /* MainButtonCell.swift */; };
+		FD4708672055CE8D000DC475 /* VehicleResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4708662055CE8D000DC475 /* VehicleResource.swift */; };
+		FD4708692055D2CD000DC475 /* StarshipResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4708682055D2CD000DC475 /* StarshipResource.swift */; };
+		FD47086B2055DAEB000DC475 /* BaseVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD47086A2055DAEB000DC475 /* BaseVehicle.swift */; };
 		FD49255F2041B8BE009480B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49255E2041B8BE009480B1 /* AppDelegate.swift */; };
 		FD4925612041B8BE009480B1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925602041B8BE009480B1 /* MainViewController.swift */; };
 		FD4925642041B8BE009480B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4925622041B8BE009480B1 /* Main.storyboard */; };
@@ -40,10 +45,24 @@
 		FD4925B6204B3D1C009480B1 /* ExchangeRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925B5204B3D1C009480B1 /* ExchangeRateViewController.swift */; };
 		FD4925B8204B3DD9009480B1 /* RateModalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925B7204B3DD9009480B1 /* RateModalDelegate.swift */; };
 		FD56D2D9204B9D06002D71CB /* NavigationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2D8204B9D06002D71CB /* NavigationCell.swift */; };
+		FD56D2E0205073E6002D71CB /* SWAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2DF205073E6002D71CB /* SWAPIError.swift */; };
+		FD56D2E220507433002D71CB /* PendingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2E120507433002D71CB /* PendingOperation.swift */; };
+		FD56D2E420507452002D71CB /* JSONDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2E320507452002D71CB /* JSONDownloader.swift */; };
+		FD56D2E620507971002D71CB /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2E520507971002D71CB /* Resource.swift */; };
+		FD56D2E820510D7B002D71CB /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2E720510D7B002D71CB /* Endpoint.swift */; };
+		FD56D2EA205114AF002D71CB /* SWCharacterResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2E9205114AF002D71CB /* SWCharacterResource.swift */; };
+		FD56D2EC20511F0B002D71CB /* DownloadEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2EB20511F0B002D71CB /* DownloadEntity.swift */; };
+		FD56D2EF205513DC002D71CB /* MainButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD56D2EE205513DC002D71CB /* MainButtonView.xib */; };
+		FD56D2F120551419002D71CB /* MainButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2F020551419002D71CB /* MainButtonView.swift */; };
 		FDFAA597204B954B00B4F77F /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFAA596204B954B00B4F77F /* TitleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD470862205562D8000DC475 /* MainButtonsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonsDataSource.swift; sourceTree = "<group>"; };
+		FD47086420556562000DC475 /* MainButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonCell.swift; sourceTree = "<group>"; };
+		FD4708662055CE8D000DC475 /* VehicleResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleResource.swift; sourceTree = "<group>"; };
+		FD4708682055D2CD000DC475 /* StarshipResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipResource.swift; sourceTree = "<group>"; };
+		FD47086A2055DAEB000DC475 /* BaseVehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVehicle.swift; sourceTree = "<group>"; };
 		FD49255B2041B8BE009480B1 /* APIAwakens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APIAwakens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD49255E2041B8BE009480B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD4925602041B8BE009480B1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +98,15 @@
 		FD4925B5204B3D1C009480B1 /* ExchangeRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateViewController.swift; sourceTree = "<group>"; };
 		FD4925B7204B3DD9009480B1 /* RateModalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateModalDelegate.swift; sourceTree = "<group>"; };
 		FD56D2D8204B9D06002D71CB /* NavigationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCell.swift; sourceTree = "<group>"; };
+		FD56D2DF205073E6002D71CB /* SWAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPIError.swift; sourceTree = "<group>"; };
+		FD56D2E120507433002D71CB /* PendingOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingOperation.swift; sourceTree = "<group>"; };
+		FD56D2E320507452002D71CB /* JSONDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDownloader.swift; sourceTree = "<group>"; };
+		FD56D2E520507971002D71CB /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		FD56D2E720510D7B002D71CB /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		FD56D2E9205114AF002D71CB /* SWCharacterResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWCharacterResource.swift; sourceTree = "<group>"; };
+		FD56D2EB20511F0B002D71CB /* DownloadEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadEntity.swift; sourceTree = "<group>"; };
+		FD56D2EE205513DC002D71CB /* MainButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainButtonView.xib; sourceTree = "<group>"; };
+		FD56D2F020551419002D71CB /* MainButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonView.swift; sourceTree = "<group>"; };
 		FDFAA596204B954B00B4F77F /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,8 +143,6 @@
 				FD49257A2042E180009480B1 /* Data Sources */,
 				FD4925702041BA88009480B1 /* Models */,
 				FD56D2DE2050731B002D71CB /* Networking */,
-				FD4925872042F27F009480B1 /* Views */,
-				FD4925822042E8EA009480B1 /* View Controlers */,
 				FD49257B2042E1A9009480B1 /* View Models */,
 				FD4925932049E9C7009480B1 /* UI */,
 				FD49255E2041B8BE009480B1 /* AppDelegate.swift */,
@@ -137,6 +163,7 @@
 				FD492596204A7B2F009480B1 /* Namable.swift */,
 				FD4925A0204ADF86009480B1 /* DataCollection.swift */,
 				FD4925A4204AE23B009480B1 /* Sizable.swift */,
+				FD47086A2055DAEB000DC475 /* BaseVehicle.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -155,6 +182,7 @@
 			children = (
 				FD49258B2043446D009480B1 /* DetailsDataSource.swift */,
 				FD49258F20436AF4009480B1 /* PickerDataSource.swift */,
+				FD470862205562D8000DC475 /* MainButtonsDataSource.swift */,
 			);
 			path = "Data Sources";
 			sourceTree = "<group>";
@@ -183,7 +211,7 @@
 			path = "View Controlers";
 			sourceTree = "<group>";
 		};
-		FD4925872042F27F009480B1 /* Views */ = {
+		FD4925872042F27F009480B1 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				FD4925892042F2C3009480B1 /* DataCell.swift */,
@@ -191,16 +219,18 @@
 				FD4925AC204B2DE1009480B1 /* CashDataCell.swift */,
 				FDFAA596204B954B00B4F77F /* TitleCell.swift */,
 				FD56D2D8204B9D06002D71CB /* NavigationCell.swift */,
+				FD47086420556562000DC475 /* MainButtonCell.swift */,
 			);
-			path = Views;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		FD4925932049E9C7009480B1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FD4925872042F27F009480B1 /* Cells */,
+				FD56D2ED2055136C002D71CB /* Components */,
 				FD4925772042D836009480B1 /* Extensions */,
-				FD4925942049E9F3009480B1 /* UnitUIButton.swift */,
-				FD4925AA204B2DB7009480B1 /* CashUIButton.swift */,
+				FD4925822042E8EA009480B1 /* View Controlers */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -219,8 +249,28 @@
 		FD56D2DE2050731B002D71CB /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				FD56D2EB20511F0B002D71CB /* DownloadEntity.swift */,
+				FD56D2DF205073E6002D71CB /* SWAPIError.swift */,
+				FD56D2E120507433002D71CB /* PendingOperation.swift */,
+				FD56D2E320507452002D71CB /* JSONDownloader.swift */,
+				FD56D2E520507971002D71CB /* Resource.swift */,
+				FD56D2E720510D7B002D71CB /* Endpoint.swift */,
+				FD56D2E9205114AF002D71CB /* SWCharacterResource.swift */,
+				FD4708662055CE8D000DC475 /* VehicleResource.swift */,
+				FD4708682055D2CD000DC475 /* StarshipResource.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		FD56D2ED2055136C002D71CB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FD4925942049E9F3009480B1 /* UnitUIButton.swift */,
+				FD4925AA204B2DB7009480B1 /* CashUIButton.swift */,
+				FD56D2EE205513DC002D71CB /* MainButtonView.xib */,
+				FD56D2F020551419002D71CB /* MainButtonView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +335,7 @@
 				FD4925692041B8BE009480B1 /* LaunchScreen.storyboard in Resources */,
 				FD4925662041B8BE009480B1 /* Assets.xcassets in Resources */,
 				FD4925642041B8BE009480B1 /* Main.storyboard in Resources */,
+				FD56D2EF205513DC002D71CB /* MainButtonView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +349,8 @@
 				FD4925922045FAD6009480B1 /* MetricDataCell.swift in Sources */,
 				FD49259020436AF4009480B1 /* PickerDataSource.swift in Sources */,
 				FD4925842042E936009480B1 /* DataViewController.swift in Sources */,
+				FD56D2F120551419002D71CB /* MainButtonView.swift in Sources */,
+				FD56D2EA205114AF002D71CB /* SWCharacterResource.swift in Sources */,
 				FD4925722041BA95009480B1 /* SWCharacter.swift in Sources */,
 				FD4925A9204B13A0009480B1 /* StarshipViewModel.swift in Sources */,
 				FD49258A2042F2C3009480B1 /* DataCell.swift in Sources */,
@@ -305,25 +358,36 @@
 				FD49257D2042E1CE009480B1 /* CharacterViewModel.swift in Sources */,
 				FD492599204A88AC009480B1 /* ViewModel.swift in Sources */,
 				FD4925862042EE76009480B1 /* DataValue.swift in Sources */,
+				FD56D2E820510D7B002D71CB /* Endpoint.swift in Sources */,
 				FD49258C2043446D009480B1 /* DetailsDataSource.swift in Sources */,
 				FD492597204A7B2F009480B1 /* Namable.swift in Sources */,
 				FD4925762041BEC7009480B1 /* Starship.swift in Sources */,
+				FD56D2E620507971002D71CB /* Resource.swift in Sources */,
 				FDFAA597204B954B00B4F77F /* TitleCell.swift in Sources */,
 				FD4925952049E9F3009480B1 /* UnitUIButton.swift in Sources */,
 				FD4925612041B8BE009480B1 /* MainViewController.swift in Sources */,
 				FD4925B6204B3D1C009480B1 /* ExchangeRateViewController.swift in Sources */,
+				FD470863205562D8000DC475 /* MainButtonsDataSource.swift in Sources */,
 				FD4925AD204B2DE1009480B1 /* CashDataCell.swift in Sources */,
 				FD4925742041BA9F009480B1 /* Vehicle.swift in Sources */,
 				FD4925B8204B3DD9009480B1 /* RateModalDelegate.swift in Sources */,
 				FD4925A5204AE23B009480B1 /* Sizable.swift in Sources */,
 				FD49258E20435BF2009480B1 /* UITableView.swift in Sources */,
+				FD47086B2055DAEB000DC475 /* BaseVehicle.swift in Sources */,
+				FD56D2E420507452002D71CB /* JSONDownloader.swift in Sources */,
 				FD4925A7204B0843009480B1 /* VehicleViewModel.swift in Sources */,
 				FD4925B4204B3492009480B1 /* CashValue.swift in Sources */,
+				FD4708672055CE8D000DC475 /* VehicleResource.swift in Sources */,
+				FD56D2EC20511F0B002D71CB /* DownloadEntity.swift in Sources */,
+				FD56D2E220507433002D71CB /* PendingOperation.swift in Sources */,
 				FD4925B0204B3465009480B1 /* StringValue.swift in Sources */,
+				FD56D2E0205073E6002D71CB /* SWAPIError.swift in Sources */,
 				FD4925A1204ADF86009480B1 /* DataCollection.swift in Sources */,
 				FD4925AB204B2DB7009480B1 /* CashUIButton.swift in Sources */,
+				FD4708692055D2CD000DC475 /* StarshipResource.swift in Sources */,
 				FD4925B2204B3479009480B1 /* MetricValue.swift in Sources */,
 				FD49259F204ACCA1009480B1 /* ViewModelFactory.swift in Sources */,
+				FD47086520556562000DC475 /* MainButtonCell.swift in Sources */,
 				FD49255F2041B8BE009480B1 /* AppDelegate.swift in Sources */,
 				FD4925792042D843009480B1 /* UIButton.swift in Sources */,
 			);
