@@ -8,8 +8,8 @@
 
 import Foundation
 
-class BaseVehicle: Sizable, Decodable, CustomStringConvertible {
-    enum CodingKeys: String, CodingKey {
+class BaseVehicle: Sizable, Codable, CustomStringConvertible {
+    private enum CodingKeys: String, CodingKey {
         case name
         case model
         case manufacturer
@@ -26,37 +26,36 @@ class BaseVehicle: Sizable, Decodable, CustomStringConvertible {
     let name: String
     let model: String
     let manufacturer: String
-    let costInCredits: String
-    let lengthInM: String
-    let maxAtmosphericSpeedInKmPerHour: String
-    let crew: String
-    let passengers: String
-    let cargoCapacity: String
+    let costInCredits: Int?
+    let lengthInM: Double?
+    let maxAtmosphericSpeedInKmPerHour: Int?
+    let crew: Int?
+    let passengers: Int?
+    let cargoCapacity: Int?
     let consumables: String
     let pilots: [String] // Links*/
     
-    var size: Double {
-        guard let size = Double(lengthInM) else {
-            return -1
-        }
-        return size
+    var size: Double? {
+        return lengthInM
     }
     
-    init(name: String, model: String, manufacturer: String, costInCredits: String, lengthInM: String, maxAtmosphericSpeedInKmPerHour: String, crew: String, passengers: String, cargoCapacity: String, consumables: String, pilots: [String]) {
-        self.name = name
-        self.model = model
-        self.manufacturer = manufacturer
-        self.costInCredits = costInCredits
-        self.lengthInM = lengthInM
-        self.maxAtmosphericSpeedInKmPerHour = maxAtmosphericSpeedInKmPerHour
-        self.crew = crew
-        self.passengers = passengers
-        self.cargoCapacity = cargoCapacity
-        self.consumables = consumables
-        self.pilots = pilots
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        name = try container.decode(String.self, forKey: .name)
+        model = try container.decode(String.self, forKey: .model)
+        manufacturer = try container.decode(String.self, forKey: .manufacturer)
+        costInCredits = Int(try container.decode(String.self, forKey: .costInCredits))
+        lengthInM = Double(try container.decode(String.self, forKey: .lengthInM))
+        maxAtmosphericSpeedInKmPerHour = Int(try container.decode(String.self, forKey: .maxAtmosphericSpeedInKmPerHour))
+        crew = Int(try container.decode(String.self, forKey: .crew))
+        passengers = Int(try container.decode(String.self, forKey: .passengers))
+        cargoCapacity = Int(try container.decode(String.self, forKey: .cargoCapacity))
+        consumables = try container.decode(String.self, forKey: .consumables)
+        pilots = try container.decode([String].self, forKey: .pilots)
     }
     
     var description: String {
-        return "name=\(name), model=\(model), manufacturer=\(manufacturer), costInCredits=\(costInCredits), lengthInM=\(lengthInM), maxAtmosphericSpeedInKmPerHour=\(maxAtmosphericSpeedInKmPerHour), crew\(crew), passengers=\(passengers), cargoCapacity=\(cargoCapacity), consumables=\(consumables), piltos=[\(pilots.joined(separator: ", "))]"
+        return "name=\(name), model=\(model), manufacturer=\(manufacturer), costInCredits=\(String(describing: costInCredits)), lengthInM=\(String(describing: lengthInM)), maxAtmosphericSpeedInKmPerHour=\(String(describing: maxAtmosphericSpeedInKmPerHour)), crew\(String(describing: crew)), passengers=\(String(describing: passengers)), cargoCapacity=\(String(describing: cargoCapacity)), consumables=\(consumables), piltos=[\(pilots.joined(separator: ", "))]"
     }
 }

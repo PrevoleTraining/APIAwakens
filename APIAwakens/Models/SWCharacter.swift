@@ -9,7 +9,7 @@
 import Foundation
 
 class SWCharacter: Sizable, Decodable, CustomStringConvertible {
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case name
         case heightInCm = "height"
         case massInKg = "mass"
@@ -24,8 +24,8 @@ class SWCharacter: Sizable, Decodable, CustomStringConvertible {
     }
     
     let name: String
-    let heightInCm: String
-    let massInKg: String
+    let heightInCm: Double?
+    let massInKg: Double?
     let hairColor: String
     let skinColor: String
     let eyeColor: String
@@ -35,28 +35,27 @@ class SWCharacter: Sizable, Decodable, CustomStringConvertible {
     let vehicles: [String] // Links
     let starships: [String] // Links
     
-    var size: Double {
-        guard let size = Double(heightInCm) else {
-            return -1
-        }
-        return size
+    var size: Double? {
+        return heightInCm
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        name = try container.decode(String.self, forKey: .name)
+        heightInCm = Double(try container.decode(String.self, forKey: .heightInCm))
+        massInKg = Double(try container.decode(String.self, forKey: .massInKg))
+        hairColor = try container.decode(String.self, forKey: .hairColor)
+        skinColor = try container.decode(String.self, forKey: .skinColor)
+        eyeColor = try container.decode(String.self, forKey: .eyeColor)
+        birthYear = try container.decode(String.self, forKey: .birthYear)
+        gender = try container.decode(String.self, forKey: .gender)
+        homeworld = try container.decode(String.self, forKey: .homeworld)
+        vehicles = try container.decode([String].self, forKey: .vehicles)
+        starships = try container.decode([String].self, forKey: .starships)
     }
     
     var description: String {
-        return "name=\(name), heightInCm=\(heightInCm), massInKg=\(massInKg), hairColor=\(hairColor), skinColor=\(skinColor), eyeColor=\(eyeColor), birthYear\(birthYear), gender=\(gender), homeworld=\(homeworld), vehicles=[\(vehicles.joined(separator: ", "))], starships=[\(starships.joined(separator: ", "))]"
-    }
-    
-    init(name: String, heightInCm: String, massInKg: String, hairColor: String, skinColor: String, eyeColor: String, birthYear: String, gender: String, homeworld: String, vehicles: [String], starships: [String]) {
-        self.name = name
-        self.heightInCm = heightInCm
-        self.massInKg = massInKg
-        self.hairColor = hairColor
-        self.skinColor = skinColor
-        self.eyeColor = eyeColor
-        self.birthYear = birthYear
-        self.gender = gender
-        self.homeworld = homeworld
-        self.vehicles = vehicles
-        self.starships = starships
+        return "name=\(name), heightInCm=\(String(describing: heightInCm)), massInKg=\(String(describing: massInKg)), hairColor=\(hairColor), skinColor=\(skinColor), eyeColor=\(eyeColor), birthYear\(birthYear), gender=\(gender), homeworld=\(homeworld), vehicles=[\(vehicles.joined(separator: ", "))], starships=[\(starships.joined(separator: ", "))]"
     }
 }

@@ -17,17 +17,19 @@ struct CashValue: DataValue {
     private var value: Int?
     private var unit: Unit = .credits
     
-    private let formatter = NumberFormatter()
+    private let formatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 2
+        formatter.groupingSeparator = "'"
+        formatter.groupingSize = 3
+        formatter.usesGroupingSeparator = true
+        return formatter
+    }()
     
     var rate: Double = 1.0
 
     init(valueInCredits: Int?) {
         self.value = valueInCredits
-        
-        self.formatter.maximumFractionDigits = 2
-        self.formatter.groupingSeparator = "'"
-        self.formatter.groupingSize = 3
-        self.formatter.usesGroupingSeparator = true
     }
     
     var formatedValue: String {

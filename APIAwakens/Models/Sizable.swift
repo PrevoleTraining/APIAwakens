@@ -9,6 +9,6 @@
 import Foundation
 
 protocol Sizable: Namable {
-    var size: Double { get }
+    var size: Double? { get }
 }
 

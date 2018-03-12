@@ -10,7 +10,11 @@ import Foundation
 
 class DataCollection {
     private let closure: (Sizable, Sizable) -> Bool = { (left, right) -> Bool in
-        return left.size < right.size
+        if let leftSize = left.size, let rightSize = right.size {
+            return leftSize < rightSize
+        } else {
+            return false
+        }
     }
     
     private let sizables: [Sizable]
@@ -18,7 +22,13 @@ class DataCollection {
     let collectionLabel: String
 
     var smallest: Namable {
-        return sizables.min(by: self.closure)!
+        return sizables.filter({ (item) -> Bool in
+            if let _ = item.size {
+                return true
+            } else {
+                return false
+            }
+        }).min(by: self.closure)!
     }
     
     var largest: Namable {

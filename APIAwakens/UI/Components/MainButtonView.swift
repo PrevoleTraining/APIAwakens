@@ -59,6 +59,7 @@ import UIKit
                     self.button.isHidden = false
                     
                     if let delegate = self.delegate {
+                        print(items)
                         delegate.downloaded(title: self.label, collection: items)
                     }
                 } else {

@@ -16,22 +16,30 @@ struct MetricValue: DataValue {
         case english = "english"
     }
     
-    private let formatter = NumberFormatter()
+    private var formatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 2
+        formatter.groupingSeparator = "'"
+        formatter.groupingSize = 3
+        formatter.usesGroupingSeparator = true
+        return formatter
+    }()
     
-    private var value: Double
+    private var value: Double?
     private var unit: Unit = .metric
     
-    init(valueInCm: Double) {
-        self.value = valueInCm / 100.0
-        
-        self.formatter.maximumFractionDigits = 2
-        self.formatter.groupingSeparator = "'"
-        self.formatter.groupingSize = 3
-        self.formatter.usesGroupingSeparator = true
+    init(valueInM: Double?) {
+        self.value = valueInM
+    }
+    
+    init(valueInCm: Double?) {
+        if let valueInCm = valueInCm {
+            self.value = valueInCm / 100.0
+        }
     }
     
     var formatedValue: String {
-        if value < 0 {
+        guard let value = value else {
             return "n/a"
         }
         

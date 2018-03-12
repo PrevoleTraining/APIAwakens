@@ -9,21 +9,14 @@
 import Foundation
 
 class Vehicle: BaseVehicle {
-    private enum VehicleCodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case vhcClass = "vehicle_class"
     }
     
     let vhcClass: String
     
-    init(name: String, model: String, manufacturer: String, costInCredits: String, lengthInM: String, maxAtmosphericSpeedInKmPerHour: String, crew: String, passengers: String, cargoCapacity: String, consumables: String, pilots: [String], vhcClass: String) {
-        
-        self.vhcClass = vhcClass
-        
-        super.init(name: name, model: model, manufacturer: manufacturer, costInCredits: costInCredits, lengthInM: lengthInM, maxAtmosphericSpeedInKmPerHour: maxAtmosphericSpeedInKmPerHour, crew: crew, passengers: passengers, cargoCapacity: cargoCapacity, consumables: consumables, pilots: pilots)
-    }
-    
     required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: VehicleCodingKeys.self)
+        let container = try decoder.container(keyedBy: CodingKeys.self)
         
         vhcClass = try container.decode(String.self, forKey: .vhcClass)
         
