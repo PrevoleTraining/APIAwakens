@@ -12,6 +12,8 @@
 		FD4708672055CE8D000DC475 /* VehicleResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4708662055CE8D000DC475 /* VehicleResource.swift */; };
 		FD4708692055D2CD000DC475 /* StarshipResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4708682055D2CD000DC475 /* StarshipResource.swift */; };
 		FD47086B2055DAEB000DC475 /* BaseVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD47086A2055DAEB000DC475 /* BaseVehicle.swift */; };
+		FD47086D2058643A000DC475 /* GetOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD47086C2058643A000DC475 /* GetOperation.swift */; };
+		FD47086F205866AD000DC475 /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD47086E205866AD000DC475 /* BaseOperation.swift */; };
 		FD49255F2041B8BE009480B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49255E2041B8BE009480B1 /* AppDelegate.swift */; };
 		FD4925612041B8BE009480B1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925602041B8BE009480B1 /* MainViewController.swift */; };
 		FD4925642041B8BE009480B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4925622041B8BE009480B1 /* Main.storyboard */; };
@@ -26,7 +28,6 @@
 		FD4925862042EE76009480B1 /* DataValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925852042EE76009480B1 /* DataValue.swift */; };
 		FD49258A2042F2C3009480B1 /* DataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925892042F2C3009480B1 /* DataCell.swift */; };
 		FD49258C2043446D009480B1 /* DetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49258B2043446D009480B1 /* DetailsDataSource.swift */; };
-		FD49258E20435BF2009480B1 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49258D20435BF2009480B1 /* UITableView.swift */; };
 		FD49259020436AF4009480B1 /* PickerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49258F20436AF4009480B1 /* PickerDataSource.swift */; };
 		FD4925922045FAD6009480B1 /* MetricDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925912045FAD6009480B1 /* MetricDataCell.swift */; };
 		FD4925952049E9F3009480B1 /* UnitUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925942049E9F3009480B1 /* UnitUIButton.swift */; };
@@ -46,7 +47,6 @@
 		FD4925B8204B3DD9009480B1 /* RateModalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925B7204B3DD9009480B1 /* RateModalDelegate.swift */; };
 		FD56D2D9204B9D06002D71CB /* NavigationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2D8204B9D06002D71CB /* NavigationCell.swift */; };
 		FD56D2E0205073E6002D71CB /* SWAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2DF205073E6002D71CB /* SWAPIError.swift */; };
-		FD56D2E220507433002D71CB /* PendingOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2E120507433002D71CB /* PendingOperation.swift */; };
 		FD56D2E420507452002D71CB /* JSONDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2E320507452002D71CB /* JSONDownloader.swift */; };
 		FD56D2E620507971002D71CB /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2E520507971002D71CB /* Resource.swift */; };
 		FD56D2E820510D7B002D71CB /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2E720510D7B002D71CB /* Endpoint.swift */; };
@@ -63,6 +63,8 @@
 		FD4708662055CE8D000DC475 /* VehicleResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleResource.swift; sourceTree = "<group>"; };
 		FD4708682055D2CD000DC475 /* StarshipResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipResource.swift; sourceTree = "<group>"; };
 		FD47086A2055DAEB000DC475 /* BaseVehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVehicle.swift; sourceTree = "<group>"; };
+		FD47086C2058643A000DC475 /* GetOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOperation.swift; sourceTree = "<group>"; };
+		FD47086E205866AD000DC475 /* BaseOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
 		FD49255B2041B8BE009480B1 /* APIAwakens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APIAwakens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD49255E2041B8BE009480B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD4925602041B8BE009480B1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +81,6 @@
 		FD4925852042EE76009480B1 /* DataValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataValue.swift; sourceTree = "<group>"; };
 		FD4925892042F2C3009480B1 /* DataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCell.swift; sourceTree = "<group>"; };
 		FD49258B2043446D009480B1 /* DetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsDataSource.swift; sourceTree = "<group>"; };
-		FD49258D20435BF2009480B1 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		FD49258F20436AF4009480B1 /* PickerDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerDataSource.swift; sourceTree = "<group>"; };
 		FD4925912045FAD6009480B1 /* MetricDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricDataCell.swift; sourceTree = "<group>"; };
 		FD4925942049E9F3009480B1 /* UnitUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitUIButton.swift; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 		FD4925B7204B3DD9009480B1 /* RateModalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateModalDelegate.swift; sourceTree = "<group>"; };
 		FD56D2D8204B9D06002D71CB /* NavigationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCell.swift; sourceTree = "<group>"; };
 		FD56D2DF205073E6002D71CB /* SWAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPIError.swift; sourceTree = "<group>"; };
-		FD56D2E120507433002D71CB /* PendingOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingOperation.swift; sourceTree = "<group>"; };
 		FD56D2E320507452002D71CB /* JSONDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDownloader.swift; sourceTree = "<group>"; };
 		FD56D2E520507971002D71CB /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		FD56D2E720510D7B002D71CB /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -172,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				FD4925782042D843009480B1 /* UIButton.swift */,
-				FD49258D20435BF2009480B1 /* UITableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -251,13 +250,14 @@
 			children = (
 				FD56D2EB20511F0B002D71CB /* DownloadEntity.swift */,
 				FD56D2DF205073E6002D71CB /* SWAPIError.swift */,
-				FD56D2E120507433002D71CB /* PendingOperation.swift */,
 				FD56D2E320507452002D71CB /* JSONDownloader.swift */,
 				FD56D2E520507971002D71CB /* Resource.swift */,
 				FD56D2E720510D7B002D71CB /* Endpoint.swift */,
 				FD56D2E9205114AF002D71CB /* SWCharacterResource.swift */,
 				FD4708662055CE8D000DC475 /* VehicleResource.swift */,
 				FD4708682055D2CD000DC475 /* StarshipResource.swift */,
+				FD47086C2058643A000DC475 /* GetOperation.swift */,
+				FD47086E205866AD000DC475 /* BaseOperation.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -372,21 +372,21 @@
 				FD4925742041BA9F009480B1 /* Vehicle.swift in Sources */,
 				FD4925B8204B3DD9009480B1 /* RateModalDelegate.swift in Sources */,
 				FD4925A5204AE23B009480B1 /* Sizable.swift in Sources */,
-				FD49258E20435BF2009480B1 /* UITableView.swift in Sources */,
 				FD47086B2055DAEB000DC475 /* BaseVehicle.swift in Sources */,
 				FD56D2E420507452002D71CB /* JSONDownloader.swift in Sources */,
 				FD4925A7204B0843009480B1 /* VehicleViewModel.swift in Sources */,
 				FD4925B4204B3492009480B1 /* CashValue.swift in Sources */,
 				FD4708672055CE8D000DC475 /* VehicleResource.swift in Sources */,
 				FD56D2EC20511F0B002D71CB /* DownloadEntity.swift in Sources */,
-				FD56D2E220507433002D71CB /* PendingOperation.swift in Sources */,
 				FD4925B0204B3465009480B1 /* StringValue.swift in Sources */,
 				FD56D2E0205073E6002D71CB /* SWAPIError.swift in Sources */,
 				FD4925A1204ADF86009480B1 /* DataCollection.swift in Sources */,
 				FD4925AB204B2DB7009480B1 /* CashUIButton.swift in Sources */,
 				FD4708692055D2CD000DC475 /* StarshipResource.swift in Sources */,
 				FD4925B2204B3479009480B1 /* MetricValue.swift in Sources */,
+				FD47086F205866AD000DC475 /* BaseOperation.swift in Sources */,
 				FD49259F204ACCA1009480B1 /* ViewModelFactory.swift in Sources */,
+				FD47086D2058643A000DC475 /* GetOperation.swift in Sources */,
 				FD47086520556562000DC475 /* MainButtonCell.swift in Sources */,
 				FD49255F2041B8BE009480B1 /* AppDelegate.swift in Sources */,
 				FD4925792042D843009480B1 /* UIButton.swift in Sources */,

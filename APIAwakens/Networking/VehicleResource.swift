@@ -9,12 +9,9 @@
 import Foundation
 
 class VehicleResource: Resource {
-    func decodeAll(from: Data) throws -> [Sizable] {
-        do {
-            return try JSONDecoder().decode(DownloadEntity<Vehicle>.self, from: from).entities
-        } catch {
-            fatalError()
-        }
+    func decodeAll(from: Data) throws -> PaginatedResult {
+        let result = try JSONDecoder().decode(DownloadEntity<Vehicle>.self, from: from)
+        return PaginatedResult(total: result.count, next: result.next, entities: result.entities)
     }
     
     func getAll(completion: @escaping ([Sizable]?, SWAPIError?) -> Void) {

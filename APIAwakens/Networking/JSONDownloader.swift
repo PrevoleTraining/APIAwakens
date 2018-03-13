@@ -42,4 +42,26 @@ class JSONDownloader {
         
         return task
     }
+
+    func jsonTask(with url: URL, completionHandler completion: @escaping JSONTaskCompletionHandler) -> URLSessionDataTask {
+        let task = session.dataTask(with: url) { data, response, error in
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(nil, .requestFailed)
+                return
+            }
+            
+            if httpResponse.statusCode == 200 {
+                if let data = data {
+                    completion(data, nil)
+                } else {
+                    completion(nil, .invalidData)
+                }
+            } else {
+                completion(nil, .responseUnsuccessful)
+            }
+        }
+        
+        return task
+    }
 }
