@@ -14,13 +14,18 @@ protocol Resource {
 }
 
 class ResourceEngine<Entity: Decodable & Sizable> {
-    let endpoint: Endpoint
+    let endpoint: SWAPIBaseEndpoint
     
-    init(endpoint: Endpoint) {
+    init(endpoint: SWAPIBaseEndpoint) {
         self.endpoint = endpoint
     }
 
     func getOne(url stringUrl: String, completion: @escaping (Sizable?, SWAPIError?) -> Void) {
+        if let sizable = Cache.get(id: stringUrl) {
+            completion(sizable, nil)
+            return
+        }
+        
         guard let url = URL(string: stringUrl) else {
             completion(nil, .wrongUrlFormat)
             return
@@ -34,6 +39,7 @@ class ResourceEngine<Entity: Decodable & Sizable> {
                 
                 do {
                     let result = try JSONDecoder().decode(Entity.self, from: data)
+                    Cache.put(entity: result)
                     completion(result, nil)
                 } catch {
                     completion(nil, .jsonConversionFailure)
@@ -45,6 +51,11 @@ class ResourceEngine<Entity: Decodable & Sizable> {
     }
     
     func getAll(completion: @escaping ([Sizable]?, SWAPIError?) -> Void) {
+        if let sizables = Cache.getCollection(endpoint: endpoint) {
+            completion(sizables, nil)
+            return
+        }
+        
         let task = JSONDownloader().jsonTask(with: endpoint.request) { data, error in
             DispatchQueue.main.async {
                 guard let data = data else {
@@ -81,10 +92,11 @@ class ResourceEngine<Entity: Decodable & Sizable> {
         let operationQueue: OperationQueue = OperationQueue()
         operationQueue.cancelAllOperations()
         
-        var result: [Sizable] = []
+        var result: [Sizable] = paginatedResult.entities
         
         let queueCompletionOperation = BlockOperation {
             DispatchQueue.main.async {
+                Cache.putCollection(endpoint: self.endpoint, collection: result)
                 completion(result, nil)
             }
         }

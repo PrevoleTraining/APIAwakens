@@ -37,7 +37,7 @@ extension CharacterViewModel {
             data.append((label: "Vehicles", value: StringValue(value: ""), cellIdentifier: TitleCell.reuseIdentifier))
             
             for vehicle in character.vehicles {
-                data.append((label: "", value: StringValue(value: vehicle), cellIdentifier: NavigationCell.reuseIdentifier))
+                data.append((label: "", value: ResourceValue(url: vehicle, resource: VehicleResource()), cellIdentifier: NamableDataCell.reuseIdentifier))
             }
         }
         
