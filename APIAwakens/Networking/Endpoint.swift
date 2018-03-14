@@ -34,6 +34,7 @@ enum SWAPIBaseEndpoint: String, Endpoint {
     case people
     case vehicles
     case starships
+    case planets
 }
 
 extension SWAPIBaseEndpoint {

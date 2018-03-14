@@ -12,6 +12,7 @@ enum SWAPIError: Error {
     case requestFailed
     case responseUnsuccessful
     case invalidData
+    case wrongUrlFormat
     case jsonConversionFailure
     case jsonParsingFailure(message: String)
 }

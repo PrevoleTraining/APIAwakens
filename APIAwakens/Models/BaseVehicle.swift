@@ -10,6 +10,7 @@ import Foundation
 
 class BaseVehicle: Sizable, Codable, CustomStringConvertible {
     private enum CodingKeys: String, CodingKey {
+        case id = "url"
         case name
         case model
         case manufacturer
@@ -23,6 +24,7 @@ class BaseVehicle: Sizable, Codable, CustomStringConvertible {
         case pilots
     }
     
+    let id: String
     let name: String
     let model: String
     let manufacturer: String
@@ -42,6 +44,7 @@ class BaseVehicle: Sizable, Codable, CustomStringConvertible {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
+        id = try container.decode(String.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
         model = try container.decode(String.self, forKey: .model)
         manufacturer = try container.decode(String.self, forKey: .manufacturer)
@@ -56,6 +59,6 @@ class BaseVehicle: Sizable, Codable, CustomStringConvertible {
     }
     
     var description: String {
-        return "name=\(name), model=\(model), manufacturer=\(manufacturer), costInCredits=\(String(describing: costInCredits)), lengthInM=\(String(describing: lengthInM)), maxAtmosphericSpeedInKmPerHour=\(String(describing: maxAtmosphericSpeedInKmPerHour)), crew\(String(describing: crew)), passengers=\(String(describing: passengers)), cargoCapacity=\(String(describing: cargoCapacity)), consumables=\(consumables), piltos=[\(pilots.joined(separator: ", "))]"
+        return "id=\(id), name=\(name), model=\(model), manufacturer=\(manufacturer), costInCredits=\(String(describing: costInCredits)), lengthInM=\(String(describing: lengthInM)), maxAtmosphericSpeedInKmPerHour=\(String(describing: maxAtmosphericSpeedInKmPerHour)), crew\(String(describing: crew)), passengers=\(String(describing: passengers)), cargoCapacity=\(String(describing: cargoCapacity)), consumables=\(consumables), piltos=[\(pilots.joined(separator: ", "))]"
     }
 }

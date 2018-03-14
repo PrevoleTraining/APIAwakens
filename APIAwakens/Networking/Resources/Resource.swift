@@ -9,66 +9,72 @@
 import Foundation
 
 protocol Resource {
+    func getOne(url: String, completion: @escaping (Sizable?, SWAPIError?) -> Void)
     func getAll(completion: @escaping ([Sizable]?, SWAPIError?) -> Void)
-    
-//    func decodeOne(from: Data) -> Sizable
-    func decodeAll(from: Data) throws -> PaginatedResult
 }
 
-extension Resource {
-    internal func all(endpoint: Endpoint, completion: @escaping ([Sizable]?, SWAPIError?) -> Void) {
-        performRequest(with: endpoint.request) { data, error in
-            guard let data = data else {
-                return completion(nil, error)
-            }
-            
-            do  {
-                let paginatedResult = try self.decodeAll(from: data)
-
-                if let _ = paginatedResult.next {
-                    self.getAllRemaining(paginatedResult: paginatedResult, completion: completion)
-                } else {
-                    completion(paginatedResult.entities, nil)
-                }
-            } catch {
-                completion(nil, .jsonConversionFailure)
-            }
-        }
+class ResourceEngine<Entity: Decodable & Sizable> {
+    let endpoint: Endpoint
+    
+    init(endpoint: Endpoint) {
+        self.endpoint = endpoint
     }
-    
-    /*internal func get<Entity: Decodable>(endpoint: RawEndpoint, completion: @escaping (Entity?, SWAPIError?) -> Void) {
-        performRequest(with: endpoint.request) { data, error in
-            guard let data = data else {
-                return completion(nil, error)
-            }
-            
-            do {
-                let result = try JSONDecoder().decode(Entity.self, from: data)
-                
-                if let _ = result.next {
-                    getAllRemaining(paginatedResult: result)
-                } else {
-                    completion(result.entities, nil)
-                }
-            } catch {
-                completion(nil, .jsonConversionFailure)
-            }
+
+    func getOne(url stringUrl: String, completion: @escaping (Sizable?, SWAPIError?) -> Void) {
+        guard let url = URL(string: stringUrl) else {
+            completion(nil, .wrongUrlFormat)
+            return
         }
-    }*/
-    
-    private func performRequest(with endpoint: URLRequest, completion: @escaping (Data?, SWAPIError?) -> Void) {
-        let task = JSONDownloader().jsonTask(with: endpoint) { data, error in
+        
+        let task = JSONDownloader().jsonTask(with: url) { data, error in
             DispatchQueue.main.async {
                 guard let data = data else {
-                    completion(nil, error)
-                    return
+                    return completion(nil, error)
                 }
-
-                completion(data, nil)
+                
+                do {
+                    let result = try JSONDecoder().decode(Entity.self, from: data)
+                    completion(result, nil)
+                } catch {
+                    completion(nil, .jsonConversionFailure)
+                }
             }
         }
         
         task.resume()
+    }
+    
+    func getAll(completion: @escaping ([Sizable]?, SWAPIError?) -> Void) {
+        let task = JSONDownloader().jsonTask(with: endpoint.request) { data, error in
+            DispatchQueue.main.async {
+                guard let data = data else {
+                    return completion(nil, error)
+                }
+                
+                do  {
+                    let paginatedResult = try self.decodeAll(from: data)
+                    
+                    if let _ = paginatedResult.next {
+                        self.getAllRemaining(paginatedResult: paginatedResult, completion: completion)
+                    } else {
+                        completion(paginatedResult.entities, nil)
+                    }
+                } catch {
+                    completion(nil, .jsonConversionFailure)
+                }
+            }
+        }
+        
+        task.resume()
+    }
+    
+    private func decodeOne(from data: Data) throws -> Entity {
+        return try JSONDecoder().decode(Entity.self, from: data)
+    }
+    
+    private func decodeAll(from data: Data) throws -> PaginatedResult {
+        let result = try JSONDecoder().decode(DownloadEntity<Entity>.self, from: data)
+        return PaginatedResult(total: result.count, next: result.next, entities: result.entities)
     }
     
     private func getAllRemaining(paginatedResult: PaginatedResult, completion: @escaping ([Sizable]?, SWAPIError?) -> Void) {

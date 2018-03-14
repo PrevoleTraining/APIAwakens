@@ -10,6 +10,7 @@ import Foundation
 
 class SWCharacter: Sizable, Decodable, CustomStringConvertible {
     private enum CodingKeys: String, CodingKey {
+        case id = "url"
         case name
         case heightInCm = "height"
         case massInKg = "mass"
@@ -23,6 +24,7 @@ class SWCharacter: Sizable, Decodable, CustomStringConvertible {
         case starships
     }
     
+    let id: String
     let name: String
     let heightInCm: Double?
     let massInKg: Double?
@@ -42,6 +44,7 @@ class SWCharacter: Sizable, Decodable, CustomStringConvertible {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
+        id = try container.decode(String.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
         heightInCm = Double(try container.decode(String.self, forKey: .heightInCm))
         massInKg = Double(try container.decode(String.self, forKey: .massInKg))
@@ -56,6 +59,6 @@ class SWCharacter: Sizable, Decodable, CustomStringConvertible {
     }
     
     var description: String {
-        return "name=\(name), heightInCm=\(String(describing: heightInCm)), massInKg=\(String(describing: massInKg)), hairColor=\(hairColor), skinColor=\(skinColor), eyeColor=\(eyeColor), birthYear\(birthYear), gender=\(gender), homeworld=\(homeworld), vehicles=[\(vehicles.joined(separator: ", "))], starships=[\(starships.joined(separator: ", "))]"
+        return "id=\(id), name=\(name), heightInCm=\(String(describing: heightInCm)), massInKg=\(String(describing: massInKg)), hairColor=\(hairColor), skinColor=\(skinColor), eyeColor=\(eyeColor), birthYear\(birthYear), gender=\(gender), homeworld=\(homeworld), vehicles=[\(vehicles.joined(separator: ", "))], starships=[\(starships.joined(separator: ", "))]"
     }
 }

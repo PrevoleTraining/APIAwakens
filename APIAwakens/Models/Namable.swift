@@ -10,4 +10,5 @@ import Foundation
 
 protocol Namable {
     var name: String { get }
+    var id: String { get }
 }

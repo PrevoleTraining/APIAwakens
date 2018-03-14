@@ -14,6 +14,10 @@
 		FD47086B2055DAEB000DC475 /* BaseVehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD47086A2055DAEB000DC475 /* BaseVehicle.swift */; };
 		FD47086D2058643A000DC475 /* GetOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD47086C2058643A000DC475 /* GetOperation.swift */; };
 		FD47086F205866AD000DC475 /* BaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD47086E205866AD000DC475 /* BaseOperation.swift */; };
+		FD4708712058853B000DC475 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4708702058853B000DC475 /* Planet.swift */; };
+		FD4708732058894B000DC475 /* PlanetResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4708722058894B000DC475 /* PlanetResource.swift */; };
+		FD470877205894AE000DC475 /* NamableDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD470876205894AE000DC475 /* NamableDataCell.swift */; };
+		FD470879205896DA000DC475 /* ResourceValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD470878205896DA000DC475 /* ResourceValue.swift */; };
 		FD49255F2041B8BE009480B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49255E2041B8BE009480B1 /* AppDelegate.swift */; };
 		FD4925612041B8BE009480B1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925602041B8BE009480B1 /* MainViewController.swift */; };
 		FD4925642041B8BE009480B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4925622041B8BE009480B1 /* Main.storyboard */; };
@@ -65,6 +69,10 @@
 		FD47086A2055DAEB000DC475 /* BaseVehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVehicle.swift; sourceTree = "<group>"; };
 		FD47086C2058643A000DC475 /* GetOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOperation.swift; sourceTree = "<group>"; };
 		FD47086E205866AD000DC475 /* BaseOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOperation.swift; sourceTree = "<group>"; };
+		FD4708702058853B000DC475 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		FD4708722058894B000DC475 /* PlanetResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetResource.swift; sourceTree = "<group>"; };
+		FD470876205894AE000DC475 /* NamableDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamableDataCell.swift; sourceTree = "<group>"; };
+		FD470878205896DA000DC475 /* ResourceValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceValue.swift; sourceTree = "<group>"; };
 		FD49255B2041B8BE009480B1 /* APIAwakens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APIAwakens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD49255E2041B8BE009480B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD4925602041B8BE009480B1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +129,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD47087420588C3B000DC475 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				FD47086C2058643A000DC475 /* GetOperation.swift */,
+				FD47086E205866AD000DC475 /* BaseOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		FD47087520588C47000DC475 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FD56D2E520507971002D71CB /* Resource.swift */,
+				FD56D2E9205114AF002D71CB /* SWCharacterResource.swift */,
+				FD4708662055CE8D000DC475 /* VehicleResource.swift */,
+				FD4708682055D2CD000DC475 /* StarshipResource.swift */,
+				FD4708722058894B000DC475 /* PlanetResource.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		FD4925522041B8BE009480B1 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +193,7 @@
 				FD4925A0204ADF86009480B1 /* DataCollection.swift */,
 				FD4925A4204AE23B009480B1 /* Sizable.swift */,
 				FD47086A2055DAEB000DC475 /* BaseVehicle.swift */,
+				FD4708702058853B000DC475 /* Planet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -219,6 +249,7 @@
 				FDFAA596204B954B00B4F77F /* TitleCell.swift */,
 				FD56D2D8204B9D06002D71CB /* NavigationCell.swift */,
 				FD47086420556562000DC475 /* MainButtonCell.swift */,
+				FD470876205894AE000DC475 /* NamableDataCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -241,6 +272,7 @@
 				FD4925AF204B3465009480B1 /* StringValue.swift */,
 				FD4925B1204B3479009480B1 /* MetricValue.swift */,
 				FD4925B3204B3492009480B1 /* CashValue.swift */,
+				FD470878205896DA000DC475 /* ResourceValue.swift */,
 			);
 			path = Values;
 			sourceTree = "<group>";
@@ -248,16 +280,12 @@
 		FD56D2DE2050731B002D71CB /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				FD47087420588C3B000DC475 /* Operations */,
+				FD47087520588C47000DC475 /* Resources */,
 				FD56D2EB20511F0B002D71CB /* DownloadEntity.swift */,
 				FD56D2DF205073E6002D71CB /* SWAPIError.swift */,
 				FD56D2E320507452002D71CB /* JSONDownloader.swift */,
-				FD56D2E520507971002D71CB /* Resource.swift */,
 				FD56D2E720510D7B002D71CB /* Endpoint.swift */,
-				FD56D2E9205114AF002D71CB /* SWCharacterResource.swift */,
-				FD4708662055CE8D000DC475 /* VehicleResource.swift */,
-				FD4708682055D2CD000DC475 /* StarshipResource.swift */,
-				FD47086C2058643A000DC475 /* GetOperation.swift */,
-				FD47086E205866AD000DC475 /* BaseOperation.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -359,6 +387,7 @@
 				FD492599204A88AC009480B1 /* ViewModel.swift in Sources */,
 				FD4925862042EE76009480B1 /* DataValue.swift in Sources */,
 				FD56D2E820510D7B002D71CB /* Endpoint.swift in Sources */,
+				FD4708732058894B000DC475 /* PlanetResource.swift in Sources */,
 				FD49258C2043446D009480B1 /* DetailsDataSource.swift in Sources */,
 				FD492597204A7B2F009480B1 /* Namable.swift in Sources */,
 				FD4925762041BEC7009480B1 /* Starship.swift in Sources */,
@@ -370,6 +399,8 @@
 				FD470863205562D8000DC475 /* MainButtonsDataSource.swift in Sources */,
 				FD4925AD204B2DE1009480B1 /* CashDataCell.swift in Sources */,
 				FD4925742041BA9F009480B1 /* Vehicle.swift in Sources */,
+				FD470879205896DA000DC475 /* ResourceValue.swift in Sources */,
+				FD470877205894AE000DC475 /* NamableDataCell.swift in Sources */,
 				FD4925B8204B3DD9009480B1 /* RateModalDelegate.swift in Sources */,
 				FD4925A5204AE23B009480B1 /* Sizable.swift in Sources */,
 				FD47086B2055DAEB000DC475 /* BaseVehicle.swift in Sources */,
@@ -385,6 +416,7 @@
 				FD4708692055D2CD000DC475 /* StarshipResource.swift in Sources */,
 				FD4925B2204B3479009480B1 /* MetricValue.swift in Sources */,
 				FD47086F205866AD000DC475 /* BaseOperation.swift in Sources */,
+				FD4708712058853B000DC475 /* Planet.swift in Sources */,
 				FD49259F204ACCA1009480B1 /* ViewModelFactory.swift in Sources */,
 				FD47086D2058643A000DC475 /* GetOperation.swift in Sources */,
 				FD47086520556562000DC475 /* MainButtonCell.swift in Sources */,
