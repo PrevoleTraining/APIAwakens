@@ -14,9 +14,9 @@ protocol Resource {
 }
 
 class ResourceEngine<Entity: Decodable & Sizable> {
-    let endpoint: SWAPIBaseEndpoint
+    let endpoint: SWAPIEndpoint
     
-    init(endpoint: SWAPIBaseEndpoint) {
+    init(endpoint: SWAPIEndpoint) {
         self.endpoint = endpoint
     }
 

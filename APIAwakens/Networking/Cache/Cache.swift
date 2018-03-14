@@ -10,7 +10,7 @@ import Foundation
 
 struct Cache {
     static var sizables: [String: Sizable] = [:]
-    static var collections: [SWAPIBaseEndpoint: [Sizable]] = [:]
+    static var collections: [SWAPIEndpoint: [Sizable]] = [:]
     
     static func get(id: String) -> Sizable? {
         return sizables[id]
@@ -24,11 +24,11 @@ struct Cache {
         sizables.updateValue(entity, forKey: entity.id)
     }
     
-    static func getCollection(endpoint: SWAPIBaseEndpoint) -> [Sizable]? {
+    static func getCollection(endpoint: SWAPIEndpoint) -> [Sizable]? {
         return collections[endpoint]
     }
     
-    static func putCollection(endpoint: SWAPIBaseEndpoint, collection: [Sizable]) -> Void {
+    static func putCollection(endpoint: SWAPIEndpoint, collection: [Sizable]) -> Void {
         if let _ = collections[endpoint] {
             return
         }

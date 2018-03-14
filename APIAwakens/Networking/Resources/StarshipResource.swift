@@ -9,7 +9,7 @@
 import Foundation
 
 class StarshipResource: Resource {
-    let resource = ResourceEngine<Starship>(endpoint: SWAPIBaseEndpoint.starships)
+    let resource = ResourceEngine<Starship>(endpoint: SWAPIEndpoint.starships)
     
     func getOne(url: String, completion: @escaping (Sizable?, SWAPIError?) -> Void) {
         resource.getOne(url: url, completion: completion)

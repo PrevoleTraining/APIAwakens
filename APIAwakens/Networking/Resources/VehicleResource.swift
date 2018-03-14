@@ -9,7 +9,7 @@
 import Foundation
 
 class VehicleResource: Resource {
-    let resource = ResourceEngine<Vehicle>(endpoint: SWAPIBaseEndpoint.vehicles)
+    let resource = ResourceEngine<Vehicle>(endpoint: SWAPIEndpoint.vehicles)
     
     func getOne(url: String, completion: @escaping (Sizable?, SWAPIError?) -> Void) {
         resource.getOne(url: url, completion: completion)

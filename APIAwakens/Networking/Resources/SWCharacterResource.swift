@@ -9,7 +9,7 @@
 import Foundation
 
 class SWCharacterResource: Resource {
-    let resource = ResourceEngine<SWCharacter>(endpoint: SWAPIBaseEndpoint.people)
+    let resource = ResourceEngine<SWCharacter>(endpoint: SWAPIEndpoint.people)
 
     func getOne(url: String, completion: @escaping (Sizable?, SWAPIError?) -> Void) {
         resource.getOne(url: url, completion: completion)

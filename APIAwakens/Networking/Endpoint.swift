@@ -8,12 +8,22 @@
 
 import Foundation
 
-protocol Endpoint {
-    var base: String { get }
-    var path: String? { get }
+enum SWAPIEndpoint: String {
+    case people
+    case vehicles
+    case starships
+    case planets
 }
 
-extension Endpoint {
+extension SWAPIEndpoint {
+    var base: String {
+        return "https://swapi.co"
+    }
+    
+    var path: String? {
+        return "/api/\(self.rawValue)/"
+    }
+    
     var urlComponents: URLComponents {
         var components = URLComponents(string: base)!
         
@@ -27,36 +37,5 @@ extension Endpoint {
     var request: URLRequest {
         let url = urlComponents.url!
         return URLRequest(url: url)
-    }
-}
-
-enum SWAPIBaseEndpoint: String, Endpoint {
-    case people
-    case vehicles
-    case starships
-    case planets
-}
-
-extension SWAPIBaseEndpoint {
-    var base: String {
-        return "https://swapi.co"
-    }
-    
-    var path: String? {
-        return "/api/\(self.rawValue)/"
-    }
-}
-
-struct RawEndpoint: Endpoint {
-    let rawUrl: String
-}
-
-extension RawEndpoint {
-    var base: String {
-        return rawUrl
-    }
-    
-    var path: String? {
-        return nil
     }
 }

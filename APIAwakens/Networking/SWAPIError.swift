@@ -14,5 +14,14 @@ enum SWAPIError: Error {
     case invalidData
     case wrongUrlFormat
     case jsonConversionFailure
-    case jsonParsingFailure(message: String)
+    
+    func friendlyMessage() -> String {
+        switch self {
+        case .requestFailed: return "Network error!"
+        case .responseUnsuccessful: return "Bad server response!"
+        case .invalidData: return "Data is invalid!"
+        case .wrongUrlFormat: return "Wrong URL!"
+        case .jsonConversionFailure: return "Unable to parse JSON data!"
+        }
+    }
 }

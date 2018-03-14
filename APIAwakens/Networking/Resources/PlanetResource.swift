@@ -9,7 +9,7 @@
 import Foundation
 
 class PlanetResource: Resource {
-    let resource = ResourceEngine<Planet>(endpoint: SWAPIBaseEndpoint.planets)
+    let resource = ResourceEngine<Planet>(endpoint: SWAPIEndpoint.planets)
     
     func getOne(url: String, completion: @escaping (Sizable?, SWAPIError?) -> Void) {
         resource.getOne(url: url, completion: completion)
