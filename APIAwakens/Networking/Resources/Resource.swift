@@ -14,13 +14,16 @@ protocol Resource {
 }
 
 class ResourceEngine<Entity: Decodable & Sizable> {
+    typealias AllEntitiesHandler = ([Sizable]?, SWAPIError?) -> Void
+    typealias OneEntityHandler = (Sizable?, SWAPIError?) -> Void
+    
     let endpoint: SWAPIEndpoint
     
     init(endpoint: SWAPIEndpoint) {
         self.endpoint = endpoint
     }
 
-    func getOne(url stringUrl: String, completion: @escaping (Sizable?, SWAPIError?) -> Void) {
+    func getOne(url stringUrl: String, completion: @escaping OneEntityHandler) {
         if let sizable = Cache.get(id: stringUrl) {
             completion(sizable, nil)
             return
@@ -38,11 +41,11 @@ class ResourceEngine<Entity: Decodable & Sizable> {
                 }
                 
                 do {
-                    let result = try JSONDecoder().decode(Entity.self, from: data)
-                    Cache.put(entity: result)
-                    completion(result, nil)
+                    let entity = try JSONDecoder().decode(Entity.self, from: data)
+                    Cache.put(entity: entity)
+                    completion(entity, nil)
                 } catch {
-                    completion(nil, .jsonConversionFailure)
+                    completion(nil, .jsonConversionFailure(error: error))
                 }
             }
         }
@@ -50,7 +53,7 @@ class ResourceEngine<Entity: Decodable & Sizable> {
         task.resume()
     }
     
-    func getAll(completion: @escaping ([Sizable]?, SWAPIError?) -> Void) {
+    func getAll(completion: @escaping AllEntitiesHandler) {
         if let sizables = Cache.getCollection(endpoint: endpoint) {
             completion(sizables, nil)
             return
@@ -71,7 +74,7 @@ class ResourceEngine<Entity: Decodable & Sizable> {
                         completion(paginatedResult.entities, nil)
                     }
                 } catch {
-                    completion(nil, .jsonConversionFailure)
+                    completion(nil, .jsonConversionFailure(error: error))
                 }
             }
         }
@@ -88,7 +91,7 @@ class ResourceEngine<Entity: Decodable & Sizable> {
         return PaginatedResult(total: result.count, next: result.next, entities: result.entities)
     }
     
-    private func getAllRemaining(paginatedResult: PaginatedResult, completion: @escaping ([Sizable]?, SWAPIError?) -> Void) {
+    private func getAllRemaining(paginatedResult: PaginatedResult, completion: @escaping AllEntitiesHandler) {
         let operationQueue: OperationQueue = OperationQueue()
         operationQueue.cancelAllOperations()
         
@@ -100,7 +103,7 @@ class ResourceEngine<Entity: Decodable & Sizable> {
                 completion(result, nil)
             }
         }
-
+        
         var operations: [Operation] = []
         
         operationQueue.isSuspended = true
@@ -119,7 +122,22 @@ class ResourceEngine<Entity: Decodable & Sizable> {
             getOp.completionBlock = {
                 if let data = getOp.data {
                     DispatchQueue.global().sync(flags: .barrier) {
-                        result = try! result + self.decodeAll(from: data).entities
+                        do {
+                            result = try result + self.decodeAll(from: data).entities
+                        } catch let error as SWAPIError {
+                            operationQueue.cancelAllOperations()
+                            completion(nil, error)
+                        } catch {
+                            operationQueue.cancelAllOperations()
+                            completion(nil, .unknown(error: error))
+                        }
+                    }
+                }
+                
+                if let error = getOp.error {
+                    DispatchQueue.global().sync(flags: .barrier) {
+                        operationQueue.cancelAllOperations()
+                        completion(nil, error)
                     }
                 }
             }

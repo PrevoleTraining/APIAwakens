@@ -22,46 +22,31 @@ class JSONDownloader {
     typealias JSONTaskCompletionHandler = (Data?, SWAPIError?) -> Void
     
     func jsonTask(with request: URLRequest, completionHandler completion: @escaping JSONTaskCompletionHandler) -> URLSessionDataTask {
-        let task = session.dataTask(with: request) { data, response, error in
-            
-            guard let httpResponse = response as? HTTPURLResponse else {
-                completion(nil, .requestFailed)
-                return
-            }
-            
-            if httpResponse.statusCode == 200 {
-                if let data = data {
-                    completion(data, nil)
-                } else {
-                    completion(nil, .invalidData)
-                }
-            } else {
-                completion(nil, .responseUnsuccessful)
-            }
+        return session.dataTask(with: request) { data, response, error in
+            self.handleResponse(data: data, response: response, error: error, completion: completion)
         }
-        
-        return task
     }
 
     func jsonTask(with url: URL, completionHandler completion: @escaping JSONTaskCompletionHandler) -> URLSessionDataTask {
-        let task = session.dataTask(with: url) { data, response, error in
-            
-            guard let httpResponse = response as? HTTPURLResponse else {
-                completion(nil, .requestFailed)
-                return
-            }
-            
-            if httpResponse.statusCode == 200 {
-                if let data = data {
-                    completion(data, nil)
-                } else {
-                    completion(nil, .invalidData)
-                }
-            } else {
-                completion(nil, .responseUnsuccessful)
-            }
+        return session.dataTask(with: url) { data, response, error in
+            self.handleResponse(data: data, response: response, error: error, completion: completion)
+        }
+    }
+    
+    private func handleResponse(data: Data?, response: URLResponse?, error: Error?, completion: @escaping JSONTaskCompletionHandler) -> Void {
+        guard let httpResponse = response as? HTTPURLResponse else {
+            completion(nil, .requestFailed)
+            return
         }
         
-        return task
+        if httpResponse.statusCode == 200 {
+            if let data = data {
+                completion(data, nil)
+            } else {
+                completion(nil, .noData)
+            }
+        } else {
+            completion(nil, .responseUnsuccessful)
+        }
     }
 }

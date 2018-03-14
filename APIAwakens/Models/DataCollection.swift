@@ -21,34 +21,39 @@ class DataCollection {
     
     let collectionLabel: String
 
-    var smallest: Namable {
+    private var onlyWithSize: [Sizable] {
         return sizables.filter({ (item) -> Bool in
             if let _ = item.size {
                 return true
             } else {
                 return false
             }
-        }).min(by: self.closure)!
+        })
     }
     
-    var largest: Namable {
-        return sizables.max(by: self.closure)!
+    var smallest: String {
+        if let smallest = onlyWithSize.min(by: self.closure) {
+            return smallest.name
+        } else {
+            return "n/a"
+        }
+    }
+    
+    var largest: String {
+        if let largest = onlyWithSize.max(by: self.closure) {
+            return largest.name
+        } else {
+            return "n/a"
+        }
     }
     
     var namables: [Namable] {
         return sizables
     }
     
-    init(collectionLabel: String, sizables: [Sizable]) throws {
-        if sizables.count == 0 {
-            throw DataCollectionError.noData
-        }
-        
+    init(collectionLabel: String, sizables: [Sizable]) {
         self.sizables = sizables
         self.collectionLabel = collectionLabel
     }
 }
 
-enum DataCollectionError: Error {
-    case noData
-}

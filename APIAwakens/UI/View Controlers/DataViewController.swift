@@ -13,15 +13,15 @@ class DataViewController: UITableViewController, UIPickerViewDelegate {
         didSet {
             if let data = data {
                 pickerDataSource.update(namables: data.namables)
-                smallest = data.smallest.name
-                largest = data.largest.name
+                smallest = data.smallest
+                largest = data.largest
                 title = data.collectionLabel
             }
         }
     }
     
-    private var smallest: String = "n/a"
-    private var largest: String = "n/a"
+    private var smallest: String = ""
+    private var largest: String = ""
     
     private let pickerDataSource = PickerDataSource()
     private let detailsDataSource = DetailsDataSource()

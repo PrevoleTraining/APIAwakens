@@ -8,29 +8,61 @@
 
 import Foundation
 
-class GetOperation: BaseOperation {
+class GetOperation: Operation {
     let url: URL
     
     var data: Data?
     var error: SWAPIError?
     
+    // MARK: - Override flags
+    
+    private var inExecution = false {
+        willSet {
+            willChangeValue(forKey: "isExecuting")
+        }
+        didSet {
+            didChangeValue(forKey: "isExecuting")
+        }
+    }
+    
+    private var inEnding = false {
+        willSet {
+            willChangeValue(forKey: "isFinished")
+        }
+        
+        didSet {
+            didChangeValue(forKey: "isFinished")
+        }
+    }
+    
+    // MARK: - Overrides
+    
     init(url: URL) {
         self.url = url
     }
     
+    override var isExecuting: Bool {
+        return inExecution
+    }
+    
+    override var isFinished: Bool {
+        return inEnding
+    }
+    
     override func main() {
         guard !isCancelled else {
-            finish(true)
+            inExecution = false
+            inEnding = true
             return
         }
         
-        executing(true)
+        inExecution = true
         
         let task = JSONDownloader().jsonTask(with: url) { data, error in
             self.data = data
             self.error = error
-            self.executing(false)
-            self.finish(true)
+            self.inExecution = false
+            self.inEnding = true
         }
         
         task.resume()

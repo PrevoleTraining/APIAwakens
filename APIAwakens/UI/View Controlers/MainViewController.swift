@@ -17,8 +17,7 @@ class MainViewController: UITableViewController, MainButtonViewDelegate {
         ])
     }()
     
-    var sizables: [Sizable]?
-    var detailTitle: String?
+    var dataCollection: DataCollection?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,29 +28,28 @@ class MainViewController: UITableViewController, MainButtonViewDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? DataViewController {
-            prepare(controller: controller, sizables: sizables!, label: detailTitle!)
+            controller.data = dataCollection
         }
     }
     
     func willDownload() {
-        self.tableView.isUserInteractionEnabled = false
+        tableView.isUserInteractionEnabled = false
     }
     
     func didDownload(title: String?, collection: [Sizable]) {
-        self.tableView.isUserInteractionEnabled = true
-        self.detailTitle = title
-        self.sizables = collection
-        performSegue(withIdentifier: "viewDetails", sender: nil)
+        tableView.isUserInteractionEnabled = true
+
+        if collection.count > 0 {
+            dataCollection = DataCollection(collectionLabel: title!, sizables: collection)
+            performSegue(withIdentifier: "viewDetails", sender: nil)
+        } else {
+            present(ErrorViewController.instantiate(error: .noData), animated: false, completion: nil)
+        }
     }
     
-    // Mark: - Helpers
-    
-    func prepare(controller: DataViewController, sizables: [Sizable], label: String) {
-        do {
-            try controller.data = DataCollection(collectionLabel: label, sizables: sizables)
-        } catch {
-            fatalError()
-        }
+    func downloadFailed(error: SWAPIError) {
+        present(ErrorViewController.instantiate(error: error), animated: false, completion: nil)
+        tableView.isUserInteractionEnabled = true
     }
 }
 

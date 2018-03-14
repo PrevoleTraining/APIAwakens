@@ -16,16 +16,14 @@ enum SWAPIEndpoint: String {
 }
 
 extension SWAPIEndpoint {
-    var base: String {
-        return "https://swapi.co"
-    }
+    static let base: String = "https://swapi.co"
     
     var path: String? {
         return "/api/\(self.rawValue)/"
     }
     
     var urlComponents: URLComponents {
-        var components = URLComponents(string: base)!
+        var components = URLComponents(string: SWAPIEndpoint.base)!
         
         if let path = path {
             components.path = path

@@ -57,12 +57,13 @@ import UIKit
         if let resource = resource {
             resource.getAll(completion: { (items, error) in
                 if let items = items {
-                    self.loader.stopAnimating()
-                    self.button.isHidden = false
                     self.delegate?.didDownload(title: self.label, collection: items)
                 } else {
-                    print(error!)
+                    self.delegate?.downloadFailed(error: error!)
                 }
+                
+                self.loader.stopAnimating()
+                self.button.isHidden = false
             })
         }
     }
@@ -100,4 +101,5 @@ import UIKit
 protocol MainButtonViewDelegate {
     func willDownload()
     func didDownload(title: String?, collection: [Sizable])
+    func downloadFailed(error: SWAPIError)
 }
