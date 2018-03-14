@@ -27,17 +27,18 @@ class MainViewController: UITableViewController, MainButtonViewDelegate {
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? DataViewController {
             prepare(controller: controller, sizables: sizables!, label: detailTitle!)
         }
     }
     
-    func downloaded(title: String?, collection: [Sizable]) {
+    func willDownload() {
+        self.tableView.isUserInteractionEnabled = false
+    }
+    
+    func didDownload(title: String?, collection: [Sizable]) {
+        self.tableView.isUserInteractionEnabled = true
         self.detailTitle = title
         self.sizables = collection
         performSegue(withIdentifier: "viewDetails", sender: nil)

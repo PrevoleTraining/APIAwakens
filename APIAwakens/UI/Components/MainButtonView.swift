@@ -49,6 +49,8 @@ import UIKit
     // MARK: - Actions
     
     @IBAction func load(_ sender: Any) {
+        delegate?.willDownload()
+        
         button.isHidden = true
         loader.startAnimating()
         
@@ -57,11 +59,7 @@ import UIKit
                 if let items = items {
                     self.loader.stopAnimating()
                     self.button.isHidden = false
-                    
-                    if let delegate = self.delegate {
-                        print(items)
-                        delegate.downloaded(title: self.label, collection: items)
-                    }
+                    self.delegate?.didDownload(title: self.label, collection: items)
                 } else {
                     print(error!)
                 }
@@ -100,5 +98,6 @@ import UIKit
 }
 
 protocol MainButtonViewDelegate {
-    func downloaded(title: String?, collection: [Sizable])
+    func willDownload()
+    func didDownload(title: String?, collection: [Sizable])
 }
