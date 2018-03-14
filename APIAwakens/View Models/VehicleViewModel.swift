@@ -23,13 +23,13 @@ extension VehicleViewModel {
         data.append((label: "Cost", value: CashValue(valueInCredits: vehicle.costInCredits), cellIdentifier: CashDataCell.reuseIdentifier))
         data.append((label: "Length", value: MetricValue(valueInM: vehicle.size), cellIdentifier: MetricDataCell.reuseIdentifier))
         data.append((label: "Class", value: StringValue(value: vehicle.vhcClass), cellIdentifier: DataCell.reuseIdentifier))
-        data.append((label: "Crew", value: StringValue(value: "\(vehicle.crew)"), cellIdentifier: DataCell.reuseIdentifier))
+        data.append((label: "Crew", value: IntValue(value: vehicle.crew), cellIdentifier: DataCell.reuseIdentifier))
         
         if vehicle.pilots.count > 0 {
             data.append((label: "Pilots", value: StringValue(value: ""), cellIdentifier: TitleCell.reuseIdentifier))
             
             for pilot in vehicle.pilots {
-                data.append((label: "", value: StringValue(value: pilot), cellIdentifier: NavigationCell.reuseIdentifier))
+                data.append((label: "", value: ResourceValue(url: pilot, resource: SWCharacterResource()), cellIdentifier: NamableDataCell.reuseIdentifier))
             }
         }
         
