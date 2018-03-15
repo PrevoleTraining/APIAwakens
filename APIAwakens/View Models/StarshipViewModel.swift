@@ -29,7 +29,7 @@ extension StarshipViewModel {
             data.append((label: "Pilots", value: StringValue(value: ""), cellIdentifier: TitleCell.reuseIdentifier))
             
             for pilot in starship.pilots {
-                data.append((label: "", value: ResourceValue(url: pilot, resource: SWCharacterResource()), cellIdentifier: NamableDataCell.reuseIdentifier))
+                data.append((label: nil, value: ResourceValue(url: pilot, resource: SWCharacterResource()), cellIdentifier: NamableDataCell.reuseIdentifier))
             }
         }
         

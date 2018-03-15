@@ -32,7 +32,7 @@ class MetricDataCell: UITableViewCell {
     
     // MARK: - Helpers
     
-    func update(label: String, metricValue: MetricValue) {
+    func update(label: String?, metricValue: MetricValue) {
         titleLabel.text = label
         self.metricValue = metricValue
         

@@ -16,7 +16,7 @@ class DataCell: UITableViewCell {
     
     // MARK: - Helpers
     
-    func update(label: String, data: DataValue) {
+    func update(label: String?, data: DataValue) {
         titleLabel.text = label
         valueLabel.text = data.formatedValue
     }

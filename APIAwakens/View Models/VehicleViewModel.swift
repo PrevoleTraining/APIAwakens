@@ -29,7 +29,7 @@ extension VehicleViewModel {
             data.append((label: "Pilots", value: StringValue(value: ""), cellIdentifier: TitleCell.reuseIdentifier))
             
             for pilot in vehicle.pilots {
-                data.append((label: "", value: ResourceValue(url: pilot, resource: SWCharacterResource()), cellIdentifier: NamableDataCell.reuseIdentifier))
+                data.append((label: nil, value: ResourceValue(url: pilot, resource: SWCharacterResource()), cellIdentifier: NamableDataCell.reuseIdentifier))
             }
         }
         

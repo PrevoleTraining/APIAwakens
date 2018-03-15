@@ -52,7 +52,6 @@
 		FD4925B4204B3492009480B1 /* CashValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925B3204B3492009480B1 /* CashValue.swift */; };
 		FD4925B6204B3D1C009480B1 /* ExchangeRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925B5204B3D1C009480B1 /* ExchangeRateViewController.swift */; };
 		FD4925B8204B3DD9009480B1 /* RateModalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925B7204B3DD9009480B1 /* RateModalDelegate.swift */; };
-		FD56D2D9204B9D06002D71CB /* NavigationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2D8204B9D06002D71CB /* NavigationCell.swift */; };
 		FD56D2E0205073E6002D71CB /* SWAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2DF205073E6002D71CB /* SWAPIError.swift */; };
 		FD56D2E420507452002D71CB /* JSONDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2E320507452002D71CB /* JSONDownloader.swift */; };
 		FD56D2E620507971002D71CB /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2E520507971002D71CB /* Resource.swift */; };
@@ -112,7 +111,6 @@
 		FD4925B3204B3492009480B1 /* CashValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashValue.swift; sourceTree = "<group>"; };
 		FD4925B5204B3D1C009480B1 /* ExchangeRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateViewController.swift; sourceTree = "<group>"; };
 		FD4925B7204B3DD9009480B1 /* RateModalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateModalDelegate.swift; sourceTree = "<group>"; };
-		FD56D2D8204B9D06002D71CB /* NavigationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCell.swift; sourceTree = "<group>"; };
 		FD56D2DF205073E6002D71CB /* SWAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPIError.swift; sourceTree = "<group>"; };
 		FD56D2E320507452002D71CB /* JSONDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDownloader.swift; sourceTree = "<group>"; };
 		FD56D2E520507971002D71CB /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
@@ -261,7 +259,6 @@
 				FD4925912045FAD6009480B1 /* MetricDataCell.swift */,
 				FD4925AC204B2DE1009480B1 /* CashDataCell.swift */,
 				FDFAA596204B954B00B4F77F /* TitleCell.swift */,
-				FD56D2D8204B9D06002D71CB /* NavigationCell.swift */,
 				FD47086420556562000DC475 /* MainButtonCell.swift */,
 				FD470876205894AE000DC475 /* NamableDataCell.swift */,
 			);
@@ -399,7 +396,6 @@
 				FD4925722041BA95009480B1 /* SWCharacter.swift in Sources */,
 				FD4925A9204B13A0009480B1 /* StarshipViewModel.swift in Sources */,
 				FD49258A2042F2C3009480B1 /* DataCell.swift in Sources */,
-				FD56D2D9204B9D06002D71CB /* NavigationCell.swift in Sources */,
 				FD49257D2042E1CE009480B1 /* CharacterViewModel.swift in Sources */,
 				FD492599204A88AC009480B1 /* ViewModel.swift in Sources */,
 				FD4925862042EE76009480B1 /* DataValue.swift in Sources */,

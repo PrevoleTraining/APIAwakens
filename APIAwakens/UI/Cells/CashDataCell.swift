@@ -45,7 +45,7 @@ class CashDataCell: UITableViewCell, RateModalDelegate {
     
     // MARK: - Helpers
     
-    func update(label: String, cashValue: CashValue) {
+    func update(label: String?, cashValue: CashValue) {
         titleLabel.text = label
         self.cashValue = cashValue
         

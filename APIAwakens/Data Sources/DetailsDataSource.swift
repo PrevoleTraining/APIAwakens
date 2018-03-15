@@ -36,7 +36,6 @@ class DetailsDataSource: NSObject, UITableViewDataSource {
             case let englishMetricCell as MetricDataCell: englishMetricCell.update(label: data.label, metricValue: data.value as! MetricValue)
             case let cashCell as CashDataCell: cashCell.update(label: data.label, cashValue: data.value as! CashValue)
             case let titleCell as TitleCell: titleCell.update(label: data.label)
-            case let navigationCell as NavigationCell: navigationCell.update(label: data.value.formatedValue)
             default: fatalError("Unknown cell type")
             }
             

@@ -29,7 +29,7 @@ extension CharacterViewModel {
             data.append((label: "Starships", value: StringValue(value: ""), cellIdentifier: TitleCell.reuseIdentifier))
             
             for starship in character.starships {
-                data.append((label: "", value: ResourceValue(url: starship, resource: StarshipResource()), cellIdentifier: NamableDataCell.reuseIdentifier))
+                data.append((label: nil, value: ResourceValue(url: starship, resource: StarshipResource()), cellIdentifier: NamableDataCell.reuseIdentifier))
             }
         }
 
@@ -37,7 +37,7 @@ extension CharacterViewModel {
             data.append((label: "Vehicles", value: StringValue(value: ""), cellIdentifier: TitleCell.reuseIdentifier))
             
             for vehicle in character.vehicles {
-                data.append((label: "", value: ResourceValue(url: vehicle, resource: VehicleResource()), cellIdentifier: NamableDataCell.reuseIdentifier))
+                data.append((label: nil, value: ResourceValue(url: vehicle, resource: VehicleResource()), cellIdentifier: NamableDataCell.reuseIdentifier))
             }
         }
         

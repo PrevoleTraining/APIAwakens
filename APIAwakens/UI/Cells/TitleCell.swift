@@ -15,7 +15,7 @@ class TitleCell: UITableViewCell {
     
     // MARK: - Helpers
     
-    func update(label: String) {
+    func update(label: String?) {
         titleLabel.text = label
     }
 }
