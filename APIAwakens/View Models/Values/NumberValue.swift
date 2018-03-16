@@ -1,5 +1,5 @@
 //
-//  IntValue.swift
+//  DoubleValue.swift
 //  APIAwakens
 //
 //  Created by lprevost on 14.03.18.
@@ -8,30 +8,31 @@
 
 import Foundation
 
-struct IntValue: DataValue {
+struct NumberValue<NumberType: SignedNumeric>: DataValue {
     private var formatter: NumberFormatter = {
         let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 2
         formatter.groupingSeparator = "'"
         formatter.groupingSize = 3
         formatter.usesGroupingSeparator = true
         return formatter
     }()
-    
-    var value: Int?
+
+    var value: NumberType?
     var suffix: String?
-    
-    init(value: Int?) {
+
+    init(value: NumberType?) {
         self.value = value
     }
     
-    init(value: Int?, suffix: String) {
+    init(value: NumberType?, suffix: String) {
         self.value = value
         self.suffix = suffix
     }
-    
+
     var formatedValue: String {
-        if let value = value {
-            return "\(formatter.string(from: value as NSNumber)!)\(suffix ?? "")"
+        if let value = value, let number = value as? NSNumber {
+            return "\(formatter.string(from: number)!)\(suffix ?? "")"
         } else {
             return "unkown"
         }

@@ -8,31 +8,27 @@
 
 import Foundation
 
-struct VehicleViewModel: ViewModel {
-    let name: String
-    let data: [LabelValue]
-}
+func vehicleViewModel(vehicle: Vehicle) -> ViewModel {
+    var data: [ViewModel.LabelValue] = []
+    
+    data.append((label: "Make", value: StringValue(value: vehicle.manufacturer), cellIdentifier: DataCell.reuseIdentifier))
+    data.append((label: "Model", value: StringValue(value: vehicle.model), cellIdentifier: DataCell.reuseIdentifier))
+    data.append((label: "Class", value: StringValue(value: vehicle.vhcClass), cellIdentifier: DataCell.reuseIdentifier))
+    data.append((label: "Cost", value: CashValue(valueInCredits: vehicle.costInCredits), cellIdentifier: CashDataCell.reuseIdentifier))
+    data.append((label: "Length", value: MetricValue(value: vehicle.lengthInM, scale: .meter), cellIdentifier: MetricDataCell.reuseIdentifier))
+    data.append((label: "Speed", value: MetricValue(value: vehicle.maxAtmosphericSpeedInKmPerHour, scale: .kilometersPerHour), cellIdentifier: MetricDataCell.reuseIdentifier))
+    data.append((label: "Crew", value: IntValue(value: vehicle.crew), cellIdentifier: DataCell.reuseIdentifier))
+    data.append((label: "Passengers", value: IntValue(value: vehicle.passengers), cellIdentifier: DataCell.reuseIdentifier))
+    data.append((label: "Cargo", value: IntValue(value: vehicle.cargoCapacity), cellIdentifier: DataCell.reuseIdentifier))
+    data.append((label: "Consumables", value: StringValue(value: vehicle.consumables), cellIdentifier: DataCell.reuseIdentifier))
 
-extension VehicleViewModel {
-    init(vehicle: Vehicle) {
-        self.name = vehicle.name
+    if vehicle.pilots.count > 0 {
+        data.append((label: "Pilots", value: StringValue(value: ""), cellIdentifier: TitleCell.reuseIdentifier))
         
-        var data: [LabelValue] = []
-        
-        data.append((label: "Make", value: StringValue(value: vehicle.manufacturer), cellIdentifier: DataCell.reuseIdentifier))
-        data.append((label: "Cost", value: CashValue(valueInCredits: vehicle.costInCredits), cellIdentifier: CashDataCell.reuseIdentifier))
-        data.append((label: "Length", value: MetricValue(valueInM: vehicle.size), cellIdentifier: MetricDataCell.reuseIdentifier))
-        data.append((label: "Class", value: StringValue(value: vehicle.vhcClass), cellIdentifier: DataCell.reuseIdentifier))
-        data.append((label: "Crew", value: IntValue(value: vehicle.crew), cellIdentifier: DataCell.reuseIdentifier))
-        
-        if vehicle.pilots.count > 0 {
-            data.append((label: "Pilots", value: StringValue(value: ""), cellIdentifier: TitleCell.reuseIdentifier))
-            
-            for pilot in vehicle.pilots {
-                data.append((label: nil, value: ResourceValue(url: pilot, resource: SWCharacterResource()), cellIdentifier: NamableDataCell.reuseIdentifier))
-            }
+        for pilot in vehicle.pilots {
+            data.append((label: nil, value: ResourceValue(url: pilot, resource: SWCharacterResource()), cellIdentifier: NamableDataCell.reuseIdentifier))
         }
-        
-        self.data = data;
     }
+    
+    return ViewModel(name: vehicle.name, data: data)
 }

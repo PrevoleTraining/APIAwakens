@@ -23,16 +23,18 @@ class Planet: Sizable, Decodable, CustomStringConvertible {
         case residents
     }
     
+    let typeName = "Planet"
+    
     let id: String
     let name: String
-    let diameterInKm: Int?
+    let diameterInKm: Double?
     let rotationPeriodInHours: Int?
     let orbitalPeriodInDays: Int?
-    let gravity: Double?
+    let gravity: String
     let population: Int?
     let climate: String
     let terrain: String
-    let surfaceWaterInPerCent: Int?
+    let surfaceWaterInPerCent: Double?
     let residents: [String]
     
     var size: Double? {
@@ -44,23 +46,19 @@ class Planet: Sizable, Decodable, CustomStringConvertible {
     }
     
     required init(from decoder: Decoder) throws {
-        do {
-            let container = try decoder.container(keyedBy: CodingKeys.self)
-        
-            id = try container.decode(String.self, forKey: .id)
-            name = try container.decode(String.self, forKey: .name)
-            diameterInKm = Int(try container.decode(String.self, forKey: .diameterInKm))
-            rotationPeriodInHours = Int(try container.decode(String.self, forKey: .rotationPeriodInHours))
-            orbitalPeriodInDays = Int(try container.decode(String.self, forKey: .orbitalPeriodInDays))
-            gravity = Double(try container.decode(String.self, forKey: .gravity))
-            population = Int(try container.decode(String.self, forKey: .population))
-            climate = try container.decode(String.self, forKey: .climate)
-            terrain = try container.decode(String.self, forKey: .terrain)
-            surfaceWaterInPerCent = Int(try container.decode(String.self, forKey: .surfaceWaterInPerCent))
-            residents = try container.decode([String].self, forKey: .residents)
-        } catch {
-            fatalError()
-        }
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+    
+        id = try container.decode(String.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        diameterInKm = Double(try container.decode(String.self, forKey: .diameterInKm))
+        rotationPeriodInHours = Int(try container.decode(String.self, forKey: .rotationPeriodInHours))
+        orbitalPeriodInDays = Int(try container.decode(String.self, forKey: .orbitalPeriodInDays))
+        gravity = try container.decode(String.self, forKey: .gravity)
+        population = Int(try container.decode(String.self, forKey: .population))
+        climate = try container.decode(String.self, forKey: .climate)
+        terrain = try container.decode(String.self, forKey: .terrain)
+        surfaceWaterInPerCent = Double(try container.decode(String.self, forKey: .surfaceWaterInPerCent))
+        residents = try container.decode([String].self, forKey: .residents)
     }
     
     var description: String {

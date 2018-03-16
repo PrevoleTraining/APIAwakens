@@ -39,7 +39,7 @@ struct CashValue: DataValue {
             case .credits: return formatter.string(from: value as NSNumber)!
             }
         } else {
-            return "n/a"
+            return "unkown"
         }
     }
     

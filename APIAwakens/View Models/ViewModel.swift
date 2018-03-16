@@ -8,9 +8,9 @@
 
 import Foundation
 
-protocol ViewModel {
+struct ViewModel {
     typealias LabelValue = (label: String?, value: DataValue, cellIdentifier: String)
     
-    var name: String { get }
-    var data: [LabelValue] { get }
+    let name: String
+    let data: [LabelValue]
 }

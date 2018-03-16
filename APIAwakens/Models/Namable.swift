@@ -9,6 +9,7 @@
 import Foundation
 
 protocol Namable {
+    var typeName: String { get }
     var name: String { get }
     var id: String { get }
 }

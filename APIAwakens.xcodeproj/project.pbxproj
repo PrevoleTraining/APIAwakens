@@ -19,7 +19,7 @@
 		FD470879205896DA000DC475 /* ResourceValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD470878205896DA000DC475 /* ResourceValue.swift */; };
 		FD47087C2058A1A9000DC475 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD47087B2058A1A9000DC475 /* Cache.swift */; };
 		FD47087E2058A757000DC475 /* IntValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD47087D2058A757000DC475 /* IntValue.swift */; };
-		FD4708802058A793000DC475 /* DoubleValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD47087F2058A793000DC475 /* DoubleValue.swift */; };
+		FD4708802058A793000DC475 /* NumberValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD47087F2058A793000DC475 /* NumberValue.swift */; };
 		FD4708822059046F000DC475 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4708812059046F000DC475 /* ErrorViewController.swift */; };
 		FD49255F2041B8BE009480B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49255E2041B8BE009480B1 /* AppDelegate.swift */; };
 		FD4925612041B8BE009480B1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925602041B8BE009480B1 /* MainViewController.swift */; };
@@ -60,6 +60,8 @@
 		FD56D2EC20511F0B002D71CB /* DownloadEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2EB20511F0B002D71CB /* DownloadEntity.swift */; };
 		FD56D2EF205513DC002D71CB /* MainButtonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD56D2EE205513DC002D71CB /* MainButtonView.xib */; };
 		FD56D2F120551419002D71CB /* MainButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2F020551419002D71CB /* MainButtonView.swift */; };
+		FD9E888E205C6FF800B8133E /* PlanetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E888D205C6FF800B8133E /* PlanetViewModel.swift */; };
+		FD9E8890205C723000B8133E /* PercentValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E888F205C723000B8133E /* PercentValue.swift */; };
 		FDFAA597204B954B00B4F77F /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFAA596204B954B00B4F77F /* TitleCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +78,7 @@
 		FD470878205896DA000DC475 /* ResourceValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceValue.swift; sourceTree = "<group>"; };
 		FD47087B2058A1A9000DC475 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		FD47087D2058A757000DC475 /* IntValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntValue.swift; sourceTree = "<group>"; };
-		FD47087F2058A793000DC475 /* DoubleValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleValue.swift; sourceTree = "<group>"; };
+		FD47087F2058A793000DC475 /* NumberValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberValue.swift; sourceTree = "<group>"; };
 		FD4708812059046F000DC475 /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		FD49255B2041B8BE009480B1 /* APIAwakens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APIAwakens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD49255E2041B8BE009480B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,8 @@
 		FD56D2EB20511F0B002D71CB /* DownloadEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadEntity.swift; sourceTree = "<group>"; };
 		FD56D2EE205513DC002D71CB /* MainButtonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainButtonView.xib; sourceTree = "<group>"; };
 		FD56D2F020551419002D71CB /* MainButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonView.swift; sourceTree = "<group>"; };
+		FD9E888D205C6FF800B8133E /* PlanetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetViewModel.swift; sourceTree = "<group>"; };
+		FD9E888F205C723000B8133E /* PercentValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentValue.swift; sourceTree = "<group>"; };
 		FDFAA596204B954B00B4F77F /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -236,6 +240,7 @@
 				FD49259E204ACCA1009480B1 /* ViewModelFactory.swift */,
 				FD4925A6204B0843009480B1 /* VehicleViewModel.swift */,
 				FD4925A8204B13A0009480B1 /* StarshipViewModel.swift */,
+				FD9E888D205C6FF800B8133E /* PlanetViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -285,7 +290,8 @@
 				FD4925B3204B3492009480B1 /* CashValue.swift */,
 				FD470878205896DA000DC475 /* ResourceValue.swift */,
 				FD47087D2058A757000DC475 /* IntValue.swift */,
-				FD47087F2058A793000DC475 /* DoubleValue.swift */,
+				FD47087F2058A793000DC475 /* NumberValue.swift */,
+				FD9E888F205C723000B8133E /* PercentValue.swift */,
 			);
 			path = Values;
 			sourceTree = "<group>";
@@ -392,6 +398,7 @@
 				FD49259020436AF4009480B1 /* PickerDataSource.swift in Sources */,
 				FD4925842042E936009480B1 /* DataViewController.swift in Sources */,
 				FD56D2F120551419002D71CB /* MainButtonView.swift in Sources */,
+				FD9E888E205C6FF800B8133E /* PlanetViewModel.swift in Sources */,
 				FD56D2EA205114AF002D71CB /* SWCharacterResource.swift in Sources */,
 				FD4925722041BA95009480B1 /* SWCharacter.swift in Sources */,
 				FD4925A9204B13A0009480B1 /* StarshipViewModel.swift in Sources */,
@@ -407,13 +414,14 @@
 				FD56D2E620507971002D71CB /* Resource.swift in Sources */,
 				FDFAA597204B954B00B4F77F /* TitleCell.swift in Sources */,
 				FD4925952049E9F3009480B1 /* UnitUIButton.swift in Sources */,
-				FD4708802058A793000DC475 /* DoubleValue.swift in Sources */,
+				FD4708802058A793000DC475 /* NumberValue.swift in Sources */,
 				FD4925612041B8BE009480B1 /* MainViewController.swift in Sources */,
 				FD4925B6204B3D1C009480B1 /* ExchangeRateViewController.swift in Sources */,
 				FD470863205562D8000DC475 /* MainButtonsDataSource.swift in Sources */,
 				FD4925AD204B2DE1009480B1 /* CashDataCell.swift in Sources */,
 				FD4925742041BA9F009480B1 /* Vehicle.swift in Sources */,
 				FD470879205896DA000DC475 /* ResourceValue.swift in Sources */,
+				FD9E8890205C723000B8133E /* PercentValue.swift in Sources */,
 				FD470877205894AE000DC475 /* NamableDataCell.swift in Sources */,
 				FD4925B8204B3DD9009480B1 /* RateModalDelegate.swift in Sources */,
 				FD47087C2058A1A9000DC475 /* Cache.swift in Sources */,

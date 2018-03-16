@@ -15,21 +15,25 @@ class Starship: BaseVehicle {
         case starshipClass = "starship_class"
     }
     
+    override var typeName: String {
+        return "Starship"
+    }
+    
     let hyperdriveRating: String
-    let mglt: String
+    let mglt: Double?
     let starshipClass: String
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         hyperdriveRating = try container.decode(String.self, forKey: .hyperdriveRating)
-        mglt = try container.decode(String.self, forKey: .mglt)
+        mglt = Double(try container.decode(String.self, forKey: .mglt))
         starshipClass = try container.decode(String.self, forKey: .starshipClass)
 
         try super.init(from: decoder)
     }
     
     override var description: String {
-        return "\(super.description), hyperdriveRating=\(hyperdriveRating), mglt=\(mglt), starshipClass=\(starshipClass)"
+        return "\(super.description), hyperdriveRating=\(hyperdriveRating), mglt=\(String(describing: mglt)), starshipClass=\(starshipClass)"
     }
 }

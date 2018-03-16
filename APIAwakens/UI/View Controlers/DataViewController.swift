@@ -18,6 +18,16 @@ class DataViewController: UITableViewController, UIPickerViewDelegate {
                 smallest = data.smallest
                 largest = data.largest
                 title = data.collectionLabel
+                footerView.isHidden = false
+            }
+        }
+    }
+    
+    var singleData: Namable? {
+        didSet {
+            if let namable = singleData {
+                title = namable.typeName
+                pickerDataSource.update(namables: [namable])
             }
         }
     }
@@ -74,8 +84,14 @@ class DataViewController: UITableViewController, UIPickerViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "exchangeRateModal", let controller = segue.destination as? ExchangeRateViewController, let button = sender as? UIButton, let view = button.superview, let cell = view.superview as? CashDataCell {
             controller.rateModalDelegate = cell
+        } else if segue.identifier == "accessoryViewDetails", let controller = segue.destination as? DataViewController {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                if let cell = tableView.cellForRow(at: indexPath), let namableDataCell = cell as? NamableDataCell {
+                    controller.singleData = namableDataCell.entity
+                }
+                
+                tableView.deselectRow(at: indexPath, animated: true)
+            }
         }
     }
 }
-
-

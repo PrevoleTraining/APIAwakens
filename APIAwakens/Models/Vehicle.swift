@@ -13,6 +13,10 @@ class Vehicle: BaseVehicle {
         case vhcClass = "vehicle_class"
     }
     
+    override var typeName: String {
+        return "Vehicle"
+    }
+
     let vhcClass: String
     
     required init(from decoder: Decoder) throws {

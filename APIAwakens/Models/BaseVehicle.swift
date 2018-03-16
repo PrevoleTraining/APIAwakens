@@ -24,13 +24,17 @@ class BaseVehicle: Sizable, Codable, CustomStringConvertible {
         case pilots
     }
     
+    var typeName: String {
+        return "Base vehicles"
+    }
+    
     let id: String
     let name: String
     let model: String
     let manufacturer: String
     let costInCredits: Int?
     let lengthInM: Double?
-    let maxAtmosphericSpeedInKmPerHour: Int?
+    let maxAtmosphericSpeedInKmPerHour: Double?
     let crew: Int?
     let passengers: Int?
     let cargoCapacity: Int?
@@ -50,7 +54,7 @@ class BaseVehicle: Sizable, Codable, CustomStringConvertible {
         manufacturer = try container.decode(String.self, forKey: .manufacturer)
         costInCredits = Int(try container.decode(String.self, forKey: .costInCredits))
         lengthInM = Double(try container.decode(String.self, forKey: .lengthInM))
-        maxAtmosphericSpeedInKmPerHour = Int(try container.decode(String.self, forKey: .maxAtmosphericSpeedInKmPerHour))
+        maxAtmosphericSpeedInKmPerHour = Double(try container.decode(String.self, forKey: .maxAtmosphericSpeedInKmPerHour))
         crew = Int(try container.decode(String.self, forKey: .crew))
         passengers = Int(try container.decode(String.self, forKey: .passengers))
         cargoCapacity = Int(try container.decode(String.self, forKey: .cargoCapacity))

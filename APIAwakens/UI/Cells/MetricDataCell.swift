@@ -43,7 +43,7 @@ class MetricDataCell: UITableViewCell {
         update(unit: nil)
     }
     
-    private func update(unit: MetricValue.Unit?) {
+    private func update(unit: MetricValue.UnitType?) {
         if var metricValue = metricValue {
             if let unit = unit {
                 metricValue.change(unit: unit)

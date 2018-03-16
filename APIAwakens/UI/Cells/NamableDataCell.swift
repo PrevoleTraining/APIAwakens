@@ -10,13 +10,25 @@ import Foundation
 import UIKit
 
 class NamableDataCell: UITableViewCell {
-    static let titleLabelMinWidth = CGFloat(90)
+    static let titleLabelMinWidth = CGFloat(110)
     static let labelsSpacing = CGFloat(10)
     
     static var reuseIdentifier = "NamableDataCell"
     
     static let normalColor = UIColor(red: 220.0/255.0, green: 220.0/255.0, blue: 220.0/255.0, alpha: 1.0)
     static let errorColor = UIColor.red
+    
+    var entity: Namable? {
+        didSet {
+            if let entity = entity {
+                self.valueLabel.text = entity.name
+                self.valueLabel.textColor = NamableDataCell.normalColor
+            } else {
+                self.valueLabel.text = "Network Error!"
+                self.valueLabel.textColor = NamableDataCell.errorColor
+            }
+        }
+    }
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
@@ -67,14 +79,7 @@ class NamableDataCell: UITableViewCell {
         spinner.startAnimating()
         
         value.resource.getOne(url: value.url) { (entity, error) in
-            if let entity = entity {
-                self.valueLabel.text = entity.name
-                self.valueLabel.textColor = NamableDataCell.normalColor
-            } else {
-                self.valueLabel.text = "Network Error!"
-                self.valueLabel.textColor = NamableDataCell.errorColor
-            }
-            
+            self.entity = entity
             self.spinner.stopAnimating()
             self.valueLabel.isHidden = false
         }

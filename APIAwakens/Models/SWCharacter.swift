@@ -24,6 +24,8 @@ class SWCharacter: Sizable, Decodable, CustomStringConvertible {
         case starships
     }
     
+    let typeName = "Character"
+    
     let id: String
     let name: String
     let heightInCm: Double?

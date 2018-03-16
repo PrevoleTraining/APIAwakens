@@ -9,12 +9,12 @@
 import UIKit
 
 class UnitUIButton: UIButton {
-    var unit: MetricValue.Unit = .metric
+    var unit: MetricValue.UnitType = .metric
     
     @IBInspectable
     var unitAdapter: String? {
         willSet {
-            if let unit = MetricValue.Unit(rawValue: newValue?.lowercased() ?? "") {
+            if let unit = MetricValue.UnitType(rawValue: newValue?.lowercased() ?? "") {
                 self.unit = unit
             }
         }
