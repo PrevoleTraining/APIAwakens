@@ -71,6 +71,7 @@ class ResourceEngine<Entity: Decodable & Classifiable> {
                     if let _ = paginatedResult.next {
                         self.getAllRemaining(paginatedResult: paginatedResult, completion: completion)
                     } else {
+                        Cache.putCollection(endpoint: self.endpoint, collection: paginatedResult.entities)
                         completion(paginatedResult.entities, nil)
                     }
                 } catch {
