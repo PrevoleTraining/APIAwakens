@@ -16,12 +16,14 @@ protocol Classifiable: Namable {
 enum ClassifiableLabel {
     case longestSmallest
     case largestSmallest
+    case tallestSmallest
     case oldestLatest
     
     func labels() -> (first: String, last: String) {
         switch self {
         case .longestSmallest: return ("Longest", "Smallest")
         case .largestSmallest: return ("Largest", "Smallest")
+        case .tallestSmallest: return ("Tallest", "Smallest")
         case .oldestLatest: return ("Oldest", "Latest")
         }
     }

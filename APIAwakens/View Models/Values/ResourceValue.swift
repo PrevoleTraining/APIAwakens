@@ -13,6 +13,11 @@ struct ResourceValue: DataValue {
         return ""
     }
     
-    var url: String
+    var url: String?
     var resource: Resource
+    
+    init(url: String?, resource: Resource) {
+        self.url = url
+        self.resource = resource
+    }
 }

@@ -44,7 +44,9 @@ class DataCollection {
     }
     
     init(collectionLabel: String, sizables: [Classifiable]) {
-        self.sizables = sizables
+        self.sizables = sizables.sorted(by: { (left, right) -> Bool in
+            return left.name < right.name
+        })
         self.collectionLabel = collectionLabel
     }
 }

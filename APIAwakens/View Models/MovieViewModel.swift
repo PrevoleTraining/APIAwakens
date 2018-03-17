@@ -8,7 +8,7 @@
 
 import Foundation
 
-func MovieViewModel(movie: Movie) -> ViewModel {
+func movieViewModel(movie: Movie) -> ViewModel {
     var data: [ViewModel.LabelValue] = []
     
     data.append((label: "Episode", value: RomanValue(value: movie.episode), cellIdentifier: DataCell.reuseIdentifier))
@@ -20,7 +20,7 @@ func MovieViewModel(movie: Movie) -> ViewModel {
     data.append(contentsOf: ViewModelFactory.populateCollection(title: "Starships", collection: movie.starships, resource: StarshipResource()))
     data.append(contentsOf: ViewModelFactory.populateCollection(title: "Vehicles", collection: movie.vehicles, resource: VehicleResource()))
     data.append(contentsOf: ViewModelFactory.populateCollection(title: "Planets", collection: movie.planets, resource: PlanetResource()))
-//    data.append(contentsOf: ViewModelFactory.populateCollection(title: "Species", collection: movie.species, resource: SpeciesResource()))
+    data.append(contentsOf: ViewModelFactory.populateCollection(title: "Species", collection: movie.species, resource: SpeciesResource()))
 
     return ViewModel(name: movie.name, data: data)
 }

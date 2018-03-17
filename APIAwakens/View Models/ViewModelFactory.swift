@@ -14,8 +14,9 @@ class ViewModelFactory {
         case let namable as SWCharacter: return characterViewModel(character: namable)
         case let namable as Starship: return starshipViewModel(starship: namable)
         case let namable as Vehicle: return vehicleViewModel(vehicle: namable)
-        case let namable as Planet: return PlanetViewModel(planet: namable)
-        case let namable as Movie: return MovieViewModel(movie: namable)
+        case let namable as Planet: return planetViewModel(planet: namable)
+        case let namable as Movie: return movieViewModel(movie: namable)
+        case let namable as Species: return speciesViewModel(species: namable)
         default: fatalError("Should never hapened")
         }
     }

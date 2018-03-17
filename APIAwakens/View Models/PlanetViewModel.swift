@@ -8,7 +8,7 @@
 
 import Foundation
 
-func PlanetViewModel(planet: Planet) -> ViewModel {
+func planetViewModel(planet: Planet) -> ViewModel {
     var data: [ViewModel.LabelValue] = []
     
     data.append((label: "Climate", value: StringValue(value: planet.climate), cellIdentifier: DataCell.reuseIdentifier))

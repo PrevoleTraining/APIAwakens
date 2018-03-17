@@ -15,6 +15,7 @@ class MainViewController: UITableViewController, MainButtonViewDelegate {
             MainButtonData(title: "Vehicles", image: UIImage(named: "icon-vehicles"), resource: VehicleResource(), delegate: self),
             MainButtonData(title: "Starships", image: UIImage(named: "icon-starships"), resource: StarshipResource(), delegate: self),
             MainButtonData(title: "Planets", image: UIImage(named: "icon-planets"), resource: PlanetResource(), delegate: self),
+            MainButtonData(title: "Species", image: UIImage(named: "icon-species"), resource: SpeciesResource(), delegate: self),
             MainButtonData(title: "Movies", image: UIImage(named: "icon-movies"), resource: MovieResource(), delegate: self)
         ])
     }()

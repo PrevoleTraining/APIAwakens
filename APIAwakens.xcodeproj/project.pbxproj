@@ -66,6 +66,9 @@
 		FD9E8896205D126800B8133E /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E8895205D126800B8133E /* MovieViewModel.swift */; };
 		FD9E8898205D1E8500B8133E /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E8897205D1E8500B8133E /* Int.swift */; };
 		FD9E889A205D1F3F00B8133E /* RomanValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E8899205D1F3F00B8133E /* RomanValue.swift */; };
+		FD9E889C205D25F600B8133E /* SpeciesResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E889B205D25F600B8133E /* SpeciesResource.swift */; };
+		FD9E889E205D265F00B8133E /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E889D205D265F00B8133E /* Species.swift */; };
+		FD9E88A0205D296700B8133E /* SpeciesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E889F205D296700B8133E /* SpeciesViewModel.swift */; };
 		FDFAA597204B954B00B4F77F /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFAA596204B954B00B4F77F /* TitleCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +134,9 @@
 		FD9E8895205D126800B8133E /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		FD9E8897205D1E8500B8133E /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		FD9E8899205D1F3F00B8133E /* RomanValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomanValue.swift; sourceTree = "<group>"; };
+		FD9E889B205D25F600B8133E /* SpeciesResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesResource.swift; sourceTree = "<group>"; };
+		FD9E889D205D265F00B8133E /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
+		FD9E889F205D296700B8133E /* SpeciesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesViewModel.swift; sourceTree = "<group>"; };
 		FDFAA596204B954B00B4F77F /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,6 +168,7 @@
 				FD4708682055D2CD000DC475 /* StarshipResource.swift */,
 				FD4708722058894B000DC475 /* PlanetResource.swift */,
 				FD9E8891205CFDDE00B8133E /* MovieResource.swift */,
+				FD9E889B205D25F600B8133E /* SpeciesResource.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -220,6 +227,7 @@
 				FD47086A2055DAEB000DC475 /* BaseVehicle.swift */,
 				FD4708702058853B000DC475 /* Planet.swift */,
 				FD9E8893205CFE4400B8133E /* Movie.swift */,
+				FD9E889D205D265F00B8133E /* Species.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,6 +261,7 @@
 				FD4925A8204B13A0009480B1 /* StarshipViewModel.swift */,
 				FD9E888D205C6FF800B8133E /* PlanetViewModel.swift */,
 				FD9E8895205D126800B8133E /* MovieViewModel.swift */,
+				FD9E889F205D296700B8133E /* SpeciesViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -426,6 +435,7 @@
 				FD56D2E620507971002D71CB /* Resource.swift in Sources */,
 				FDFAA597204B954B00B4F77F /* TitleCell.swift in Sources */,
 				FD4925952049E9F3009480B1 /* UnitUIButton.swift in Sources */,
+				FD9E889E205D265F00B8133E /* Species.swift in Sources */,
 				FD4708802058A793000DC475 /* NumberValue.swift in Sources */,
 				FD4925612041B8BE009480B1 /* MainViewController.swift in Sources */,
 				FD4925B6204B3D1C009480B1 /* ExchangeRateViewController.swift in Sources */,
@@ -434,6 +444,7 @@
 				FD4925742041BA9F009480B1 /* Vehicle.swift in Sources */,
 				FD470879205896DA000DC475 /* ResourceValue.swift in Sources */,
 				FD9E8890205C723000B8133E /* PercentValue.swift in Sources */,
+				FD9E889C205D25F600B8133E /* SpeciesResource.swift in Sources */,
 				FD470877205894AE000DC475 /* NamableDataCell.swift in Sources */,
 				FD4925B8204B3DD9009480B1 /* RateModalDelegate.swift in Sources */,
 				FD47087C2058A1A9000DC475 /* Cache.swift in Sources */,
@@ -442,6 +453,7 @@
 				FD47086B2055DAEB000DC475 /* BaseVehicle.swift in Sources */,
 				FD56D2E420507452002D71CB /* JSONDownloader.swift in Sources */,
 				FD4925A7204B0843009480B1 /* VehicleViewModel.swift in Sources */,
+				FD9E88A0205D296700B8133E /* SpeciesViewModel.swift in Sources */,
 				FD4925B4204B3492009480B1 /* CashValue.swift in Sources */,
 				FD9E889A205D1F3F00B8133E /* RomanValue.swift in Sources */,
 				FD4708672055CE8D000DC475 /* VehicleResource.swift in Sources */,

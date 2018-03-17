@@ -41,11 +41,7 @@ class Planet: Classifiable, Decodable, CustomStringConvertible {
     let movies: [String] // Links
     
     var classifierWeight: Double? {
-        if let diameterInKm = diameterInKm {
-            return Double(diameterInKm)
-        } else {
-            return nil
-        }
+        return diameterInKm
     }
     
     required init(from decoder: Decoder) throws {

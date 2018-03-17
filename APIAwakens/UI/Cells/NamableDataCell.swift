@@ -18,14 +18,24 @@ class NamableDataCell: UITableViewCell {
     static let normalColor = UIColor(red: 220.0/255.0, green: 220.0/255.0, blue: 220.0/255.0, alpha: 1.0)
     static let errorColor = UIColor.red
     
+    var error: SWAPIError?
     var entity: Namable? {
         didSet {
             if let entity = entity {
-                self.valueLabel.text = entity.name
-                self.valueLabel.textColor = NamableDataCell.normalColor
+                accessoryType = .disclosureIndicator
+                isUserInteractionEnabled = true
+                valueLabel.text = entity.name
+                valueLabel.textColor = NamableDataCell.normalColor
             } else {
-                self.valueLabel.text = "Network Error!"
-                self.valueLabel.textColor = NamableDataCell.errorColor
+                accessoryType = .none
+                isUserInteractionEnabled = false
+                if let error = error {
+                    valueLabel.text = error.friendlyMessage
+                    valueLabel.textColor = NamableDataCell.errorColor
+                } else {
+                    valueLabel.text = "n/a"
+                    valueLabel.textColor = NamableDataCell.normalColor
+                }
             }
         }
     }
@@ -78,8 +88,15 @@ class NamableDataCell: UITableViewCell {
         
         spinner.startAnimating()
         
-        value.resource.getOne(url: value.url) { (entity, error) in
-            self.entity = entity
+        if let url = value.url {
+            value.resource.getOne(url: url) { (entity, error) in
+                self.entity = entity
+                self.error = error
+                self.spinner.stopAnimating()
+                self.valueLabel.isHidden = false
+            }
+        } else {
+            self.entity = nil
             self.spinner.stopAnimating()
             self.valueLabel.isHidden = false
         }

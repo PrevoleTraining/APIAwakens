@@ -23,10 +23,11 @@ class SWCharacter: Classifiable, Decodable, CustomStringConvertible {
         case vehicles
         case starships
         case movies = "films"
+        case species
     }
     
     let typeName = "Character"
-    let classifierLabel: ClassifiableLabel = .longestSmallest
+    let classifierLabel: ClassifiableLabel = .tallestSmallest
     
     let id: String
     let name: String
@@ -41,6 +42,7 @@ class SWCharacter: Classifiable, Decodable, CustomStringConvertible {
     let vehicles: [String] // Links
     let starships: [String] // Links
     let movies: [String] // Links
+    let species: [String] // Links
     
     var classifierWeight: Double? {
         return heightInCm
@@ -62,9 +64,10 @@ class SWCharacter: Classifiable, Decodable, CustomStringConvertible {
         vehicles = try container.decode([String].self, forKey: .vehicles)
         starships = try container.decode([String].self, forKey: .starships)
         movies = try container.decode([String].self, forKey: .movies)
+        species = try container.decode([String].self, forKey: .species)
     }
     
     var description: String {
-        return "id=\(id), name=\(name), heightInCm=\(String(describing: heightInCm)), massInKg=\(String(describing: massInKg)), hairColor=\(hairColor), skinColor=\(skinColor), eyeColor=\(eyeColor), birthYear\(birthYear), gender=\(gender), homeworld=\(homeworld), vehicles=[\(vehicles.joined(separator: ", "))], starships=[\(starships.joined(separator: ", ")), movies=[\(movies.joined(separator: ", "))]"
+        return "id=\(id), name=\(name), heightInCm=\(String(describing: heightInCm)), massInKg=\(String(describing: massInKg)), hairColor=\(hairColor), skinColor=\(skinColor), eyeColor=\(eyeColor), birthYear\(birthYear), gender=\(gender), homeworld=\(homeworld), vehicles=[\(vehicles.joined(separator: ", "))], starships=[\(starships.joined(separator: ", ")), movies=[\(movies.joined(separator: ", ")), species=[\(species.joined(separator: ", "))]"
     }
 }

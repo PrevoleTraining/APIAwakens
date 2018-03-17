@@ -34,11 +34,11 @@ class Movie: Classifiable, Decodable, CustomStringConvertible {
     let producer: String
     let opening: String
     let releaseDate: String
-    let species: [String]
-    let starships: [String]
-    let vehicles: [String]
-    let characters: [String]
-    let planets: [String]
+    let species: [String] // Links
+    let starships: [String] // Links
+    let vehicles: [String] // Links
+    let characters: [String] // Links
+    let planets: [String] // Links
     
     private let isoFormater: ISO8601DateFormatter = {
         let formatter = ISO8601DateFormatter()
@@ -55,24 +55,20 @@ class Movie: Classifiable, Decodable, CustomStringConvertible {
     }
     
     required init(from decoder: Decoder) throws {
-        do {
-            let container = try decoder.container(keyedBy: CodingKeys.self)
-        
-            id = try container.decode(String.self, forKey: .id)
-            name = try container.decode(String.self, forKey: .name)
-            episode = try container.decode(Int.self, forKey: .episode)
-            director = try container.decode(String.self, forKey: .director)
-            producer = try container.decode(String.self, forKey: .producer)
-            opening = try container.decode(String.self, forKey: .opening)
-            releaseDate = try container.decode(String.self, forKey: .releaseDate)
-            species = try container.decode([String].self, forKey: .species)
-            starships = try container.decode([String].self, forKey: .starships)
-            vehicles = try container.decode([String].self, forKey: .vehicles)
-            characters = try container.decode([String].self, forKey: .characters)
-            planets = try container.decode([String].self, forKey: .planets)
-        } catch {
-            fatalError()
-        }
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+    
+        id = try container.decode(String.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        episode = try container.decode(Int.self, forKey: .episode)
+        director = try container.decode(String.self, forKey: .director)
+        producer = try container.decode(String.self, forKey: .producer)
+        opening = try container.decode(String.self, forKey: .opening)
+        releaseDate = try container.decode(String.self, forKey: .releaseDate)
+        species = try container.decode([String].self, forKey: .species)
+        starships = try container.decode([String].self, forKey: .starships)
+        vehicles = try container.decode([String].self, forKey: .vehicles)
+        characters = try container.decode([String].self, forKey: .characters)
+        planets = try container.decode([String].self, forKey: .planets)
     }
     
     var description: String {
