@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BaseVehicle: Sizable, Codable, CustomStringConvertible {
+class BaseVehicle: Classifiable, Codable, CustomStringConvertible {
     private enum CodingKeys: String, CodingKey {
         case id = "url"
         case name
@@ -22,11 +22,14 @@ class BaseVehicle: Sizable, Codable, CustomStringConvertible {
         case cargoCapacity = "cargo_capacity"
         case consumables
         case pilots
+        case movies = "films"
     }
     
     var typeName: String {
         return "Base vehicles"
     }
+    
+    let classifierLabel: ClassifiableLabel = .longestSmallest
     
     let id: String
     let name: String
@@ -39,9 +42,10 @@ class BaseVehicle: Sizable, Codable, CustomStringConvertible {
     let passengers: Int?
     let cargoCapacity: Int?
     let consumables: String
-    let pilots: [String] // Links*/
+    let pilots: [String] // Links
+    let movies: [String] // Links
     
-    var size: Double? {
+    var classifierWeight: Double? {
         return lengthInM
     }
     
@@ -60,9 +64,10 @@ class BaseVehicle: Sizable, Codable, CustomStringConvertible {
         cargoCapacity = Int(try container.decode(String.self, forKey: .cargoCapacity))
         consumables = try container.decode(String.self, forKey: .consumables)
         pilots = try container.decode([String].self, forKey: .pilots)
+        movies = try container.decode([String].self, forKey: .movies)
     }
     
     var description: String {
-        return "id=\(id), name=\(name), model=\(model), manufacturer=\(manufacturer), costInCredits=\(String(describing: costInCredits)), lengthInM=\(String(describing: lengthInM)), maxAtmosphericSpeedInKmPerHour=\(String(describing: maxAtmosphericSpeedInKmPerHour)), crew\(String(describing: crew)), passengers=\(String(describing: passengers)), cargoCapacity=\(String(describing: cargoCapacity)), consumables=\(consumables), piltos=[\(pilots.joined(separator: ", "))]"
+        return "id=\(id), name=\(name), model=\(model), manufacturer=\(manufacturer), costInCredits=\(String(describing: costInCredits)), lengthInM=\(String(describing: lengthInM)), maxAtmosphericSpeedInKmPerHour=\(String(describing: maxAtmosphericSpeedInKmPerHour)), crew\(String(describing: crew)), passengers=\(String(describing: passengers)), cargoCapacity=\(String(describing: cargoCapacity)), consumables=\(consumables), piltos=[\(pilots.joined(separator: ", ")), movies=[\(movies.joined(separator: ", "))]"
     }
 }

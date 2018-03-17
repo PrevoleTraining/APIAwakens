@@ -11,11 +11,11 @@ import Foundation
 class VehicleResource: Resource {
     let resource = ResourceEngine<Vehicle>(endpoint: SWAPIEndpoint.vehicles)
     
-    func getOne(url: String, completion: @escaping (Sizable?, SWAPIError?) -> Void) {
+    func getOne(url: String, completion: @escaping (Classifiable?, SWAPIError?) -> Void) {
         resource.getOne(url: url, completion: completion)
     }
     
-    func getAll(completion: @escaping ([Sizable]?, SWAPIError?) -> Void) {
+    func getAll(completion: @escaping ([Classifiable]?, SWAPIError?) -> Void) {
         resource.getAll(completion: completion)
     }
 }

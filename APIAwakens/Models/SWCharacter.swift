@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SWCharacter: Sizable, Decodable, CustomStringConvertible {
+class SWCharacter: Classifiable, Decodable, CustomStringConvertible {
     private enum CodingKeys: String, CodingKey {
         case id = "url"
         case name
@@ -22,9 +22,11 @@ class SWCharacter: Sizable, Decodable, CustomStringConvertible {
         case homeworld
         case vehicles
         case starships
+        case movies = "films"
     }
     
     let typeName = "Character"
+    let classifierLabel: ClassifiableLabel = .longestSmallest
     
     let id: String
     let name: String
@@ -38,8 +40,9 @@ class SWCharacter: Sizable, Decodable, CustomStringConvertible {
     let homeworld: String // Link
     let vehicles: [String] // Links
     let starships: [String] // Links
+    let movies: [String] // Links
     
-    var size: Double? {
+    var classifierWeight: Double? {
         return heightInCm
     }
     
@@ -58,9 +61,10 @@ class SWCharacter: Sizable, Decodable, CustomStringConvertible {
         homeworld = try container.decode(String.self, forKey: .homeworld)
         vehicles = try container.decode([String].self, forKey: .vehicles)
         starships = try container.decode([String].self, forKey: .starships)
+        movies = try container.decode([String].self, forKey: .movies)
     }
     
     var description: String {
-        return "id=\(id), name=\(name), heightInCm=\(String(describing: heightInCm)), massInKg=\(String(describing: massInKg)), hairColor=\(hairColor), skinColor=\(skinColor), eyeColor=\(eyeColor), birthYear\(birthYear), gender=\(gender), homeworld=\(homeworld), vehicles=[\(vehicles.joined(separator: ", "))], starships=[\(starships.joined(separator: ", "))]"
+        return "id=\(id), name=\(name), heightInCm=\(String(describing: heightInCm)), massInKg=\(String(describing: massInKg)), hairColor=\(hairColor), skinColor=\(skinColor), eyeColor=\(eyeColor), birthYear\(birthYear), gender=\(gender), homeworld=\(homeworld), vehicles=[\(vehicles.joined(separator: ", "))], starships=[\(starships.joined(separator: ", ")), movies=[\(movies.joined(separator: ", "))]"
     }
 }

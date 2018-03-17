@@ -15,8 +15,8 @@ class DataViewController: UITableViewController, UIPickerViewDelegate {
         didSet {
             if let data = data {
                 pickerDataSource.update(namables: data.namables)
-                smallest = data.smallest
-                largest = data.largest
+                first = data.first
+                last = data.last
                 title = data.collectionLabel
                 footerView.isHidden = false
             }
@@ -32,8 +32,8 @@ class DataViewController: UITableViewController, UIPickerViewDelegate {
         }
     }
     
-    private var smallest: String = ""
-    private var largest: String = ""
+    private var first: Classifiable?
+    private var last: Classifiable?
     
     private let pickerDataSource = PickerDataSource()
     private let detailsDataSource = DetailsDataSource()
@@ -41,8 +41,11 @@ class DataViewController: UITableViewController, UIPickerViewDelegate {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dataPicker: UIPickerView!
     
-    @IBOutlet weak var smallestLabel: UILabel!
-    @IBOutlet weak var largestLabel: UILabel!
+    @IBOutlet weak var firstTitleLabel: UILabel!
+    @IBOutlet weak var firstValueLabel: UILabel!
+
+    @IBOutlet weak var lastTitleLabel: UILabel!
+    @IBOutlet weak var lastValueLabel: UILabel!
     
     @IBOutlet var footerView: UIView!
     
@@ -56,8 +59,15 @@ class DataViewController: UITableViewController, UIPickerViewDelegate {
         dataPicker.dataSource = pickerDataSource
         dataPicker.delegate = pickerDataSource
         
-        smallestLabel.text = smallest
-        largestLabel.text = largest
+        if let first = first {
+            firstTitleLabel.text = first.classifierLabel.labels().first
+            firstValueLabel.text = first.name
+        }
+        
+        if let last = last {
+            lastTitleLabel.text = last.classifierLabel.labels().last
+            lastValueLabel.text = last.name
+        }
         
         pickerDataSource.observe { viewModel in
             self.nameLabel.text = viewModel.name

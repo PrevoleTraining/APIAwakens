@@ -9,14 +9,14 @@
 import Foundation
 
 struct Cache {
-    static var sizables: [String: Sizable] = [:]
-    static var collections: [SWAPIEndpoint: [Sizable]] = [:]
+    static var sizables: [String: Classifiable] = [:]
+    static var collections: [SWAPIEndpoint: [Classifiable]] = [:]
     
-    static func get(id: String) -> Sizable? {
+    static func get(id: String) -> Classifiable? {
         return sizables[id]
     }
     
-    static func put(entity: Sizable) -> Void {
+    static func put(entity: Classifiable) -> Void {
         if let _ = sizables[entity.id] {
             return
         }
@@ -24,11 +24,11 @@ struct Cache {
         sizables.updateValue(entity, forKey: entity.id)
     }
     
-    static func getCollection(endpoint: SWAPIEndpoint) -> [Sizable]? {
+    static func getCollection(endpoint: SWAPIEndpoint) -> [Classifiable]? {
         return collections[endpoint]
     }
     
-    static func putCollection(endpoint: SWAPIEndpoint, collection: [Sizable]) -> Void {
+    static func putCollection(endpoint: SWAPIEndpoint, collection: [Classifiable]) -> Void {
         if let _ = collections[endpoint] {
             return
         }

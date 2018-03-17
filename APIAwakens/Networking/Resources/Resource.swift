@@ -9,13 +9,13 @@
 import Foundation
 
 protocol Resource {
-    func getOne(url: String, completion: @escaping (Sizable?, SWAPIError?) -> Void)
-    func getAll(completion: @escaping ([Sizable]?, SWAPIError?) -> Void)
+    func getOne(url: String, completion: @escaping (Classifiable?, SWAPIError?) -> Void)
+    func getAll(completion: @escaping ([Classifiable]?, SWAPIError?) -> Void)
 }
 
-class ResourceEngine<Entity: Decodable & Sizable> {
-    typealias AllEntitiesHandler = ([Sizable]?, SWAPIError?) -> Void
-    typealias OneEntityHandler = (Sizable?, SWAPIError?) -> Void
+class ResourceEngine<Entity: Decodable & Classifiable> {
+    typealias AllEntitiesHandler = ([Classifiable]?, SWAPIError?) -> Void
+    typealias OneEntityHandler = (Classifiable?, SWAPIError?) -> Void
     
     let endpoint: SWAPIEndpoint
     
@@ -95,7 +95,7 @@ class ResourceEngine<Entity: Decodable & Sizable> {
         let operationQueue: OperationQueue = OperationQueue()
         operationQueue.cancelAllOperations()
         
-        var result: [Sizable] = paginatedResult.entities
+        var result: [Classifiable] = paginatedResult.entities
         
         let queueCompletionOperation = BlockOperation {
             DispatchQueue.main.async {
@@ -156,5 +156,5 @@ class ResourceEngine<Entity: Decodable & Sizable> {
 struct PaginatedResult {
     let total: Int
     let next: String?
-    let entities: [Sizable]
+    let entities: [Classifiable]
 }

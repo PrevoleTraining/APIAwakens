@@ -13,7 +13,9 @@ class MainViewController: UITableViewController, MainButtonViewDelegate {
         return MainButtonsDataSource(buttons: [
             MainButtonData(title: "Characters", image: UIImage(named: "icon-characters"), resource: SWCharacterResource(), delegate: self),
             MainButtonData(title: "Vehicles", image: UIImage(named: "icon-vehicles"), resource: VehicleResource(), delegate: self),
-            MainButtonData(title: "Starships", image: UIImage(named: "icon-starships"), resource: StarshipResource(), delegate: self)
+            MainButtonData(title: "Starships", image: UIImage(named: "icon-starships"), resource: StarshipResource(), delegate: self),
+            MainButtonData(title: "Planets", image: UIImage(named: "icon-planets"), resource: PlanetResource(), delegate: self),
+            MainButtonData(title: "Movies", image: UIImage(named: "icon-movies"), resource: MovieResource(), delegate: self)
         ])
     }()
     
@@ -36,7 +38,7 @@ class MainViewController: UITableViewController, MainButtonViewDelegate {
         tableView.isUserInteractionEnabled = false
     }
     
-    func didDownload(title: String?, collection: [Sizable]) {
+    func didDownload(title: String?, collection: [Classifiable]) {
         tableView.isUserInteractionEnabled = true
 
         if collection.count > 0 {

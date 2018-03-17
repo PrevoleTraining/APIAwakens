@@ -9,21 +9,21 @@
 import Foundation
 
 class DataCollection {
-    private let closure: (Sizable, Sizable) -> Bool = { (left, right) -> Bool in
-        if let leftSize = left.size, let rightSize = right.size {
+    private let closure: (Classifiable, Classifiable) -> Bool = { (left, right) -> Bool in
+        if let leftSize = left.classifierWeight, let rightSize = right.classifierWeight {
             return leftSize < rightSize
         } else {
             return false
         }
     }
     
-    private let sizables: [Sizable]
+    private let sizables: [Classifiable]
     
     let collectionLabel: String
 
-    private var onlyWithSize: [Sizable] {
+    private var onlyWithSize: [Classifiable] {
         return sizables.filter({ (item) -> Bool in
-            if let _ = item.size {
+            if let _ = item.classifierWeight {
                 return true
             } else {
                 return false
@@ -31,27 +31,19 @@ class DataCollection {
         })
     }
     
-    var smallest: String {
-        if let smallest = onlyWithSize.min(by: self.closure) {
-            return smallest.name
-        } else {
-            return "n/a"
-        }
+    var first: Classifiable? {
+        return onlyWithSize.max(by: self.closure)
     }
     
-    var largest: String {
-        if let largest = onlyWithSize.max(by: self.closure) {
-            return largest.name
-        } else {
-            return "n/a"
-        }
+    var last: Classifiable? {
+        return onlyWithSize.min(by: self.closure)
     }
     
     var namables: [Namable] {
         return sizables
     }
     
-    init(collectionLabel: String, sizables: [Sizable]) {
+    init(collectionLabel: String, sizables: [Classifiable]) {
         self.sizables = sizables
         self.collectionLabel = collectionLabel
     }

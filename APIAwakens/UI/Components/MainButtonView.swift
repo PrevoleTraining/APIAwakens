@@ -100,6 +100,6 @@ import UIKit
 
 protocol MainButtonViewDelegate {
     func willDownload()
-    func didDownload(title: String?, collection: [Sizable])
+    func didDownload(title: String?, collection: [Classifiable])
     func downloadFailed(error: SWAPIError)
 }

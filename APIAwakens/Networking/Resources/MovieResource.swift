@@ -1,15 +1,15 @@
 //
-//  StarshipResource.swift
+//  MovieResource.swift
 //  APIAwakens
 //
-//  Created by lprevost on 11.03.18.
+//  Created by lprevost on 17.03.18.
 //  Copyright © 2018 prevole.ch. All rights reserved.
 //
 
 import Foundation
 
-class StarshipResource: Resource {
-    let resource = ResourceEngine<Starship>(endpoint: SWAPIEndpoint.starships)
+class MovieResource: Resource {
+    let resource = ResourceEngine<Movie>(endpoint: SWAPIEndpoint.movies)
     
     func getOne(url: String, completion: @escaping (Classifiable?, SWAPIError?) -> Void) {
         resource.getOne(url: url, completion: completion)

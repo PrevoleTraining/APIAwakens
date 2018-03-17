@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Planet: Sizable, Decodable, CustomStringConvertible {
+class Planet: Classifiable, Decodable, CustomStringConvertible {
     private enum CodingKeys: String, CodingKey {
         case id = "url"
         case name
@@ -21,9 +21,11 @@ class Planet: Sizable, Decodable, CustomStringConvertible {
         case terrain
         case surfaceWaterInPerCent = "surface_water"
         case residents
+        case movies = "films"
     }
     
     let typeName = "Planet"
+    let classifierLabel: ClassifiableLabel = .largestSmallest
     
     let id: String
     let name: String
@@ -35,9 +37,10 @@ class Planet: Sizable, Decodable, CustomStringConvertible {
     let climate: String
     let terrain: String
     let surfaceWaterInPerCent: Double?
-    let residents: [String]
+    let residents: [String] // Links
+    let movies: [String] // Links
     
-    var size: Double? {
+    var classifierWeight: Double? {
         if let diameterInKm = diameterInKm {
             return Double(diameterInKm)
         } else {
@@ -59,9 +62,10 @@ class Planet: Sizable, Decodable, CustomStringConvertible {
         terrain = try container.decode(String.self, forKey: .terrain)
         surfaceWaterInPerCent = Double(try container.decode(String.self, forKey: .surfaceWaterInPerCent))
         residents = try container.decode([String].self, forKey: .residents)
+        movies = try container.decode([String].self, forKey: .movies)
     }
     
     var description: String {
-        return "id=\(id), name=\(name), diametersInKm=\(String(describing: diameterInKm)), rotationPeriodInHours=\(String(describing: rotationPeriodInHours)), orbitalPeriodInDays=\(String(describing: orbitalPeriodInDays)), gravity=\(String(describing: gravity)), population=\(String(describing: population)), cliamte\(climate), terrain=\(terrain), surfaceWaterInPerCent=\(String(describing: surfaceWaterInPerCent)), residents=\(residents.joined(separator: ", "))]"
+        return "id=\(id), name=\(name), diametersInKm=\(String(describing: diameterInKm)), rotationPeriodInHours=\(String(describing: rotationPeriodInHours)), orbitalPeriodInDays=\(String(describing: orbitalPeriodInDays)), gravity=\(String(describing: gravity)), population=\(String(describing: population)), cliamte\(climate), terrain=\(terrain), surfaceWaterInPerCent=\(String(describing: surfaceWaterInPerCent)), residents=\(residents.joined(separator: ", ")), movies=[\(movies.joined(separator: ", "))]"
     }
 }

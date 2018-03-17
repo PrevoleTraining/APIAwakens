@@ -16,7 +16,7 @@
         <scene sceneID="mb0-FS-q9M">
             <objects>
                 <tableViewController id="m0D-Jv-Bcu" customClass="MainViewController" customModule="APIAwakens" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="A1E-7b-gbZ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="A1E-7b-gbZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -395,10 +395,12 @@
                     </tableView>
                     <connections>
                         <outlet property="dataPicker" destination="9nP-2d-c6g" id="NyU-6M-Sz8"/>
+                        <outlet property="firstTitleLabel" destination="sLP-vO-aeq" id="4UX-Oy-dTK"/>
+                        <outlet property="firstValueLabel" destination="kdO-LM-MGW" id="fYJ-eF-oOr"/>
                         <outlet property="footerView" destination="VJv-qd-DOq" id="CM8-9b-hTr"/>
-                        <outlet property="largestLabel" destination="kdO-LM-MGW" id="unq-Cb-IIA"/>
+                        <outlet property="lastTitleLabel" destination="wCA-PJ-PrW" id="KC3-PS-bJj"/>
+                        <outlet property="lastValueLabel" destination="LyF-06-nLO" id="SXI-WL-ONT"/>
                         <outlet property="nameLabel" destination="u5t-q9-NMy" id="Cco-vg-Xgp"/>
-                        <outlet property="smallestLabel" destination="LyF-06-nLO" id="hRP-a4-2dM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ige-bl-ELi" userLabel="First Responder" sceneMemberID="firstResponder"/>

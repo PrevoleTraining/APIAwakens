@@ -19,22 +19,9 @@ func characterViewModel(character: SWCharacter) -> ViewModel {
     data.append((label: "Hair", value: StringValue(value: character.hairColor), cellIdentifier: DataCell.reuseIdentifier))
     data.append((label: "Skin", value: StringValue(value: character.skinColor), cellIdentifier: DataCell.reuseIdentifier))
     data.append((label: "Gender", value: StringValue(value: character.gender), cellIdentifier: DataCell.reuseIdentifier))
-    
-    if character.starships.count > 0 {
-        data.append((label: "Starships", value: StringValue(value: ""), cellIdentifier: TitleCell.reuseIdentifier))
-        
-        for starship in character.starships {
-            data.append((label: nil, value: ResourceValue(url: starship, resource: StarshipResource()), cellIdentifier: NamableDataCell.reuseIdentifier))
-        }
-    }
+    data.append(contentsOf: ViewModelFactory.populateCollection(title: "Starships", collection: character.starships, resource: StarshipResource()))
+    data.append(contentsOf: ViewModelFactory.populateCollection(title: "Vehicles", collection: character.vehicles, resource: VehicleResource()))
+    data.append(contentsOf: ViewModelFactory.populateCollection(title: "Movies", collection: character.movies, resource: MovieResource()))
 
-    if character.vehicles.count > 0 {
-        data.append((label: "Vehicles", value: StringValue(value: ""), cellIdentifier: TitleCell.reuseIdentifier))
-        
-        for vehicle in character.vehicles {
-            data.append((label: nil, value: ResourceValue(url: vehicle, resource: VehicleResource()), cellIdentifier: NamableDataCell.reuseIdentifier))
-        }
-    }
-    
     return ViewModel(name: character.name, data: data)
 }

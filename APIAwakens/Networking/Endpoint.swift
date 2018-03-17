@@ -13,6 +13,7 @@ enum SWAPIEndpoint: String {
     case vehicles
     case starships
     case planets
+    case movies = "films"
 }
 
 extension SWAPIEndpoint {

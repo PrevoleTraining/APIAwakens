@@ -18,7 +18,6 @@
 		FD470877205894AE000DC475 /* NamableDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD470876205894AE000DC475 /* NamableDataCell.swift */; };
 		FD470879205896DA000DC475 /* ResourceValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD470878205896DA000DC475 /* ResourceValue.swift */; };
 		FD47087C2058A1A9000DC475 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD47087B2058A1A9000DC475 /* Cache.swift */; };
-		FD47087E2058A757000DC475 /* IntValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD47087D2058A757000DC475 /* IntValue.swift */; };
 		FD4708802058A793000DC475 /* NumberValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD47087F2058A793000DC475 /* NumberValue.swift */; };
 		FD4708822059046F000DC475 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4708812059046F000DC475 /* ErrorViewController.swift */; };
 		FD49255F2041B8BE009480B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49255E2041B8BE009480B1 /* AppDelegate.swift */; };
@@ -42,7 +41,7 @@
 		FD492599204A88AC009480B1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD492598204A88AC009480B1 /* ViewModel.swift */; };
 		FD49259F204ACCA1009480B1 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD49259E204ACCA1009480B1 /* ViewModelFactory.swift */; };
 		FD4925A1204ADF86009480B1 /* DataCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925A0204ADF86009480B1 /* DataCollection.swift */; };
-		FD4925A5204AE23B009480B1 /* Sizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925A4204AE23B009480B1 /* Sizable.swift */; };
+		FD4925A5204AE23B009480B1 /* Classifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925A4204AE23B009480B1 /* Classifiable.swift */; };
 		FD4925A7204B0843009480B1 /* VehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925A6204B0843009480B1 /* VehicleViewModel.swift */; };
 		FD4925A9204B13A0009480B1 /* StarshipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925A8204B13A0009480B1 /* StarshipViewModel.swift */; };
 		FD4925AB204B2DB7009480B1 /* CashUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4925AA204B2DB7009480B1 /* CashUIButton.swift */; };
@@ -62,6 +61,11 @@
 		FD56D2F120551419002D71CB /* MainButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD56D2F020551419002D71CB /* MainButtonView.swift */; };
 		FD9E888E205C6FF800B8133E /* PlanetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E888D205C6FF800B8133E /* PlanetViewModel.swift */; };
 		FD9E8890205C723000B8133E /* PercentValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E888F205C723000B8133E /* PercentValue.swift */; };
+		FD9E8892205CFDDE00B8133E /* MovieResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E8891205CFDDE00B8133E /* MovieResource.swift */; };
+		FD9E8894205CFE4400B8133E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E8893205CFE4400B8133E /* Movie.swift */; };
+		FD9E8896205D126800B8133E /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E8895205D126800B8133E /* MovieViewModel.swift */; };
+		FD9E8898205D1E8500B8133E /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E8897205D1E8500B8133E /* Int.swift */; };
+		FD9E889A205D1F3F00B8133E /* RomanValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E8899205D1F3F00B8133E /* RomanValue.swift */; };
 		FDFAA597204B954B00B4F77F /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFAA596204B954B00B4F77F /* TitleCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,7 +81,6 @@
 		FD470876205894AE000DC475 /* NamableDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamableDataCell.swift; sourceTree = "<group>"; };
 		FD470878205896DA000DC475 /* ResourceValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceValue.swift; sourceTree = "<group>"; };
 		FD47087B2058A1A9000DC475 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
-		FD47087D2058A757000DC475 /* IntValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntValue.swift; sourceTree = "<group>"; };
 		FD47087F2058A793000DC475 /* NumberValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberValue.swift; sourceTree = "<group>"; };
 		FD4708812059046F000DC475 /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		FD49255B2041B8BE009480B1 /* APIAwakens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APIAwakens.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +106,7 @@
 		FD492598204A88AC009480B1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		FD49259E204ACCA1009480B1 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		FD4925A0204ADF86009480B1 /* DataCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollection.swift; sourceTree = "<group>"; };
-		FD4925A4204AE23B009480B1 /* Sizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sizable.swift; sourceTree = "<group>"; };
+		FD4925A4204AE23B009480B1 /* Classifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classifiable.swift; sourceTree = "<group>"; };
 		FD4925A6204B0843009480B1 /* VehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewModel.swift; sourceTree = "<group>"; };
 		FD4925A8204B13A0009480B1 /* StarshipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipViewModel.swift; sourceTree = "<group>"; };
 		FD4925AA204B2DB7009480B1 /* CashUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashUIButton.swift; sourceTree = "<group>"; };
@@ -123,6 +126,11 @@
 		FD56D2F020551419002D71CB /* MainButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButtonView.swift; sourceTree = "<group>"; };
 		FD9E888D205C6FF800B8133E /* PlanetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetViewModel.swift; sourceTree = "<group>"; };
 		FD9E888F205C723000B8133E /* PercentValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentValue.swift; sourceTree = "<group>"; };
+		FD9E8891205CFDDE00B8133E /* MovieResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieResource.swift; sourceTree = "<group>"; };
+		FD9E8893205CFE4400B8133E /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		FD9E8895205D126800B8133E /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		FD9E8897205D1E8500B8133E /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		FD9E8899205D1F3F00B8133E /* RomanValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomanValue.swift; sourceTree = "<group>"; };
 		FDFAA596204B954B00B4F77F /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +161,7 @@
 				FD4708662055CE8D000DC475 /* VehicleResource.swift */,
 				FD4708682055D2CD000DC475 /* StarshipResource.swift */,
 				FD4708722058894B000DC475 /* PlanetResource.swift */,
+				FD9E8891205CFDDE00B8133E /* MovieResource.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -189,6 +198,7 @@
 				FD56D2DE2050731B002D71CB /* Networking */,
 				FD49257B2042E1A9009480B1 /* View Models */,
 				FD4925932049E9C7009480B1 /* UI */,
+				FD9E8897205D1E8500B8133E /* Int.swift */,
 				FD49255E2041B8BE009480B1 /* AppDelegate.swift */,
 				FD4925622041B8BE009480B1 /* Main.storyboard */,
 				FD4925652041B8BE009480B1 /* Assets.xcassets */,
@@ -206,9 +216,10 @@
 				FD4925752041BEC7009480B1 /* Starship.swift */,
 				FD492596204A7B2F009480B1 /* Namable.swift */,
 				FD4925A0204ADF86009480B1 /* DataCollection.swift */,
-				FD4925A4204AE23B009480B1 /* Sizable.swift */,
+				FD4925A4204AE23B009480B1 /* Classifiable.swift */,
 				FD47086A2055DAEB000DC475 /* BaseVehicle.swift */,
 				FD4708702058853B000DC475 /* Planet.swift */,
+				FD9E8893205CFE4400B8133E /* Movie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -241,6 +252,7 @@
 				FD4925A6204B0843009480B1 /* VehicleViewModel.swift */,
 				FD4925A8204B13A0009480B1 /* StarshipViewModel.swift */,
 				FD9E888D205C6FF800B8133E /* PlanetViewModel.swift */,
+				FD9E8895205D126800B8133E /* MovieViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -289,9 +301,9 @@
 				FD4925B1204B3479009480B1 /* MetricValue.swift */,
 				FD4925B3204B3492009480B1 /* CashValue.swift */,
 				FD470878205896DA000DC475 /* ResourceValue.swift */,
-				FD47087D2058A757000DC475 /* IntValue.swift */,
 				FD47087F2058A793000DC475 /* NumberValue.swift */,
 				FD9E888F205C723000B8133E /* PercentValue.swift */,
+				FD9E8899205D1F3F00B8133E /* RomanValue.swift */,
 			);
 			path = Values;
 			sourceTree = "<group>";
@@ -425,18 +437,22 @@
 				FD470877205894AE000DC475 /* NamableDataCell.swift in Sources */,
 				FD4925B8204B3DD9009480B1 /* RateModalDelegate.swift in Sources */,
 				FD47087C2058A1A9000DC475 /* Cache.swift in Sources */,
-				FD4925A5204AE23B009480B1 /* Sizable.swift in Sources */,
+				FD9E8898205D1E8500B8133E /* Int.swift in Sources */,
+				FD4925A5204AE23B009480B1 /* Classifiable.swift in Sources */,
 				FD47086B2055DAEB000DC475 /* BaseVehicle.swift in Sources */,
 				FD56D2E420507452002D71CB /* JSONDownloader.swift in Sources */,
 				FD4925A7204B0843009480B1 /* VehicleViewModel.swift in Sources */,
 				FD4925B4204B3492009480B1 /* CashValue.swift in Sources */,
+				FD9E889A205D1F3F00B8133E /* RomanValue.swift in Sources */,
 				FD4708672055CE8D000DC475 /* VehicleResource.swift in Sources */,
-				FD47087E2058A757000DC475 /* IntValue.swift in Sources */,
+				FD9E8894205CFE4400B8133E /* Movie.swift in Sources */,
 				FD56D2EC20511F0B002D71CB /* DownloadEntity.swift in Sources */,
 				FD4925B0204B3465009480B1 /* StringValue.swift in Sources */,
+				FD9E8896205D126800B8133E /* MovieViewModel.swift in Sources */,
 				FD56D2E0205073E6002D71CB /* SWAPIError.swift in Sources */,
 				FD4925A1204ADF86009480B1 /* DataCollection.swift in Sources */,
 				FD4925AB204B2DB7009480B1 /* CashUIButton.swift in Sources */,
+				FD9E8892205CFDDE00B8133E /* MovieResource.swift in Sources */,
 				FD4708692055D2CD000DC475 /* StarshipResource.swift in Sources */,
 				FD4925B2204B3479009480B1 /* MetricValue.swift in Sources */,
 				FD4708712058853B000DC475 /* Planet.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import Foundation
 
-func planetViewModel(planet: Planet) -> ViewModel {
+func PlanetViewModel(planet: Planet) -> ViewModel {
     var data: [ViewModel.LabelValue] = []
     
     data.append((label: "Climate", value: StringValue(value: planet.climate), cellIdentifier: DataCell.reuseIdentifier))
@@ -19,14 +19,8 @@ func planetViewModel(planet: Planet) -> ViewModel {
     data.append((label: "Diameter", value: MetricValue(value: planet.diameterInKm, scale: .kilometer), cellIdentifier: MetricDataCell.reuseIdentifier))
     data.append((label: "Rotation", value: NumberValue(value: planet.rotationPeriodInHours, suffix: " hours"), cellIdentifier: DataCell.reuseIdentifier))
     data.append((label: "Orbit", value: NumberValue(value: planet.orbitalPeriodInDays, suffix: " days"), cellIdentifier: DataCell.reuseIdentifier))
-    
-    if planet.residents.count > 0 {
-        data.append((label: "Residents", value: StringValue(value: ""), cellIdentifier: TitleCell.reuseIdentifier))
-        
-        for resident in planet.residents {
-            data.append((label: nil, value: ResourceValue(url: resident, resource: SWCharacterResource()), cellIdentifier: NamableDataCell.reuseIdentifier))
-        }
-    }
-    
+    data.append(contentsOf: ViewModelFactory.populateCollection(title: "Residents", collection: planet.residents, resource: SWCharacterResource()))
+    data.append(contentsOf: ViewModelFactory.populateCollection(title: "Movies", collection: planet.movies, resource: MovieResource()))
+
     return ViewModel(name: planet.name, data: data)
 }
