@@ -12,7 +12,7 @@ func movieViewModel(movie: Movie) -> ViewModel {
     var data: [ViewModel.LabelValue] = []
     
     data.append((label: "Episode", value: RomanValue(value: movie.episode), cellIdentifier: DataCell.reuseIdentifier))
-    data.append((label: "Opening", value: StringValue(value: movie.opening), cellIdentifier: DataCell.reuseIdentifier))
+    data.append((label: "Opening", value: OpeningCrawlValue(value: movie.opening, name: movie.name, episode: movie.episode), cellIdentifier: OpeningCrawlDataCell.reuseIdentifier))
     data.append((label: "Director", value: StringValue(value: movie.director), cellIdentifier: DataCell.reuseIdentifier))
     data.append((label: "Producer", value: StringValue(value: movie.producer), cellIdentifier: DataCell.reuseIdentifier))
     data.append((label: "Release date", value: StringValue(value: movie.releaseDate), cellIdentifier: DataCell.reuseIdentifier))

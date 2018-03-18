@@ -94,12 +94,13 @@ class DataViewController: UITableViewController, UIPickerViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "exchangeRateModal", let controller = segue.destination as? ExchangeRateViewController, let button = sender as? UIButton, let view = button.superview, let cell = view.superview as? CashDataCell {
             controller.rateModalDelegate = cell
-        } else if segue.identifier == "accessoryViewDetails", let controller = segue.destination as? DataViewController {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                if let cell = tableView.cellForRow(at: indexPath), let namableDataCell = cell as? NamableDataCell {
+        } else {
+            if let indexPath = tableView.indexPathForSelectedRow, let cell = tableView.cellForRow(at: indexPath) {
+                if segue.identifier == "accessoryViewDetails", let controller = segue.destination as? DataViewController, let namableDataCell = cell as? NamableDataCell {
                     controller.singleData = namableDataCell.entity
+                } else if segue.identifier == "openingCrawlSegue", let controller = segue.destination as? OpeningCrawlViewController, let openingCrawlCell = cell as? OpeningCrawlDataCell {
+                    controller.openingCrawlText = openingCrawlCell.openingText
                 }
-                
                 tableView.deselectRow(at: indexPath, animated: true)
             }
         }

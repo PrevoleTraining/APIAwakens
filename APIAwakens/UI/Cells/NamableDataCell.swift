@@ -49,12 +49,7 @@ class NamableDataCell: UITableViewCell {
     @IBOutlet weak var labelsSpacingConstraint: NSLayoutConstraint!
     
     var value: ResourceValue?
-    
-    // MARK: - Actions
-    
-    @IBAction func details(_ sender: Any) {
-    }
-    
+        
     // MARK: - Helpers
     
     func update(label: String?, data: ResourceValue) {

@@ -69,6 +69,9 @@
 		FD9E889C205D25F600B8133E /* SpeciesResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E889B205D25F600B8133E /* SpeciesResource.swift */; };
 		FD9E889E205D265F00B8133E /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E889D205D265F00B8133E /* Species.swift */; };
 		FD9E88A0205D296700B8133E /* SpeciesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E889F205D296700B8133E /* SpeciesViewModel.swift */; };
+		FD9E88A2205D74EB00B8133E /* OpeningCrawlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E88A1205D74EB00B8133E /* OpeningCrawlViewController.swift */; };
+		FD9E88A4205DB8FD00B8133E /* OpeningCrawlDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E88A3205DB8FD00B8133E /* OpeningCrawlDataCell.swift */; };
+		FD9E88A6205EFAE900B8133E /* OpeningCrawlValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9E88A5205EFAE900B8133E /* OpeningCrawlValue.swift */; };
 		FDFAA597204B954B00B4F77F /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFAA596204B954B00B4F77F /* TitleCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +140,9 @@
 		FD9E889B205D25F600B8133E /* SpeciesResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesResource.swift; sourceTree = "<group>"; };
 		FD9E889D205D265F00B8133E /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
 		FD9E889F205D296700B8133E /* SpeciesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesViewModel.swift; sourceTree = "<group>"; };
+		FD9E88A1205D74EB00B8133E /* OpeningCrawlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningCrawlViewController.swift; sourceTree = "<group>"; };
+		FD9E88A3205DB8FD00B8133E /* OpeningCrawlDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningCrawlDataCell.swift; sourceTree = "<group>"; };
+		FD9E88A5205EFAE900B8133E /* OpeningCrawlValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningCrawlValue.swift; sourceTree = "<group>"; };
 		FDFAA596204B954B00B4F77F /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -274,6 +280,7 @@
 				FD4925B5204B3D1C009480B1 /* ExchangeRateViewController.swift */,
 				FD4925B7204B3DD9009480B1 /* RateModalDelegate.swift */,
 				FD4708812059046F000DC475 /* ErrorViewController.swift */,
+				FD9E88A1205D74EB00B8133E /* OpeningCrawlViewController.swift */,
 			);
 			path = "View Controlers";
 			sourceTree = "<group>";
@@ -287,6 +294,7 @@
 				FDFAA596204B954B00B4F77F /* TitleCell.swift */,
 				FD47086420556562000DC475 /* MainButtonCell.swift */,
 				FD470876205894AE000DC475 /* NamableDataCell.swift */,
+				FD9E88A3205DB8FD00B8133E /* OpeningCrawlDataCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -313,6 +321,7 @@
 				FD47087F2058A793000DC475 /* NumberValue.swift */,
 				FD9E888F205C723000B8133E /* PercentValue.swift */,
 				FD9E8899205D1F3F00B8133E /* RomanValue.swift */,
+				FD9E88A5205EFAE900B8133E /* OpeningCrawlValue.swift */,
 			);
 			path = Values;
 			sourceTree = "<group>";
@@ -421,6 +430,7 @@
 				FD56D2F120551419002D71CB /* MainButtonView.swift in Sources */,
 				FD9E888E205C6FF800B8133E /* PlanetViewModel.swift in Sources */,
 				FD56D2EA205114AF002D71CB /* SWCharacterResource.swift in Sources */,
+				FD9E88A2205D74EB00B8133E /* OpeningCrawlViewController.swift in Sources */,
 				FD4925722041BA95009480B1 /* SWCharacter.swift in Sources */,
 				FD4925A9204B13A0009480B1 /* StarshipViewModel.swift in Sources */,
 				FD49258A2042F2C3009480B1 /* DataCell.swift in Sources */,
@@ -444,6 +454,7 @@
 				FD4925742041BA9F009480B1 /* Vehicle.swift in Sources */,
 				FD470879205896DA000DC475 /* ResourceValue.swift in Sources */,
 				FD9E8890205C723000B8133E /* PercentValue.swift in Sources */,
+				FD9E88A6205EFAE900B8133E /* OpeningCrawlValue.swift in Sources */,
 				FD9E889C205D25F600B8133E /* SpeciesResource.swift in Sources */,
 				FD470877205894AE000DC475 /* NamableDataCell.swift in Sources */,
 				FD4925B8204B3DD9009480B1 /* RateModalDelegate.swift in Sources */,
@@ -465,6 +476,7 @@
 				FD4925A1204ADF86009480B1 /* DataCollection.swift in Sources */,
 				FD4925AB204B2DB7009480B1 /* CashUIButton.swift in Sources */,
 				FD9E8892205CFDDE00B8133E /* MovieResource.swift in Sources */,
+				FD9E88A4205DB8FD00B8133E /* OpeningCrawlDataCell.swift in Sources */,
 				FD4708692055D2CD000DC475 /* StarshipResource.swift in Sources */,
 				FD4925B2204B3479009480B1 /* MetricValue.swift in Sources */,
 				FD4708712058853B000DC475 /* Planet.swift in Sources */,

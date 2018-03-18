@@ -11,12 +11,12 @@ import Foundation
 class ViewModelFactory {
     static func create(namable: Namable) -> ViewModel {
         switch namable {
-        case let namable as SWCharacter: return characterViewModel(character: namable)
-        case let namable as Starship: return starshipViewModel(starship: namable)
-        case let namable as Vehicle: return vehicleViewModel(vehicle: namable)
-        case let namable as Planet: return planetViewModel(planet: namable)
-        case let namable as Movie: return movieViewModel(movie: namable)
-        case let namable as Species: return speciesViewModel(species: namable)
+        case let character as SWCharacter: return characterViewModel(character: character)
+        case let starship as Starship: return starshipViewModel(starship: starship)
+        case let vehicle as Vehicle: return vehicleViewModel(vehicle: vehicle)
+        case let planet as Planet: return planetViewModel(planet: planet)
+        case let movie as Movie: return movieViewModel(movie: movie)
+        case let species as Species: return speciesViewModel(species: species)
         default: fatalError("Should never hapened")
         }
     }
