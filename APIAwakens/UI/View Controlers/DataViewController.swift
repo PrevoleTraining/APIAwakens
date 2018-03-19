@@ -10,6 +10,7 @@ import UIKit
 
 class DataViewController: UITableViewController, UIPickerViewDelegate {
     private static let footerHeight = CGFloat(235)
+    private static let backgroundHeight = CGFloat(50)
     
     var data: DataCollection? {
         didSet {
@@ -38,6 +39,12 @@ class DataViewController: UITableViewController, UIPickerViewDelegate {
     private let pickerDataSource = PickerDataSource()
     private let detailsDataSource = DetailsDataSource()
     
+    private lazy var backgroundView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.black
+        return view
+    }()
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dataPicker: UIPickerView!
     
@@ -52,6 +59,7 @@ class DataViewController: UITableViewController, UIPickerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.addSubview(backgroundView)
         tableView.addSubview(footerView)
         
         tableView.dataSource = detailsDataSource
@@ -78,6 +86,15 @@ class DataViewController: UITableViewController, UIPickerViewDelegate {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            backgroundView.bottomAnchor.constraint(equalTo: tableView.superview!.bottomAnchor),
+            backgroundView.leadingAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.leadingAnchor),
+            backgroundView.trailingAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.trailingAnchor),
+            backgroundView.heightAnchor.constraint(equalToConstant: DataViewController.backgroundHeight)
+        ])
         
         footerView.translatesAutoresizingMaskIntoConstraints = false
         

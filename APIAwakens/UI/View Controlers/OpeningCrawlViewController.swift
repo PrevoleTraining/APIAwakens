@@ -47,13 +47,15 @@ class OpeningCrawlViewController: UIViewController {
             // Put the text out the screen at the bottom
             openingCrawlLabel.transform = CGAffineTransform(translationX: 0, y: view.frame.size.height - 140)
             
-            UIView.animate(withDuration: 80, delay: 0, options: .curveLinear, animations: {
+            UIView.animate(withDuration: 60, delay: 0, options: .curveLinear, animations: {
                 self.openingCrawlLabel.transform = CGAffineTransform(translationX: 0, y: -self.view.frame.size.height)
             }, completion: { _ in
-                self.openingCrawlLabel.transform = CGAffineTransform.identity
-                self.openingCrawlLabel.superview!.layer.sublayerTransform = CATransform3DIdentity
-                self.leftConstraint.constant = self.labelLeadingTrailingStandardWidth
-                self.rightConstraint.constant = self.labelLeadingTrailingStandardWidth
+                UIView.animate(withDuration: 3, delay: 0, options: .curveLinear, animations: {
+                    self.openingCrawlLabel.transform = CGAffineTransform.identity
+                    self.openingCrawlLabel.superview!.layer.sublayerTransform = CATransform3DIdentity
+                    self.leftConstraint.constant = self.labelLeadingTrailingStandardWidth
+                    self.rightConstraint.constant = self.labelLeadingTrailingStandardWidth
+                }, completion: nil)
             })
         }
     }
