@@ -30,8 +30,12 @@ class ExchangeRateViewController: UIViewController, UITextFieldDelegate {
     @IBAction func ok(_ sender: UIButton) {
         let exchangeRate = Double(exchangeRateField.text!)!
         
-        dismiss(animated: true) {
-            self.rateModalDelegate?.confirm(rate: exchangeRate)
+        if exchangeRate > 0 {
+            dismiss(animated: true) {
+                self.rateModalDelegate?.confirm(rate: exchangeRate)
+            }
+        } else {
+            present(ErrorViewController.instantiate(errorMessage: "The exchange rate must be positive"), animated: false, completion: nil)
         }
     }
     
