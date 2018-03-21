@@ -93,4 +93,8 @@ struct MetricValue: DataValue {
     mutating func change(unit: UnitType) {
         self.unitType = unit
     }
+    
+    func hasValue() -> Bool {
+        return value != nil
+    }
 }

@@ -65,7 +65,7 @@ class CashDataCell: UITableViewCell, RateModalDelegate {
             
             for button in buttons {
                 button.isEnabled = !cashValue.isUnit(button.unit)
-                button.isHidden = !cashValue.isPositive()
+                button.isHidden = !cashValue.hasValue()
             }
             
             valueLabel.text = cashValue.formatedValue

@@ -52,6 +52,7 @@ class MetricDataCell: UITableViewCell {
             
             for button in buttons {
                 button.isEnabled = !metricValue.isUnit(button.unit)
+                button.isHidden = !metricValue.hasValue()
             }
             
             valueLabel.text = metricValue.formatedValue

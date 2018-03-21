@@ -54,7 +54,7 @@ class ExchangeRateViewController: UIViewController, UITextFieldDelegate {
                 if text.contains(".") && string.contains(".") {
                     return false
                 } else {
-                    return (text + string).count <= 5
+                    return true
                 }
             } else {
                 return true

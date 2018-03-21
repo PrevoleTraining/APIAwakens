@@ -98,7 +98,7 @@
                                 <constraint firstItem="u5t-q9-NMy" firstAttribute="top" secondItem="JEu-JY-DCp" secondAttribute="top" id="cMl-T6-A9O"/>
                             </constraints>
                         </view>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="C3v-CO-Tae">
+                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="C3v-CO-Tae">
                             <rect key="frame" x="0.0" y="370" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -590,7 +590,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert"/>
                                             </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ESS-fo-aTb">
                                                 <rect key="frame" x="0.0" y="120" width="299" height="50"/>

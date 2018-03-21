@@ -51,7 +51,7 @@ struct CashValue: DataValue {
         self.unit = unit
     }
     
-    func isPositive() -> Bool {
+    func hasValue() -> Bool {
         guard let value = value else {
             return false
         }
